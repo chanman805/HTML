@@ -116,62 +116,13 @@ border-radius:10px;
 
 
 </style>
-<script>
-(function () {
-var textFile = null,
-  makeTextFile = function (text) {
-    var data = new Blob([text], {type: 'text/html', endings:'native'});
-
-    // If we are replacing a previously generated file we need to
-    // manually revoke the object URL to avoid memory leaks.
-    if (textFile !== null) {
-      window.URL.revokeObjectURL(textFile);
-    }
-
-    textFile = window.URL.createObjectURL(data);
-
-    return textFile;
-  };
-  
-
-  var create = document.getElementById('create'),
-  		textbox = document.getElementById('textbox'),
-    	cssbox = document.getElementById('cssbox'),
-    	titlebox = document.getElementById('titlebox'),
-    	filebox = document.getElementById('filebox');
-
-  create.addEventListener('click', function () {
-    var link = document.getElementById('downloadlink');
-    
-    var html = "<html>\n<head>\n<title>\n"
-    	+ titlebox.value
-      + "\n</title>\n" 
-    	+ "<style>\n"
-    	+ cssbox.value
-    	+ "\n</style>\n"
-    	+ "</head>\n<body>\n"
-    	+ textbox.value
-    	+ "\n</body>\n</html>\n";
-    
- 		link.download = filebox.value;
-    link.href = makeTextFile(html);   
-    link.style.display = 'block';
-  }, false);
-})();
-
-window.onload = function(){
-document.body.style.transition = "all 0.5s";
-document.body.style.opacity = "100%";
-};
-
-</script>
 </head>
 <body>
 
 <h1>HTML FILE DOWNLOADER TOOL</h1>
 <p style = "font-size:12px;position:absolute;padding:0px;text-align:right;margin-left:90%;margin-top:-10px;margin-right:1%;">by Brett Docherty</p>
 <br>
-<div id = "body">
+
 <p>Enter title here:</p> <input title = "Always the hardest part, isn't it?" style = "padding:10px;background-color:#e9e9e9;border-width:0px;border-style:solid;"id="titlebox"/> 
 <br>
 <br>
@@ -193,4 +144,56 @@ Type in your CSS!
 }</textarea>
 <img id = "sneakyad" title = "Take a break. You deserve it." src = "https://chanman805.github.io/TAG/images/newlogo.png" onclick = "window.location.replace('http://www.aldergroove.com/comics')" ></img>
 </body>
+<script>
+(function () {
+var textFile = null,
+  makeTextFile = function (text) {
+    var data = new Blob([text], {type: "text/html", endings:"native"});
+
+    // If we are replacing a previously generated file we need to
+    // manually revoke the object URL to avoid memory leaks.
+    if (textFile !== null) {
+      window.URL.revokeObjectURL(textFile);
+    }
+
+    textFile = window.URL.createObjectURL(data);
+
+    return textFile;
+  };
+  
+
+  var create = document.getElementById("create"),
+  		textbox = document.getElementById("textbox"),
+    	cssbox = document.getElementById("cssbox"),
+    	titlebox = document.getElementById("titlebox"),
+    	filebox = document.getElementById("filebox");
+
+  create.addEventListener("click", function () {
+    var link = document.getElementById("downloadlink");
+    
+    var html = "<html>\n<head>\n<title>\n"
+    	+ titlebox.value
+      + "\n</title>\n" 
+    	+ "<style>\n"
+    	+ cssbox.value
+    	+ "\n</style>\n"
+    	+ "</head>\n<body>\n"
+    	+ textbox.value
+    	+ "\n</body>\n</html>\n";
+    
+ 		link.download = filebox.value;
+    link.href = makeTextFile(html);   
+    link.style.display = "none";
+	link.click();
+  }, false);
+})();
+
+
+</script>
+<script>
+window.onload = function(){
+document.body.style.transition = "all 0.5s";
+document.body.style.opacity = "100%";
+};
+</script>
 </html>
