@@ -143,7 +143,9 @@ Type in your CSS!
 <input id = "fileX" value = "file:///" title = "This tool can only output HTML files (.html)" style = "padding:10px;background-color:#e9e9e9;border-width:0px;border-style:solid;"</body>
 <button id="createoutput" onclick = "cowabunga()">View existing file</button>
 <script>
-
+document.getElementById("output").onclick = function(){
+window.location.replace(document.getElementById('fileX').value);
+};
 var cowabunga = function(){
 if (document.getElementById("fileX").value === "file:///"){
 alert("You didn't enter a file path! Remember to enter the file path for an existing HTML file, no other files or file types will be displayed.");
