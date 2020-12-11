@@ -11,9 +11,6 @@
 <meta name="author" content="Brett Docherty">
 <meta name="author" content="Chandler Mrotzek>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- this makes sure that the webpage is supported on all devices -->
-<link rel="icon" href="images/light_icon.png" id="light-scheme-icon">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300&display=swap" rel="stylesheet">
 <style>
@@ -103,11 +100,11 @@ textarea {
   
 }
 
-#create {
+#create,#createoutput {
 background-color:#90a660;color:white;border:none;padding:10px;border-radius:12px;margin:5px;
 }
 
-#create:hover {
+#create:hover, #createoutput:hover {
 background-color:#90a660ee;
 cursor:pointer;
 transition:all 0.2s;
@@ -126,15 +123,11 @@ border-radius:10px;
 <p>Enter title here:</p> <input title = "Always the hardest part, isn't it?" style = "padding:10px;background-color:#e9e9e9;border-width:0px;border-style:solid;"id="titlebox"/> 
 <br>
 <br>
-<br>
 <p>What's the file name?</p> <input title = "Go ahead. Be creative." style = "padding:10px;background-color:#e9e9e9;border-width:0px;border-style:solid;" id="filebox" value="index.html"/>
 <button id="create">Create file</button> <a download="index.html" id="downloadlink" style="display: none">Download</a>
-<br>
-<br>
-<p>
+<br><p>
 Enter your HTML (body) here.
 </p><textarea title = "You got this." style = "width:40%;background-color:#e9e9e9;border-width:0px;border-style:solid;" id="textbox"></textarea>
-<br>
 <br>
 <p>
 Type in your CSS!
@@ -143,8 +136,36 @@ Type in your CSS!
 
 }</textarea>
 <img id = "sneakyad" title = "Take a break. You deserve it." src = "https://chanman805.github.io/TAG/images/newlogo.png" onclick = "window.location.replace('http://www.aldergroove.com/comics')" ></img>
-</body>
+<object id = "output" style = "width: 30%;height: 81%;position:absolute;padding-left: 8%;margin-top: -31.5%;" type="text/html" data="help/whattodo.html"></object>
+<br>
+<br>
+<br>
+<input id = "fileX" value = "file:///" title = "This tool can only output HTML files (.html)" style = "padding:10px;background-color:#e9e9e9;border-width:0px;border-style:solid;"</body>
+<button id="createoutput" onclick = "cowabunga()">View existing file</button>
 <script>
+
+var cowabunga = function(){
+if (document.getElementById("fileX").value === "file:///"){
+alert("You didn't enter a file path! Remember to enter the file path for an existing HTML file, no other files or file types will be displayed.");
+}else{
+document.getElementById("output").removeAttribute('data');
+document.getElementById("output").setAttribute('data', document.getElementById('fileX').value);
+document.getElementById("createoutput").innerHTML = "Reload preview frame";
+}
+};
+
+var checkitycheck = function(){
+if (document.getElementById('fileX').value === ""){
+document.getElementById("createoutput").innerHTML = "View existing file";
+}
+};
+
+window.onload = function(){
+document.body.style.transition = "all 0.5s";
+document.body.style.opacity = "100%";
+setInterval(checkitycheck, 3000);
+};
+
 (function () {
 var textFile = null,
   makeTextFile = function (text) {
@@ -189,11 +210,7 @@ var textFile = null,
 })();
 
 
+
 </script>
-<script>
-window.onload = function(){
-document.body.style.transition = "all 0.5s";
-document.body.style.opacity = "100%";
-};
-</script>
+
 </html>
