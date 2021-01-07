@@ -19,15 +19,31 @@ font-size:15px;
 </style>
 </head>
 <body>
-To preview your file, simply download it, find it on your computer (try looking in your downloads folder), and copy/paste the complete file path below. The output should appear here.
-<br>
-<br>
-<br>
-For a fullscreen view, click here.
-<br>
-<br>
-<br>
-Note: due to security restrictions, this feature may not work in some browsers. For those that do, great! If not, you can try pasting the file path URL in another tab to view it.
-
+<p id = "texty" ></p>
 </body>
+<script>
+// 0 (falsey) = Local file, direct from disk (file://path/to/file.html)
+// 1 (truthy) = Virtually remote file, from local server (http://localhost)
+// 2 (truthy) = Remote file from remote server (http://example.com)
+var islocal = function(){
+document.getElementById("texty").innerHTML = "To preview your file, simply download it, find it on your computer (try looking in your downloads folder), and copy/paste the complete file path below. The output should appear here.<br><br><br>For a fullscreen view, click here.";};
+var ishosted = function(){
+document.getElementById("texty").innerHTML = "To preview your file, download this web app using the link below.<br><br><br>You can still edit files using this tool, but you won't be able to view them here unless you download the tool. <br><br><br>Plus, if you download the app, you can edit and preview files all offline!";
+};
+var isweird = function(){
+alert('Weirdo');
+};
+
+function locationType(){
+    if( window.location.protocol == 'file:' ){ islocal();return 0; }
+    if( !window.location.host.replace( /localhost|127\.0\.0\.1/i, '' ) ){ ishosted();return 2; }
+	isweird();
+	return 1;
+	
+	
+}
+window.onload = function(){
+locationType();
+};
+</script>
 </html>
