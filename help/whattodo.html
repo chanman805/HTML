@@ -30,14 +30,12 @@ document.getElementById("texty").innerHTML = "To preview your file, simply downl
 var ishosted = function(){
 document.getElementById("texty").innerHTML = "To preview your file, download this web app using the link below.<br><br><br>You can still edit files using this tool, but you won't be able to view them here unless you download the tool. <br><br><br>Plus, if you download the app, you can edit and preview files all offline!";
 };
-var isweird = function(){
-alert('Weirdo');
-};
+
 
 function locationType(){
     if( window.location.protocol == 'file:' ){ islocal();return 0; }
     if( !window.location.host.replace( /localhost|127\.0\.0\.1/i, '' ) ){ ishosted();return 2; }
-	isweird();
+	ishosted();
 	return 1;
 	
 	
