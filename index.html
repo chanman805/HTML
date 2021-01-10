@@ -1,0 +1,371 @@
+<html>
+<head>
+<title>nuken - an HTML file editor</title> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link REL="SHORTCUT ICON" HREF="program_files/images/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Courier Prime:wght@100&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="keywords" content="html downloader tool">
+<meta name="description" content="This is an HTML downloader tool for downloading HTML files.">
+<meta name="author" content="Brett Docherty">
+<meta name="author" content="Chandler Mrotzek>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- this makes sure that the webpage is supported on all devices -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<style>
+body, html {
+background-color: white;
+background-repeat:no-repeat;
+background-position:center;
+color:black;
+font-family: 'verdana', sans-serif;
+font-size:15px;
+overflow:hidden;
+overflow-x:hidden;
+overflow-y:hidden;
+transition: all 0.5s;
+}
+
+
+body {
+ 
+
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.content {
+padding-left:10px;
+}
+
+h1 {
+text-align:center;
+background-color:black;
+color:white;
+padding:15px;
+}
+
+
+h6 {
+font-size:15px;
+}
+textarea {
+  width: 100%;
+  min-height: 100px;
+  
+}
+
+#create,#createoutput {
+background-color:black;color:white;border:none;padding:10px;border-radius:12px;margin:5px;
+}
+
+#create:hover, #createoutput:hover {
+background-color:black;
+transform: scale(1.05);
+cursor:pointer;
+transition:all 0.2s;
+border-radius:10px;
+}
+
+#downloader:hover {
+transition:all 0.5s;
+transform:scale(1.05);
+cursor:pointer;
+}
+
+#downloader2:hover {
+transition:all 0.5s;
+transform:scale(1.05);
+cursor:pointer;
+}
+
+.butt:after {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  opacity: 50%;
+  background: white;
+  background: linear-gradient(
+    to right, 
+    #ffffff00 0%,
+    #ffffff50 77%,
+    #ffffff50 92%,
+    #ffffff00 100%
+  );
+}
+
+.butt:hover:after {
+  opacity: 1;
+  top: 0%;
+  left: 100%;
+  transition-property: left, top, opacity;
+  transition-duration: 0.7s, 0.7s, 0.15s;
+  transition-timing-function: ease;
+}
+
+
+
+.box {
+  width: 40%;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.2);
+  padding: 35px;
+  border: 2px solid #fff;
+  border-radius: 20px/50px;
+  background-clip: padding-box;
+  text-align: center;
+}
+
+.button {
+  font-size: 1em;
+  padding: 10px;
+  color: #fff;
+  border: 2px solid #06D85F;
+  border-radius: 20px/50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.button:hover {
+  background: #06D85F;
+}
+
+.overlay {
+  position: fixed;
+  top: 50;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #000000c0;
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius:15px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #33333300;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #33333300;
+}
+.popup .close:hover {
+  color: #06D85F;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+
+  }
+  .popup{
+    width: 70%;
+  }
+}
+
+.tools:hover {
+cursor:pointer;
+transition: all 0.5s;
+transform: scale(1.05);
+}
+</style>
+</head>
+<body>
+
+<h1 style = "text-align:left;" >nuken <<img width = "2%" src = "program_files/images/logo.png">></img></h1>
+<div  class = "content"  >
+<p>What's the title?</p> 
+<input title = "Always the hardest part, isn't it?" style = "padding:10px;background-color:#e9e9e9;border-width:0px;border-style:solid;"id="titlebox"/> 
+<br>
+<p>Enter the file name here.</p> <input title = "Go ahead. Be creative." style = "padding:10px;background-color:#e9e9e9;border-width:0px;border-style:solid;" id="filebox" value="index.html"/>
+<button class = "butt"id="create">Create file</button> <a download="index.html" id="downloadlink" style="display: none">Download</a>
+<br><p>
+Enter your HTML (body) here.
+</p><textarea title = "You got this." style = "width:40%;background-color:#e9e9e9;border-width:0px;border-style:solid;" id="textbox"></textarea>
+<br>
+<p>
+Type in your CSS!
+</p>
+<textarea title = "Almost done!" style = "width:40%;background-color:#e9e9e9;border-width:0px;border-style:solid;" id="cssbox">body {
+
+}</textarea>
+<img src = "program_files/images/download.gif" style = "border-radius:30px;width: 20%;position:absolute;padding-left: 23%;margin-top: -20%;" ></img>
+<p style = "z-index:100;margin-left:52.5%;margin-top:-5%;" >Download our web app to preview your HTML files in the browser!</p>
+<p id = "downloader" onclick = "document.getElementById('program_files/package/nuken.zip').click();" style = "text-align:center;margin-left:57%;margin-top:2%;background-color:black;color:white;border-radius:10px;padding:10px;width:30%;" >Download nuken (v3.0) - offline</p>
+<p class = "butt haha"id = "downloader2" onclick = "document.getElementById('create').click();" style = "text-align:center;margin-left:57%;margin-top:2%;background-color:black;color:white;border-radius:10px;padding:10px;width:30%;" >Just download my file (no preview)</p>
+<img class = "tools" id = "inverter" style = "text-align:center;position:relative;margin-left:0%;margin-top:-5%;background-color:#ffffff00;color:white;" title = "Invert the display" onclick = "darken()" width = "5%;"src = "program_files/images/invert.png"></img>
+<img class = "tools" id = "reloader" style = "text-align:center;position:relative;margin-left:0%;margin-top:-5%;background-color:#ffffff00;color:white;" title = "Reload the page" onclick = "document.getElementById('puppy').click();" width = "5%;"src = "program_files/images/reload.png"></img>
+<img class = "tools" id = "showandtell" style = "text-align:center;position:relative;margin-left:0%;margin-top:-5%;background-color:#ffffff00;color:white;filter:contrast(110%);" title = "Tell your friends!" onclick = "mailer()" width = "8%;"src = "program_files/images/share.gif"></img>
+<img class = "tools" id = "github" style = "text-align:center;position:relative;margin-left:0%;margin-top:-5%;background-color:#ffffff00;color:white;filter:contrast(110%);" title = "Contribute to the project" onclick = "github()" width = "5%;"src = "program_files/images/github.png"></img>
+
+</div>
+  <a id = "puppy"class="button" style = "display:none;"href="#popup1"></a>
+<div id="popup1" class="overlay">
+  <div class="popup" >
+    <h1>Are you sure about this?</h1>
+	<br>
+    <a id = "closer" style = "display:none;" class="close" href="#">&times;</a>
+    <div class="content">
+We advise you to save your work before reloading the page. Are you sure you want to do this anyway?
+<br>
+<br>
+<button style = "cursor:pointer;background-color:black;color:white;padding:10px;border:none;border-radius:10px;width:30%;"onclick = "document.getElementById('closer').click();window.location.reload(true);">Reload</button>
+<button style = "cursor:pointer;background-color:black;color:white;padding:10px;border:none;border-radius:10px;width:30%;"onclick = "document.getElementById('closer').click();">Don't</button>
+    </div>
+  </div>
+</div>
+
+<a id="supersecretmail" target = "_blank"href ="mailto:Enter your friend's emails here.?subject=Check this out!&body=I've been using this great new HTML file editor, nuken! It allows me to edit my webpage files in-browser, and even has an offline web-app that lets you preview the HTML on the same page. If you want to get in on the action, here's the link: %0D%0A%0D%0Ahttps://chanman805.github.io/HTML %0D%0A%0D%0AYou're gonna love it!"></a>
+<a target = "_blank" id = "gitty" style = "display:none" href = "https://github.com/chanman805/HTML"></a>
+
+<script>
+var github = function(){
+document.getElementById("gitty").click();
+};
+var mailer = function(){
+document.getElementById("supersecretmail").click();
+};
+var isdark=false;
+var darken = function(){
+if (isdark===false){
+document.body.style.filter="invert(100%)";
+isdark = true;
+} else {
+document.body.style.filter="invert(0%)";
+isdark=false;
+}
+};
+
+
+window.onload = function(){
+document.body.style.transition = "all 0.5s";
+document.body.style.opacity = "100%";
+};
+
+(function () {
+var textFile = null,
+  makeTextFile = function (text) {
+    var data = new Blob([text], {type: "text/html", endings:"native"});
+
+    // If we are replacing a previously generated file we need to
+    // manually revoke the object URL to avoid memory leaks.
+    if (textFile !== null) {
+      window.URL.revokeObjectURL(textFile);
+    }
+
+    textFile = window.URL.createObjectURL(data);
+
+    return textFile;
+  };
+  
+
+  var create = document.getElementById("create"),
+  		textbox = document.getElementById("textbox"),
+    	cssbox = document.getElementById("cssbox"),
+    	titlebox = document.getElementById("titlebox"),
+    	filebox = document.getElementById("filebox");
+
+  create.addEventListener("click", function () {
+    var link = document.getElementById("downloadlink");
+    
+    var html = "<html>\n<head>\n<title>\n"
+    	+ titlebox.value
+      + "\n</title>\n" 
+    	+ "<style>\n"
+    	+ cssbox.value
+    	+ "\n</style>\n"
+    	+ "</head>\n<body>\n"
+    	+ textbox.value
+    	+ "\n</body>\n</html>\n";
+    
+ 		link.download = filebox.value;
+    link.href = makeTextFile(html);   
+    link.style.display = "none";
+	link.click();
+  }, false);
+})();
+
+window.onerror = function(){
+var cusid_ele = document.getElementsByClassName('butt');
+for (var i = 0; i < cusid_ele.length; ++i) {
+    var item = cusid_ele[i];  
+item.style.transition= 'all 0.5s, opacity 1s';
+    item.style.backgroundColor = '#570000';
+item.style.opacity = '0%';
+}
+
+var cusid_ele2 = document.getElementsByClassName('tools');
+for (var i = 0; i < cusid_ele2.length; ++i) {
+    var item = cusid_ele2[i];  
+item.style.transition= 'all 0.5s, opacity .2s';
+item.style.opacity = '0%';
+}
+document.getElementsByClassName('haha')[0].style.opacity="100%";
+document.getElementById("downloader").innerHTML = "Something went wrong. Please save your work and reload the page.";
+document.getElementById("downloader2").innerHTML = "Save my work";
+}
+
+</script>
+
+</html>
