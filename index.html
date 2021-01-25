@@ -229,11 +229,15 @@ cursor:pointer;
 transition: all 0.5s;
 transform: scale(1.05);
 }
+
+#shop_icon:hover {
+cursor:pointer;
+}
 </style>
 </head>
 <body>
 
-<h1 style = "text-align:left;" >nuken <<img width = "2%" src = "program_files/images/logo.png">></img></h1>
+<h1 class = "realcontent" style = "text-align:left;" >nuken <<img id = "logo"width = "2%" src ="program_files/images/logo.png">></img><img  src = "program_files/images/shop.gif" id = "shop_icon" title = "nuken Theme Shop" width="2.5%" onclick = "window.location.replace('program_files/shop.html');" style = "text-align:right;margin-left:80%;" ></img></h1>
 <div  class = "content"  >
 <p>What's the title?</p> 
 <input title = "Always the hardest part, isn't it?" style = "padding:10px;background-color:#e9e9e9;border-width:0px;border-style:solid;"id="titlebox"/> 

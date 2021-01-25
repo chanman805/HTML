@@ -1,0 +1,401 @@
+<html>
+<head>
+<title>nuken Theme Shop</title> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link REL="SHORTCUT ICON" HREF="images/logo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="keywords" content="html downloader tool">
+<meta name="description" content="This is an HTML downloader tool for downloading HTML files.">
+<meta name="author" content="Brett Docherty">
+<meta name="author" content="Chandler Mrotzek">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- this makes sure that the webpage is supported on all devices -->
+
+<style>
+body, html {
+background-color: white;
+background-repeat:no-repeat;
+background-position:center;
+color:black;
+font-family: 'verdana', sans-serif;
+font-size:15px;
+overflow-x:hidden;
+transition: all 0.5s;
+}
+
+
+
+
+
+h1 {
+text-align:center;
+background-color:black;
+color:white;
+padding:15px;
+}
+
+
+h6 {
+font-size:15px;
+}
+textarea {
+  width: 100%;
+  min-height: 100px;
+  
+}
+
+
+
+.box {
+  width: 40%;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.2);
+  padding: 35px;
+  border: 2px solid #fff;
+  border-radius: 20px/50px;
+  background-clip: padding-box;
+  text-align: center;
+}
+
+.button {
+  font-size: 1em;
+  padding: 10px;
+  color: #fff;
+  border: 2px solid #06D85F;
+  border-radius: 0px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.button:hover {
+  background: #06D85F;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #000000c0;
+  transition: opacity 0.2s;
+  visibility: hidden;
+  opacity: 0;
+  z-index:100;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius:0px;
+  width: 30%;
+
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h1 {
+  margin-top: 0;
+  color: white;
+  border-radius:10px;
+  font-family: 'verdana', Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #33333300;
+}
+.popup .close:hover {
+  color: #06D85F;
+}
+.popup .content {
+  max-height: 50%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+}}
+
+#wifi:hover {
+cursor:pointer;
+transition: all 0.5s;
+transform: scale(1.05);
+
+}
+
+.preview {
+transition: all 0.5s;
+  /* This is where magic happens */
+  height: 22%;
+  width: 15%;
+}
+
+.preview:hover {
+cursor:pointer;
+transition: all 0.5s;
+transform:scale(1.075);
+}
+.previewaddons {
+transition: all 0.5s;
+  /* This is where magic happens */
+  height: 25%;
+  width: 15%;
+}
+
+.previewaddons:hover {
+cursor:pointer;
+transition: all 0.5s;
+transform:scale(1.075);
+}
+
+#downloader {
+transform:scale(1.05);
+}
+
+#downloader:hover {
+cursor:pointer;
+opacity:75%;
+}
+
+.help {
+cursor:pointer;
+}
+
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+
+}
+
+.container:hover .image {
+  opacity: 0.2;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  font-family: 'verdana';
+}
+
+#themes {
+object-fit:cover;
+}
+.themeslot {
+width:24%;
+height:34%;
+}
+
+#add-ons {
+object-fit:cover;
+}
+.addonslot {
+width:24%;
+height:34%;
+}
+
+.addonslot:hover {
+cursor:pointer;
+transition: all 0.5s;
+transform:scale(1.1);
+}
+
+.themeslot:hover {
+cursor:pointer;
+transition: all 0.5s;
+transform:scale(1.1);
+filter:contrast(155%) brightness(110%);
+}
+
+.losers:hover {
+cursor:pointer;
+transition: all 0.5s;
+transform:scale(1.1);
+}
+</style>
+</head>
+<body>
+<div id = "hide" class ="vignette" style = "z-index:99;filter:blur(3px) brightness(50%);background-color:black;background-image:url('images/spotlight.gif');background-repeat:no-repeat;background-position:0 0;background-size:50% 30%;padding:100%;display:none;position:absolute;top:0;left:0;"width="200%" height = "200%" ></div>
+<h1 class = "realcontent" style = "text-align:left;" >nuken <<img id = "logo"width = "3%" src ="images/shop.gif">></img></h1>
+
+
+  <img  onclick = "downloaddogs()"class = "losers"style = "float:right;width:24%;background-color:lightblue;height:34%;" src = "images/shop/themes/dog.gif" ></img>
+<img  onclick = "downloadmatrix()"class = "losers"style = "float:right;width:24%;padding-left:0px;padding-right:10px;height:34%;" src = "images/shop/themes/terminal.gif" ></img>
+<div style = "cursor:pointer" class="container">
+  <img class = "image" style = "width:100%;background-color:pink;top:0px;" src = "images/shop/themes/cat.gif" ></img>
+  <div class="middle">
+   <h1 style = "border-radius:10px">In the spotlight: Kitties!</h1>
+	
+	Calling all cat-lovers! This neat nuken theme is just meow-velous. No purrrrrchase necessary. The nuken Kitties theme turns your boring, bland workspace into a flurry of felines. No lost functionality, and the added bonus of...kitties!
+<center>    
+<p onclick = "downloadkitties()" style = "background-color:black;color:white;padding:10px;border-radius:5px;" >Download now</p>
+</center>  
+</div>
+</div>
+
+<p style = "margin-left:0px;text-align:center;font-family:'verdana';font-size:20px;background-color:black;color:white;padding:7.5px;" >Welcome to the nuken Theme Shop!<img onclick = "document.getElementById('puppy2').click();" title = "What is this?"class = "help" style = "opacity:50%;border-radius:50px;background-color:white;float:right;width:2%;" src = "images/shop/plus.png"></img></p>
+<p style = "margin-left:0px;text-align:left;font-family:'verdana';font-size:20px;background-color:Transparent;color:gray;" >Browse the latest themes<img onclick = "document.getElementById('puppy').click();" title = "What is this?"class = "help" style = "opacity:100%;border-radius:50px;background-color:white;float:right;width:2%;" src = "images/shop/plus.png"></img></p>
+<div id = "themes">  
+<img class = "themeslot" onclick = "downloadchrome()" style = "background-image:linear-gradient(gray,lightgray,gray)" src = "images/shop/themes/hammer.gif" ></img>
+ <img class = "themeslot"onclick = "downloadme()" style = "background-color:pink;" src = "images/shop/themes/me.gif" ></img>
+ <img  class = "themeslot" onclick = "downloadwood()"style = "background-color:pink;" src = "images/shop/themes/wood.gif" ></img>
+ <img  class = "themeslot" onclick = "downloadwin95()"style = "background-color:pink;" src = "images/shop/themes/win95.gif" ></img>
+</div>
+
+<p style = "margin-left:0px;text-align:left;font-family:'verdana';font-size:20px;background-color:Transparent;color:gray;" >See the newest add-ons<img onclick = "document.getElementById('puppy3').click();" title = "What is this?"class = "help" style = "opacity:100%;border-radius:50px;background-color:white;float:right;width:2%;" src = "images/shop/plus.png"></img></p>
+<div id = "add-ons">  
+<img onclick = "downloadcolor()" class = "addonslot" style = "background-image:linear-gradient(gray,lightgray,gray)" src = "images/shop/addons/colorwheel.gif" ></img>
+ <img onclick = "downloadhelp()" class = "addonslot" style = "background-color:white;filter:invert(100%);" src = "images/shop/addons/handbook.gif" ></img>
+  <img onclick = "downloadmusic()" class = "addonslot" style = "background-color:white;" src = "images/shop/addons/music.gif" ></img>
+</div>
+
+<br>
+<br>
+<div style = "margin-left:77%;">
+<h1 id = "downloader" title = "Download nuken 4.0 to use themes." onclick = "document.getElementById('nukeny').click();" style = "font-size:20px;width:20%;position:fixed;top:8px;border-radius:0px;padding:10px;padding-bottom:10px;">Download nuken <<img width = "7%" src = "images/logo.png">></h1>
+</div>
+
+<a id = "nukeny"style = "display:none" href ="packages/nuken.zip"></a>
+
+
+  <a id = "puppy"class="realcontent button" style = "display:none;"href="#popup1"></a>
+  <a id = "puppy2"class="realcontent button" style = "display:none;"href="#popup2"></a>
+   <a id = "puppy3"class="realcontent button" style = "display:none;"href="#popup3"></a>
+<div id="popup1" class="overlay">
+  <div style = "border-radius:0px" class=" realcontent popup" >
+    <a id = "closer" style = "display:none;" class="realcontent close" href="#">&times;</a>
+    
+	<div class="realcontent content">
+	<h1>What are themes?</h1>
+	nuken Themes change the appearance and layout of your nuken workspace. Make sure you have v4.0 or higher before downloading a theme! 
+To use nuken Themes, download the 'theme.zip' file and extract it to this file path:
+<br><br>
+nuken/program_files/themes/selected/
+<br><br>
+Then start the nuken offline web app. Your selected theme wil automatically load in. Enjoy!
+<br><br>
+<center><br>
+<button  class = "realcontent" style = "text-align:center;cursor:pointer;background-color:black;color:white;padding:10px;border:none;border-radius:10px;width:30%;"onclick = "document.getElementById('closer').click();">Okay</button>
+<a style = "display:none;"id = "reportlink" target="_blank"href = "https://forms.gle/X3o5xhftU5gtmjqb9"></a>
+<button  class = "realcontent" style = "text-align:center;cursor:pointer;background-color:black;color:white;padding:10px;border:none;border-radius:10px;width:30%;"onclick = "document.getElementById('reportlink').click();">Report Issues</button>
+    </center>
+	</div>
+  </div>
+</div>
+<div id="popup2" class="overlay">
+  <div class="popup" >
+    <a id = "closer2"  class="close" href="#">&times;</a>
+    <div >
+<h1>What is this place?</h1>
+	Welcome to the wonderful nuken Theme Shop! Here, you can download themes and add-ons, both of which change the appearance, layout, and functionality of your nuken
+	workspace. If you have a question about nuken Themes or add-ons, be sure to keep an eye out for the <img width= "4.5%" src = "images/shop/plus.png"></img> icon.
+	<br>
+<center><br>
+<button  class = "realcontent" style = "text-align:center;cursor:pointer;background-color:black;color:white;padding:10px;border:none;border-radius:10px;width:30%;"onclick = "document.getElementById('closer').click();">Okay</button>
+<a style = "display:none;"id = "reportlink" target="_blank"href = "https://forms.gle/X3o5xhftU5gtmjqb9"></a>
+<button  class = "realcontent" style = "text-align:center;cursor:pointer;background-color:black;color:white;padding:10px;border:none;border-radius:10px;width:30%;"onclick = "document.getElementById('reportlink').click();">Report Issues</button>
+    </center>  
+   </div>
+  </div>
+</div>
+
+<div id="popup3" class="overlay">
+  <div class="popup" >
+    <a id = "closer3"  class="close" href="#">&times;</a>
+    <div>
+ <h1>What are add-ons?</h1>
+	nuken Add-ons bring additional functionality to your nuken workspace. Make sure you have v4.0 or higher before downloading an add-on package! 
+To use nuken Add-ons, download the 'add-on.zip' file and extract it to this file path:
+<br><br>
+nuken/program_files/addons/active/
+<br><br>
+Then start the nuken offline web app. Your active add-ons will be available onscreen. Enjoy!
+<br><br>
+<center><br>
+<button  class = "realcontent" style = "text-align:center;cursor:pointer;background-color:black;color:white;padding:10px;border:none;border-radius:10px;width:30%;"onclick = "document.getElementById('closer').click();">Okay</button>
+<a style = "display:none;"id = "reportlink" target="_blank"href = "https://forms.gle/X3o5xhftU5gtmjqb9"></a>
+<button  class = "realcontent" style = "text-align:center;cursor:pointer;background-color:black;color:white;padding:10px;border:none;border-radius:10px;width:30%;"onclick = "document.getElementById('reportlink').click();">Report Issues</button>
+    </center> 
+   </div>
+  </div>
+</div>
+<a id = "kitty" style = "display:none"href = "images/shop/packages/kitties_theme.zip"></a>
+<a id = "doggy" style = "display:none"href = "images/shop/packages/dogs_theme.zip"></a>
+<a id = "chromey" style = "display:none"href = "images/shop/packages/chrome_theme.zip"></a>
+<a id = "woody" style = "display:none"href = "images/shop/packages/wood_theme.zip"></a>
+<a id = "groovy" style = "display:none"href = "images/shop/packages/groove_theme.zip"></a>
+<a id = "matrixy" style = "display:none"href = "images/shop/packages/matrix_theme.zip"></a>
+<a id = "win95y" style = "display:none"href = "images/shop/packages/win95_theme.zip"></a>
+<a id = "musicy" style = "display:none"href = "images/shop/packages/music_addon.zip"></a>
+<a id = "helpy" style = "display:none"href = "images/shop/packages/help_addon.zip"></a>
+<a id = "colory" style = "display:none"href = "images/shop/packages/color_addon.zip"></a>
+<script>
+var downloadkitties = function(){
+document.getElementById("kitty").click();
+};
+var downloaddogs = function(){
+document.getElementById("doggy").click();
+};
+var downloadchrome = function(){
+document.getElementById("chromey").click();
+};
+var downloadwood = function(){
+document.getElementById("woody").click();
+};
+var downloadme = function(){
+document.getElementById("groovy").click();
+};
+var downloadmatrix = function(){
+document.getElementById("matrixy").click();
+};
+var downloadwin95 = function(){
+document.getElementById("win95y").click();
+};
+
+var downloadmusic = function(){
+document.getElementById("musicy").click();
+};
+var downloadhelp = function(){
+document.getElementById("helpy").click();
+};
+var downloadcolor = function(){
+document.getElementById("colory").click();
+};
+</script>
+
+</html>
