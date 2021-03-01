@@ -1,26 +1,32 @@
 <html>
 <head>
-<title>nuken Theme Shop</title> 
+<title>nuken Shop</title> 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link REL="SHORTCUT ICON" HREF="images/logo.png">
+<link REL="SHORTCUT ICON" HREF="images/shop.gif">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="utf-8">
 <meta name="keywords" content="html downloader tool">
-<meta name="description" content="This is an HTML downloader tool for downloading HTML files.">
+<meta name="description" content="nuken allows you to create webpage files in your browser. Fast, free, and all offline!">
 <meta name="author" content="Brett Docherty">
 <meta name="author" content="Chandler Mrotzek">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- this makes sure that the webpage is supported on all devices -->
-
 <style>
+@font-face {
+  font-family: "fonty";
+  src: url("styles/font.ttf");
+
+}
 body, html {
-background-color: white;
+background-color: #eeeeee;
 background-repeat:no-repeat;
 background-position:center;
 color:black;
-font-family: 'verdana', sans-serif;
+font-family: 'fonty', sans-serif;
 font-size:15px;
-overflow-x:hidden;
 transition: all 0.5s;
+height: 100%;
+margin: 0px;
+cursor: default;
 }
 
 
@@ -34,6 +40,39 @@ color:white;
 padding:15px;
 }
 
+.editor_action_bar {
+	background-color: black;
+	height: 56px;
+	color:white;
+	
+}
+
+.editor_action_bar .editor_button  {
+	height: 36px;
+	display: inline;
+	font-size: 1em;
+	padding: 10px;
+	text-decoration: none;
+	cursor: pointer;
+	transition: all 0.3s ease-out;
+	float:right;
+}
+.editor_action_bar h1  {
+	display: inline-block;
+	font-size: 1.25em;
+	padding:0px;
+	text-decoration: none;
+	transition: all 0.3s ease-out;
+	  position: absolute;
+  left: 10%;
+  top: 2.45%;
+  transform: translate(-50%, -50%);
+}
+
+.editor_action_bar input  {
+	
+	float:left;
+}
 
 h6 {
 font-size:15px;
@@ -96,14 +135,14 @@ textarea {
   width: 30%;
 
   position: relative;
-  transition: all 5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .popup h1 {
   margin-top: 0;
   color: white;
   border-radius:10px;
-  font-family: 'verdana', Arial, sans-serif;
+  font-family: 'fonty', Arial, sans-serif;
 }
 .popup .close {
   position: absolute;
@@ -128,274 +167,812 @@ textarea {
     width: 70%;
 }}
 
-#wifi:hover {
+
+
+.left_frame {
+	float: left;
+width:20%;
+	overflow-y:hidden;
+		height:100%;
+
+}
+.right_frame {
+	float: right;
+	padding:10px;
+}
+
+
+#themes {
+background-color:#4a86e850;
+
+}
+#addons {
+background-color:#ff8a8a50;
+
+}
+#packages {
+background-color:#00ff0050;
+
+}
+#templates {
+background-color:#ffff0050;
+
+}
+.widget {
+padding:50px;
+font-size:50px;
+text-align:center;
+transition: all 0.5s;
+height:9.5%;
+}
+.widget:hover {
+cursor:pointer;
+transition:all 0.5s;
+filter:brightness(120%);
+opacity:50%;
+}
+
+.thumbnail{
+margin:25px;
+width:25%;
+height:30%;
+margin-left:50px;
+margin-right:-10px;
+object-fit:contain;
+}
+
+.thumbnail:hover {
 cursor:pointer;
 transition: all 0.5s;
 transform: scale(1.05);
-
 }
 
-.preview {
-transition: all 0.5s;
-  /* This is where magic happens */
-  height: 22%;
-  width: 15%;
+.thumbnail_small{
+margin:25px;
+width:19%;
+height:20%;
+margin-left:50px;
+margin-right:-10px;
+object-fit:contain;
 }
 
-.preview:hover {
+.thumbnail_small:hover {
 cursor:pointer;
 transition: all 0.5s;
-transform:scale(1.075);
-}
-.previewaddons {
-transition: all 0.5s;
-  /* This is where magic happens */
-  height: 25%;
-  width: 15%;
+transform: scale(1.05);
 }
 
-.previewaddons:hover {
-cursor:pointer;
-transition: all 0.5s;
-transform:scale(1.075);
-}
-
-#downloader {
-transform:scale(1.05);
-}
-
-#downloader:hover {
-cursor:pointer;
-opacity:75%;
-}
-
-.help {
-cursor:pointer;
-}
-
-.container {
-  position: relative;
-  width: 50%;
-}
-
-.image {
-  opacity: 1;
-  display: block;
-  height: auto;
-  transition: .5s ease;
-  backface-visibility: hidden;
-}
-
-.middle {
-  transition: .5s ease;
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
+.library::-webkit-scrollbar {
+    width: 1em;
 
 }
 
-.container:hover .image {
-  opacity: 0.2;
+.library::-webkit-scrollbar-track {
+  background-color:Transparent;
+
 }
 
-.container:hover .middle {
-  opacity: 1;
+.library::-webkit-scrollbar-thumb {
+  background-color: lightgray;
+  opacity:50%;
+  border-radius:100px;
+
 }
 
-.text {
-  background-color: black;
-  color: white;
-  font-size: 20px;
-  padding: 20px;
-  font-family: 'verdana';
+#themes_helper, #addons_helper, #packages_helper, #templates_helper {
+padding:10px;
 }
 
-#themes {
-object-fit:cover;
-}
-.themeslot {
-width:24%;
-height:34%;
-}
 
-#add-ons {
-object-fit:cover;
-}
-.addonslot {
-width:24%;
-height:34%;
-}
 
-.addonslot:hover {
-cursor:pointer;
-transition: all 0.5s;
-transform:scale(1.1);
-}
 
-.themeslot:hover {
-cursor:pointer;
-transition: all 0.5s;
-transform:scale(1.1);
-filter:contrast(155%) brightness(110%);
-}
 
-.losers:hover {
-cursor:pointer;
-transition: all 0.5s;
-transform:scale(1.1);
-}
+
 </style>
 </head>
+<body style = "overflow:hidden;">
+<div class = "editor_action_bar" >
+<img style = "width:40px;padding:5px;padding-top:9px" src = "images/shop.gif"></img>
+<h1>nuken Shop</h1>
+<img onclick = "window.location.replace('#nuken');" style = "cursor:pointer;float:right;width:30px;padding-top:10px;padding-right:35px;" src = "images/logo.png" ><img>
+<img onclick = "window.location.replace('#p3');"style = "cursor:pointer;float:right;width:30px;padding-top:10px;padding-right:45px;" src = "images/education.png" ><img>
+</div>
+
+<div class = "left_frame" >
+
+<div title = "View the theme library!" class = "widget" id = "themes" onclick = "show_all_themes();" ><img width = "60px" src = "shop/themes_icon.png"></img><br><a id = "themes_helper" href = "#themes_help" style = "display:none;font-size:12px;color:black;">What are themes?</a></div>
+<div title = "View the add-on library!" class = "widget"id = "addons" onclick = "show_all_addons();"><img width = "60px" src = "shop/addons_icon.png"></img><br><a id = "addons_helper" href = "#addons_help" style = "display:none;font-size:12px;color:black;">What are add-ons?</a></div>
+<div title = "View the package library!" class = "widget"id = "packages" onclick = "show_all_packages();" ><img width = "60px" src = "shop/package_icon.png"></img><br><a id = "packages_helper" href = "#packages_help" style = "display:none;font-size:12px;color:black;">What are packages?</a></div>
+<div title = "View the template library!" class = "widget"id = "templates"onclick = "show_all_templates();"><img width = "60px" src = "shop/templates_icon.png"></img><br><a id = "templates_helper" href = "#templates_help" style = "display:none;font-size:12px;color:black;">What are templates?</a></div>
+
+</div>
+
+
+<div class = "right_frame" ></div>
+<div id = "content">
+<center>
+<img style = "filter:invert(100%);margin-top:10%;opacity:50%;" src = "images/shop.gif"></img>
+<br>
+<br>
+<p style = "color:gray;font-size:40px;">Welcome to the nuken Shop!</p>
+<p style = "color:gray;font-size:20px;">Select a widget to the right to get started.</p>
+</center>
+</div>
+<div  id = "theme_library" class = "library" style = "transition: all 0.5s;display:none;overflow:scroll;height:95%">
+<img onclick = "window.location.replace('#t1');" class = "thumbnail"  style = "background-color:pink;" src = "shop/themes/cat.gif" ></img>
+<img onclick = "window.location.replace('#t2');"class = "thumbnail"  style = "background-color:lightblue;" src = "shop/themes/dog.gif" ></img>
+<img onclick = "window.location.replace('#t3');"class = "thumbnail"  style = "background-image:linear-gradient(gray,lightgray,gray);" src = "shop/themes/hammer.gif" ></img>
+<img onclick = "window.location.replace('#t4');"class = "thumbnail"  style = "background-color:Transparent;" src = "shop/themes/terminal.gif" ></img>
+<img onclick = "window.location.replace('#t5');"class = "thumbnail"  style = "background-color:#ffd28f;" src = "shop/themes/wood.gif" ></img>
+<img onclick = "window.location.replace('#t6');"class = "thumbnail"  style = "background-color:Transparent;" src = "shop/themes/win95.gif" ></img>
+<img onclick = "window.location.replace('#t7');"class = "thumbnail"  style = "background-color:Transparent;" src = "shop/themes/me.gif" ></img>
+
+</div>
+
+<div  id = "addon_library" class = "library" style = "transition: all 0.5s;display:none;overflow:scroll;height:95%">
+<img onclick = "window.location.replace('#a1');"class = "thumbnail_small"  style = "background-color:Transparent" src = "shop/addons/colorwheel.gif" ></img>
+<img onclick = "window.location.replace('#a2');"class = "thumbnail_small"  style = "background-color:Transparent" src = "shop/addons/groove.gif" ></img>
+<img onclick = "window.location.replace('#a3');"class = "thumbnail_small"  style = "background-color:Transparent" src = "shop/addons/more.gif" ></img>
+<img onclick = "window.location.replace('#a4');"class = "thumbnail_small"  style = "background-color:Transparent;" src = "shop/addons/music.gif" ></img>
+<img onclick = "window.location.replace('#a5');" class = "thumbnail_small"  style = "background-color:Transparent" src = "shop/addons/handbook.gif" ></img>
+<img onclick = "window.location.replace('#a6');"class = "thumbnail_small"  style = "background-color:Transparent" src = "shop/addons/importer.png" ></img>
+<img onclick = "window.location.replace('#a7');"class = "thumbnail_small"  style = "background-color:Transparent" src = "shop/addons/lesson.jpg" ></img>
+
+
+</div>
+
+<div  id = "package_library" class = "library" style = "transition: all 0.5s;display:none;overflow:scroll;height:95%">
+<img onclick = "window.location.replace('#p1');" class = "thumbnail"  style = "background-color:Transparent;filter:invert(100%);" src = "shop/packages/images/alder.jpg" ></img>
+<img onclick = "window.location.replace('#p2');"class = "thumbnail"  style = "background-color:#ffce85" src = "shop/packages/images/html5.png" ></img>
+<img onclick = "window.location.replace('#p3');"class = "thumbnail"  style = "background-color:white;" src = "shop/packages/images/nuken_ed.png" ></img>
+
+
+
+</div>
+
+<div onclick = "window.location.replace('#l1');" id = "template_library" class = "library" style = "transition: all 0.5s;display:none;overflow:scroll;height:95%">
+
+<img class = "thumbnail_small"  style = "background-color:white;" src = "../program_files/images/logo.png" ></img>
+
+</div>
+
+</body>
+<script>
+var blank = document.getElementById("content");
+var theme_library = document.getElementById("theme_library");
+var addon_library = document.getElementById("addon_library");
+var package_library = document.getElementById("package_library");
+var template_library = document.getElementById("template_library");
+var theme_widget = document.getElementById('themes');
+var addon_widget =  document.getElementById('addons');
+var package_widget =  document.getElementById('packages');
+var template_widget =  document.getElementById('templates');
+var left_side = document.getElementsByClassName('left_frame');
+
+var themes_activated = false;
+var addons_activated = false;
+var packages_activated = false;
+var templates_activated = false;
+
+var themes_helper = document.getElementById('themes_helper');
+var addons_helper = document.getElementById('addons_helper');
+var packages_helper = document.getElementById('packages_helper');
+var templates_helper = document.getElementById('templates_helper');
+
+var onlythemes = function(){
+themes_activated = true;
+addons_activated = false;
+packages_activated = false;
+templates_activated = false;
+themes_helper.style.display = "block";
+addons_helper.style.display = "none";
+packages_helper.style.display = "none";
+templates_helper.style.display = "none";
+};
+
+var onlyaddons = function(){
+themes_activated = false;
+addons_activated = true;
+packages_activated = false;
+templates_activated = false;
+themes_helper.style.display = "none";
+addons_helper.style.display = "block";
+packages_helper.style.display = "none";
+templates_helper.style.display = "none";
+};
+
+var onlypackages = function(){
+themes_activated = false;
+addons_activated = false;
+packages_activated = true;
+templates_activated = false;
+themes_helper.style.display = "none";
+addons_helper.style.display = "none";
+packages_helper.style.display = "block";
+templates_helper.style.display = "none";
+};
+
+var onlytemplates = function(){
+themes_activated = false;
+addons_activated = false;
+packages_activated = false;
+templates_activated = true;
+themes_helper.style.display = "none";
+addons_helper.style.display = "none";
+packages_helper.style.display = "none";
+templates_helper.style.display = "block";
+};
+
+var show_all_themes = function(){
+if (themes_activated === false){
+blank.style.display = "none";
+theme_library.style.display = "block";
+addon_library.style.display = "none";
+package_library.style.display = "none";
+template_library.style.display = "none";
+theme_widget.style.filter = "grayscale(0%)";
+addon_widget.style.filter = "grayscale(100%)";
+package_widget.style.filter = "grayscale(100%)";
+template_widget.style.filter = "grayscale(100%)";
+onlythemes();
+
+
+} else {
+blank.style.display = "block";
+theme_library.style.display = "none";
+addon_library.style.display = "none";
+package_library.style.display = "none";
+template_library.style.display = "none";
+theme_widget.style.filter = "grayscale(0%)";
+addon_widget.style.filter = "grayscale(0%)";
+package_widget.style.filter = "grayscale(0%)";
+template_widget.style.filter = "grayscale(0%)";
+themes_activated = false;
+themes_helper.style.display = "none";
+}
+
+};
+
+var show_all_addons = function(){
+if (addons_activated === false){
+blank.style.display = "none";
+theme_library.style.display = "none";
+addon_library.style.display = "block";
+package_library.style.display = "none";
+template_library.style.display = "none";
+theme_widget.style.filter = "grayscale(100%)";
+addon_widget.style.filter = "grayscale(0%)";
+package_widget.style.filter = "grayscale(100%)";
+template_widget.style.filter = "grayscale(100%)";
+onlyaddons();
+addons_helper.style.display = "block";
+} else {
+blank.style.display = "block";
+theme_library.style.display = "none";
+addon_library.style.display = "none";
+package_library.style.display = "none";
+template_library.style.display = "none";
+theme_widget.style.filter = "grayscale(0%)";
+addon_widget.style.filter = "grayscale(0%)";
+package_widget.style.filter = "grayscale(0%)";
+template_widget.style.filter = "grayscale(0%)";
+addons_activated = false;
+addons_helper.style.display = "none";
+}
+};
+
+var show_all_packages = function(){
+if (packages_activated === false){
+blank.style.display = "none";
+theme_library.style.display = "none";
+addon_library.style.display = "none";
+package_library.style.display = "block";
+template_library.style.display = "none";
+theme_widget.style.filter = "grayscale(100%)";
+addon_widget.style.filter = "grayscale(100%)";
+package_widget.style.filter = "grayscale(0%)";
+template_widget.style.filter = "grayscale(100%)";
+onlypackages();
+packages_helper.style.display = "block";
+} else {
+blank.style.display = "block";
+theme_library.style.display = "none";
+addon_library.style.display = "none";
+package_library.style.display = "none";
+template_library.style.display = "none";
+theme_widget.style.filter = "grayscale(0%)";
+addon_widget.style.filter = "grayscale(0%)";
+package_widget.style.filter = "grayscale(0%)";
+template_widget.style.filter = "grayscale(0%)";
+packages_activated = false;
+packages_helper.style.display = "none";
+}
+};
+
+var show_all_templates = function(){
+if (templates_activated === false){
+blank.style.display = "none";
+theme_library.style.display = "none";
+addon_library.style.display = "none";
+package_library.style.display = "none";
+template_library.style.display = "block";
+theme_widget.style.filter = "grayscale(100%)";
+addon_widget.style.filter = "grayscale(100%)";
+package_widget.style.filter = "grayscale(100%)";
+template_widget.style.filter = "grayscale(0%)";
+onlytemplates();
+} else {
+blank.style.display = "block";
+theme_library.style.display = "none";
+addon_library.style.display = "none";
+package_library.style.display = "none";
+template_library.style.display = "none";
+theme_widget.style.filter = "grayscale(0%)";
+addon_widget.style.filter = "grayscale(0%)";
+package_widget.style.filter = "grayscale(0%)";
+template_widget.style.filter = "grayscale(0%)";
+templates_activated = false;
+}
+};
+
+window.onload = function(){
+};
+
+
+</script>
+
+
 <body>
-<div id = "hide" class ="vignette" style = "z-index:99;filter:blur(3px) brightness(50%);background-color:black;background-image:url('images/spotlight.gif');background-repeat:no-repeat;background-position:0 0;background-size:50% 30%;padding:100%;display:none;position:absolute;top:0;left:0;"width="200%" height = "200%" ></div>
-<h1 class = "realcontent" style = "text-align:left;" >nuken <<img id = "logo"width = "3%" src ="images/shop.gif">></img></h1>
 
-
-  <img  onclick = "downloaddogs()"class = "losers"style = "float:right;width:24%;background-color:lightblue;height:34%;" src = "images/shop/themes/dog.gif" ></img>
-<img  onclick = "downloadmatrix()"class = "losers"style = "float:right;width:24%;padding-left:0px;padding-right:10px;height:34%;" src = "images/shop/themes/terminal.gif" ></img>
-<div style = "cursor:pointer" class="container">
-  <img class = "image" style = "width:100%;background-color:pink;top:0px;" src = "images/shop/themes/cat.gif" ></img>
-  <div class="middle">
-   <h1 style = "border-radius:10px">In the spotlight: Kitties!</h1>
-	
-	Calling all cat-lovers! This neat nuken theme is just meow-velous. No purrrrrchase necessary. The nuken Kitties theme turns your boring, bland workspace into a flurry of felines. No lost functionality, and the added bonus of...kitties!
-<center>    
-<p onclick = "downloadkitties()" style = "background-color:black;color:white;padding:10px;border-radius:5px;" >Download now</p>
-</center>  
-</div>
-</div>
-
-<p style = "margin-left:0px;text-align:center;font-family:'verdana';font-size:20px;background-color:black;color:white;padding:7.5px;" >Welcome to the nuken Theme Shop!<img onclick = "document.getElementById('puppy2').click();" title = "What is this?"class = "help" style = "opacity:50%;border-radius:50px;background-color:white;float:right;width:2%;" src = "images/shop/plus.png"></img></p>
-<p style = "margin-left:0px;text-align:left;font-family:'verdana';font-size:20px;background-color:Transparent;color:gray;" >Browse the latest themes<img onclick = "document.getElementById('puppy').click();" title = "What is this?"class = "help" style = "opacity:100%;border-radius:50px;background-color:white;float:right;width:2%;" src = "images/shop/plus.png"></img></p>
-<div id = "themes">  
-<img class = "themeslot" onclick = "downloadchrome()" style = "background-image:linear-gradient(gray,lightgray,gray)" src = "images/shop/themes/hammer.gif" ></img>
- <img class = "themeslot"onclick = "downloadme()" style = "background-color:pink;" src = "images/shop/themes/me.gif" ></img>
- <img  class = "themeslot" onclick = "downloadwood()"style = "background-color:pink;" src = "images/shop/themes/wood.gif" ></img>
- <img  class = "themeslot" onclick = "downloadwin95()"style = "background-color:pink;" src = "images/shop/themes/win95.gif" ></img>
-</div>
-
-<p style = "margin-left:0px;text-align:left;font-family:'verdana';font-size:20px;background-color:Transparent;color:gray;" >See the newest add-ons<img onclick = "document.getElementById('puppy3').click();" title = "What is this?"class = "help" style = "opacity:100%;border-radius:50px;background-color:white;float:right;width:2%;" src = "images/shop/plus.png"></img></p>
-<div id = "add-ons">  
-<img onclick = "downloadcolor()" class = "addonslot" style = "background-image:linear-gradient(gray,lightgray,gray)" src = "images/shop/addons/colorwheel.gif" ></img>
- <img onclick = "downloadhelp()" class = "addonslot" style = "background-color:white;filter:invert(100%);" src = "images/shop/addons/handbook.gif" ></img>
-  <img onclick = "downloadmusic()" class = "addonslot" style = "background-color:white;" src = "images/shop/addons/music.gif" ></img>
-</div>
-
-<br>
-<br>
-<div style = "margin-left:77%;">
-<h1 id = "downloader" title = "Download nuken 4.0 to use themes." onclick = "document.getElementById('nukeny').click();" style = "font-size:20px;width:20%;position:fixed;top:8px;border-radius:0px;padding:10px;padding-bottom:10px;">Download nuken <<img width = "7%" src = "images/logo.png">></h1>
-</div>
-
-<a id = "nukeny"style = "display:none" href ="packages/nuken.zip"></a>
-
-
-  <a id = "puppy"class="realcontent button" style = "display:none;"href="#popup1"></a>
-  <a id = "puppy2"class="realcontent button" style = "display:none;"href="#popup2"></a>
-   <a id = "puppy3"class="realcontent button" style = "display:none;"href="#popup3"></a>
-<div id="popup1" class="overlay">
-  <div style = "border-radius:0px" class=" realcontent popup" >
-    <a id = "closer" style = "display:none;" class="realcontent close" href="#">&times;</a>
-    
-	<div class="realcontent content">
-	<h1>What are themes?</h1>
-	nuken Themes change the appearance and layout of your nuken workspace. Make sure you have v4.0 or higher before downloading a theme! 
-To use nuken Themes, download the 'theme.zip' file and extract it to this file path:
-<br><br>
-nuken/program_files/themes/selected/
-<br><br>
-Then start the nuken offline web app. Your selected theme wil automatically load in. Enjoy!
-<br><br>
-<center><br>
-<button  class = "realcontent" style = "text-align:center;cursor:pointer;background-color:black;color:white;padding:10px;border:none;border-radius:10px;width:30%;"onclick = "document.getElementById('closer').click();">Okay</button>
-<a style = "display:none;"id = "reportlink" target="_blank"href = "https://forms.gle/X3o5xhftU5gtmjqb9"></a>
-<button  class = "realcontent" style = "text-align:center;cursor:pointer;background-color:black;color:white;padding:10px;border:none;border-radius:10px;width:30%;"onclick = "document.getElementById('reportlink').click();">Report Issues</button>
-    </center>
-	</div>
-  </div>
-</div>
-<div id="popup2" class="overlay">
-  <div class="popup" >
-    <a id = "closer2"  class="close" href="#">&times;</a>
-    <div >
-<h1>What is this place?</h1>
-	Welcome to the wonderful nuken Theme Shop! Here, you can download themes and add-ons, both of which change the appearance, layout, and functionality of your nuken
-	workspace. If you have a question about nuken Themes or add-ons, be sure to keep an eye out for the <img width= "4.5%" src = "images/shop/plus.png"></img> icon.
-	<br>
-<center><br>
-<button  class = "realcontent" style = "text-align:center;cursor:pointer;background-color:black;color:white;padding:10px;border:none;border-radius:10px;width:30%;"onclick = "document.getElementById('closer').click();">Okay</button>
-<a style = "display:none;"id = "reportlink" target="_blank"href = "https://forms.gle/X3o5xhftU5gtmjqb9"></a>
-<button  class = "realcontent" style = "text-align:center;cursor:pointer;background-color:black;color:white;padding:10px;border:none;border-radius:10px;width:30%;"onclick = "document.getElementById('reportlink').click();">Report Issues</button>
-    </center>  
-   </div>
-  </div>
-</div>
-
-<div id="popup3" class="overlay">
+<!-- THEMES START --> 
+<div id="t1" class="overlay">
   <div class="popup" >
     <a id = "closer3"  class="close" href="#">&times;</a>
-    <div>
- <h1>What are add-ons?</h1>
-	nuken Add-ons bring additional functionality to your nuken workspace. Make sure you have v4.0 or higher before downloading an add-on package! 
-To use nuken Add-ons, download the 'add-on.zip' file and extract it to this file path:
-<br><br>
-nuken/program_files/addons/active/
-<br><br>
-Then start the nuken offline web app. Your active add-ons will be available onscreen. Enjoy!
-<br><br>
-<center><br>
-<button  class = "realcontent" style = "text-align:center;cursor:pointer;background-color:black;color:white;padding:10px;border:none;border-radius:10px;width:30%;"onclick = "document.getElementById('closer').click();">Okay</button>
-<a style = "display:none;"id = "reportlink" target="_blank"href = "https://forms.gle/X3o5xhftU5gtmjqb9"></a>
-<button  class = "realcontent" style = "text-align:center;cursor:pointer;background-color:black;color:white;padding:10px;border:none;border-radius:10px;width:30%;"onclick = "document.getElementById('reportlink').click();">Report Issues</button>
+<img width = "50%" height = "25%" style = "background-color:pink;top:0px;padding-left:25%;padding-right:25%;" src = "shop/themes/cat.gif"></img>
+ <h1 style = "padding:5px;border-radius:0px 0px 10px 10px" >nuken Kitties!</h1>
+Download the nuken Kitties! theme here. Calling all cat-lovers! This neat nuken theme is just meow-velous. No purrrrrchase necessary. The nuken Kitties! theme turns your boring, bland workspace into a flurry of felines. No lost functionality, and the added bonus of...kitties!
+
+	<center><br>
+<p style = "background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;" onclick = "window.location.replace('packages/themes/kitties_theme.zip')"><img width = "5%"   src = "images/download_icon.png"></img>
+Download theme
+<p  onclick = "window.location.replace('#');"style = "font-size:12px;background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;">Keep browsing</p>
     </center> 
    </div>
   </div>
 </div>
-<a id = "kitty" style = "display:none"href = "images/shop/packages/kitties_theme.zip"></a>
-<a id = "doggy" style = "display:none"href = "images/shop/packages/dogs_theme.zip"></a>
-<a id = "chromey" style = "display:none"href = "images/shop/packages/chrome_theme.zip"></a>
-<a id = "woody" style = "display:none"href = "images/shop/packages/wood_theme.zip"></a>
-<a id = "groovy" style = "display:none"href = "images/shop/packages/groove_theme.zip"></a>
-<a id = "matrixy" style = "display:none"href = "images/shop/packages/matrix_theme.zip"></a>
-<a id = "win95y" style = "display:none"href = "images/shop/packages/win95_theme.zip"></a>
-<a id = "musicy" style = "display:none"href = "images/shop/packages/music_addon.zip"></a>
-<a id = "helpy" style = "display:none"href = "images/shop/packages/help_addon.zip"></a>
-<a id = "colory" style = "display:none"href = "images/shop/packages/color_addon.zip"></a>
-<script>
-var downloadkitties = function(){
-document.getElementById("kitty").click();
-};
-var downloaddogs = function(){
-document.getElementById("doggy").click();
-};
-var downloadchrome = function(){
-document.getElementById("chromey").click();
-};
-var downloadwood = function(){
-document.getElementById("woody").click();
-};
-var downloadme = function(){
-document.getElementById("groovy").click();
-};
-var downloadmatrix = function(){
-document.getElementById("matrixy").click();
-};
-var downloadwin95 = function(){
-document.getElementById("win95y").click();
-};
 
-var downloadmusic = function(){
-document.getElementById("musicy").click();
-};
-var downloadhelp = function(){
-document.getElementById("helpy").click();
-};
-var downloadcolor = function(){
-document.getElementById("colory").click();
-};
-</script>
 
+
+<div id="t2" class="overlay">
+  <div class="popup" >
+    <a id = "closer3"  class="close" href="#">&times;</a>
+<img width = "50%" height = "25%" style = "background-color:lightblue;top:0px;padding-left:25%;padding-right:25%;" src = "shop/themes/dog.gif"></img>
+ <h1 style = "padding:5px;border-radius:0px 0px 10px 10px" >nuken Dogs!</h1>
+Download the nuken Dogs! theme here. Calling all dog-lovers! This neat nuken theme is just grrrr-eat. And it's free as a frisbee! The nuken Dogs! theme turns your boring, bland workspace into a collection of canines. No lost functionality, and the added bonus of...Dogs!
+
+	<center><br>
+<p style = "background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;" onclick = "window.location.replace('packages/themes/dogs_theme.zip')"><img width = "5%"   src = "images/download_icon.png"></img>
+Download theme
+<p  onclick = "window.location.replace('#');"style = "font-size:12px;background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;">Keep browsing</p>
+    </center> 
+   </div>
+  </div>
+</div>
+
+
+
+<div id="t3" class="overlay">
+  <div class="popup" >
+    <a id = "closer3"  class="close" href="#">&times;</a>
+<img width = "50%" height = "25%" style = "background-image:linear-gradient(gray, lightgray, gray);top:0px;padding-left:25%;padding-right:25%;" src = "shop/themes/hammer.gif"></img>
+ <h1 style = "padding:5px;border-radius:0px 0px 10px 10px" >Built Tough</h1>
+Download the Built Tough theme here! nuken is all about creativity - and this theme is perfect for creating! Armed with this tool-based, free theme, who knows what you'll make? It's all up to you! Whatever it is, you can know that it's built tough! 
+	
+	<center><br>
+<p style = "background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;" onclick = "window.location.replace('packages/themes/built_tough_theme.zip')"><img width = "5%"   src = "images/download_icon.png"></img>
+Download theme
+<p  onclick = "window.location.replace('#');"style = "font-size:12px;background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;">Keep browsing</p>
+    </center> 
+   </div>
+  </div>
+</div>
+
+
+
+<div id="t4" class="overlay">
+  <div class="popup" >
+    <a id = "closer3"  class="close" href="#">&times;</a>
+<img width = "50%" height = "25%" style = "background-color:black;top:0px;padding-left:25%;padding-right:25%;" src = "shop/themes/terminal.gif"></img>
+ <h1 style = "padding:5px;border-radius:0px 0px 10px 10px" >Old-Timey Terminal</h1>
+Download the Old-timey Terminal theme here! If you're looking for nostalgia, you've come to the right place. This green-on-black color scheme is easy on the eyes, simple to understand, and will give your nuken workspace a old-school look.
+	<center><br>
+<p style = "background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;" onclick = "window.location.replace('packages/themes/terminal_theme.zip')"><img width = "5%"   src = "images/download_icon.png"></img>
+Download theme
+<p  onclick = "window.location.replace('#');"style = "font-size:12px;background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;">Keep browsing</p>
+    </center> 
+   </div>
+  </div>
+</div>
+
+<div id="t5" class="overlay">
+  <div class="popup" >
+    <a id = "closer3"  class="close" href="#">&times;</a>
+<img width = "50%" height = "25%" style = "background-color:#ffd28f;top:0px;padding-left:25%;padding-right:25%;" src = "shop/themes/wood.gif"></img>
+ <h1 style = "padding:5px;border-radius:0px 0px 10px 10px" >Retro Wood Finish</h1>
+Download the Retro Wood Finish theme here! If you're looking for nostalgia, you've come to the right place. This rustic color scheme is hand-crafted, simple to understand, and will give your nuken workspace a old-school look.
+
+	<center><br>
+<p style = "background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;" onclick = "window.location.replace('packages/themes/wood_theme.zip')"><img width = "5%"   src = "images/download_icon.png"></img>
+Download theme
+<p  onclick = "window.location.replace('#');"style = "font-size:12px;background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;">Keep browsing</p>
+    </center> 
+   </div>
+  </div>
+</div>
+
+<div id="t6" class="overlay">
+  <div class="popup" >
+    <a id = "closer3"  class="close" href="#">&times;</a>
+<img width = "50%" height = "25%" style = "background-color:#a8ffff70;top:0px;padding-left:25%;padding-right:25%;" src = "shop/themes/win95.gif"></img>
+ <h1 style = "padding:5px;border-radius:0px 0px 10px 10px" >nuken '95 Theme</h1>
+Download the nuken '95 theme here! If you're looking for nostalgia, you've come to the right place. This retro theme is made new from the ground up, simple to understand, and will give your nuken workspace a old-school look.	<center><br>
+<p style = "background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;" onclick = "window.location.replace('packages/themes/nuken95_theme.zip')"><img width = "5%"   src = "images/download_icon.png"></img>
+Download theme
+<p  onclick = "window.location.replace('#');"style = "font-size:12px;background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;">Keep browsing</p>
+    </center> 
+   </div>
+  </div>
+</div>
+
+<div id="t7" class="overlay">
+  <div class="popup" >
+    <a id = "closer3"  class="close" href="#">&times;</a>
+<img width = "50%" height = "25%" style = "background-color:white;top:0px;padding-left:25%;padding-right:25%;" src = "shop/themes/me.gif"></img>
+ <h1 style = "padding:5px;border-radius:0px 0px 10px 10px" >The Alder Groove + nuken</h1>
+Download the nuken + The Alder Groove theme here! "Hey guys! This is a theme based on my popular web comic, <a style = "text-decoration:none;" href = "http://www.aldergroove.com/comics" target = "_blank">The Alder Groove</a>. Characters and settings familar to fans are scattered throughout the package, so be sure to keep an eye out. Enjoy!" - C. Mrotzek 
+		<center><br>
+<p style = "background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;" onclick = "window.location.replace('packages/themes/groove_theme.zip')"><img width = "5%"   src = "images/download_icon.png"></img>
+Download theme
+<p  onclick = "window.location.replace('#');"style = "font-size:12px;background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;">Keep browsing</p>
+    </center> 
+   </div>
+  </div>
+</div>
+
+</body>
+<!-- THEMES END -->
+
+<body>
+
+<!-- ADDONS START --> 
+<div id="a1" class="overlay">
+  <div class="popup" >
+    <a id = "closer3"  class="close" href="#">&times;</a>
+<img width = "50%" height = "25%" style = "background-color:white;top:0px;padding-left:25%;padding-right:25%;" src = "shop/addons/colorwheel.gif"></img>
+ <h1 style = "padding:5px;border-radius:0px 0px 10px 10px" >nuken Color Picker</h1>
+Download the Color Picker add-on here! Need a way to get HEX, RGB, and color names fast? Then the Color Picker add-on is for you. Find names and codes easily with this free-to-use tool. 
+	<p style = "background-color:orange;padding:2px;border-radius:5px;"><b>This add-on is approved for use with nuken Education.</b></p>
+	<center>
+<p style = "background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;" onclick = "window.location.replace('packages/addons/colorpicker_addon.zip')"><img width = "5%"   src = "images/download_icon.png"></img>
+Download add-on
+<p  onclick = "window.location.replace('#');"style = "font-size:12px;background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;">Keep browsing</p>
+    
+	</center> 
+   </div>
+  </div>
+</div>
+
+
+
+<div id="a2" class="overlay">
+  <div class="popup" >
+    <a id = "closer3"  class="close" href="#">&times;</a>
+<img width = "50%" height = "25%" style = "background-color:black;top:0px;padding-left:25%;padding-right:25%;" src = "shop/addons/groove.gif"></img>
+ <h1 style = "padding:5px;border-radius:0px 0px 10px 10px" >TAG Snippets</h1>
+Download the TAG Snippets add-on here! Low on inspiration? Looking for a quick laugh while you work? This add-on offers a sneak peek at some of the most popular <i>Alder Groove</i> comics, and a catchy quote from series creator Chandler Mrotzek.	
+	
+	<center><br>
+<p style = "background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;" onclick = "window.location.replace('packages/addons/groove_addon.zip')"><img width = "5%"   src = "images/download_icon.png"></img>
+Download add-on
+<p  onclick = "window.location.replace('#');"style = "font-size:12px;background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;">Keep browsing</p>
+    </center> 
+   </div>
+  </div>
+</div>
+
+
+
+<div id="a3" class="overlay">
+  <div class="popup" >
+    <a id = "closer3"  class="close" href="#">&times;</a>
+<img width = "50%" height = "25%" style = "background-color:white;top:0px;padding-left:25%;padding-right:25%;" src = "shop/addons/more.gif"></img>
+ <h1 style = "padding:5px;border-radius:0px 0px 10px 10px" >nuken Add-on Extender</h1>
+Download the nuken Add-on Extender here! Have you run out of add-on slots yet? This add-on doubles the number of add-ons nuken can load! Simply drop this add-on into Slot 3, and your extra add-ons into the extra slot folder!
+	
+	<center><br>
+<p style = "background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;" onclick = "window.location.replace('packages/addons/addon_extender_addon.zip')"><img width = "5%"   src = "images/download_icon.png"></img>
+Download add-on
+<p  onclick = "window.location.replace('#');"style = "font-size:12px;background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;">Keep browsing</p>
+    </center> 
+   </div>
+  </div>
+</div>
+
+
+
+<div id="a4" class="overlay">
+  <div class="popup" >
+    <a id = "closer3"  class="close" href="#">&times;</a>
+<img width = "50%" height = "25%" style = "background-color:white;top:0px;padding-left:25%;padding-right:25%;" src = "shop/addons/music.gif"></img>
+ <h1 style = "padding:5px;border-radius:0px 0px 10px 10px" >nuken Music Player</h1>
+Download the nuken Music Player add-on here! With this add-on, you can hear your favorite MP3 files playing over your nuken workspace. Simply drop up to 20 MP3 files in your selected music folder, and click the play button. You're ready to rock!	
+		<center><br>
+<p style = "background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;" onclick = "window.location.replace('packages/addons/music_player_addon.zip')"><img width = "5%"   src = "images/download_icon.png"></img>
+Download add-on
+<p  onclick = "window.location.replace('#');"style = "font-size:12px;background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;">Keep browsing</p>
+    </center> 
+   </div>
+  </div>
+</div>
+
+<div id="a5" class="overlay">
+  <div class="popup" >
+    <a id = "closer3"  class="close" href="#">&times;</a>
+<img width = "50%" height = "25%" style = "background-color:white;top:0px;padding-left:25%;padding-right:25%;" src = "shop/addons/handbook.gif"></img>
+ <h1 style = "padding:5px;border-radius:0px 0px 10px 10px" >nuken Handbook</h1>
+Download the nuken Handbook add-on here! Confused? Perplexed? Don't know where to start? This guide can answer all of those questions for you; in a convenient, small size. If you have a question, simply open the add-on and find what you're looking for, and get back to work! 
+	
+	<center><br>
+<p style = "background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;" onclick = "window.location.replace('packages/addons/handbook_addon.zip')"><img width = "5%"   src = "images/download_icon.png"></img>
+Download add-on
+<p  onclick = "window.location.replace('#');"style = "font-size:12px;background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;">Keep browsing</p>
+    </center> 
+   </div>
+  </div>
+</div>
+
+<div id="a6" class="overlay">
+  <div class="popup" >
+    <a id = "closer3"  class="close" href="#">&times;</a>
+<img width = "50%" height = "25%" style = "background-color:pink;top:0px;padding-left:25%;padding-right:25%;" src = "shop/addons/importer.png"></img>
+ <h1 style = "padding:5px;border-radius:0px 0px 10px 10px" >nuken Import Tool </h1>
+Download the nuken Import Tool add-on here! With this add-on, you can import your webpage files in their entirety, and copy/paste the file's content to the normal HTML and CSS boxes as you please. This way, you have complete control over what's imported into your nuken workspace!
+<center>
+<p style = "background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;" onclick = "window.location.replace('packages/addons/importer_addon.zip')"><img width = "5%"   src = "images/download_icon.png"></img>
+Download add-on
+<p  onclick = "window.location.replace('#');"style = "font-size:12px;background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;">Keep browsing</p>
+    </center> 
+   </div>
+  </div>
+</div>
+
+<div id="a7" class="overlay">
+  <div class="popup" >
+    <a id = "closer3"  class="close" href="#">&times;</a>
+<img width = "50%" height = "25%" style = "background-color:white;top:0px;padding-left:25%;padding-right:25%;" src = "shop/addons/lesson.jpg"></img>
+ <h1 style = "padding:5px;border-radius:0px 0px 10px 10px" >nuken Education Lesson Creator</h1>
+Download the nuken Education Lesson Creator add-on here! Are you an educator who's confused about how to create your own hands-on lesson templates, and would like to simplify the process? If so, you should download this simple and easy-to-use tool. Simply edit your lesson template like you would a normal nuken Project, and the tool will convert it to a file that nuken Education can read!
+<center><p style = "background-color:orange;padding:2px;border-radius:5px;"><b>This add-on is approved for use with nuken Education.</b></p>
+	
+<p style = "background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;" onclick = "window.location.replace('packages/addons/lesson_creator_addon.zip')"><img width = "5%"   src = "images/download_icon.png"></img>
+Download add-on
+<p  onclick = "window.location.replace('#');"style = "font-size:12px;background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;">Keep browsing</p>
+    </center> 
+   </div>
+  </div>
+</div>
+
+</body>
+
+<!-- ADDONS END -->
+
+<!-- PACKAGES START-->
+<body>
+
+<div id="p1" class="overlay">
+  <div class="popup" >
+    <a id = "closer3"  class="close" href="#">&times;</a>
+<img width = "50%" height = "25%" style = "filter:invert(100%);background-color:white;top:0px;padding-left:25%;padding-right:25%;" src = "shop/packages/images/alder.jpg"></img>
+ <h1 style = "padding:2px;border-radius:0px 0px 10px 10px" >The Alder Groove</h1>
+
+Download The Alder Groove package here! This is a nuken package that comes pre-installed with the following:<br>
+<div>
+<p ><li style = "line-height:-5px;">The Alder Groove + nuken Theme</li></p>	
+<p><li style = "line-height:-5px;">TAG Snippets Add-on</li></p>	
+<p><li style = "line-height:-5px;">nuken Music Player Add-on</li></p>	
+<p><li style = "line-height:-5px;">nuken Handbook Add-on</li></p>	
+</div>
+	
+
+<center>	
+<p style = "background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;" onclick = "window.location.replace('packages/packages/groove_package.zip')"><img width = "5%"   src = "images/download_icon.png"></img>
+Download nuken package
+<p  onclick = "window.location.replace('#');"style = "font-size:12px;background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;">Keep browsing</p>
+    </center> 
+   </div>
+  </div>
+</div>
+
+<div id="p2" class="overlay">
+  <div class="popup" >
+    <a id = "closer3"  class="close" href="#">&times;</a>
+<img width = "50%" height = "25%" style = "background-color:#ffce85;top:0px;padding-left:25%;padding-right:25%;" src = "shop/packages/images/html5.png"></img>
+ <h1 style = "padding:2px;border-radius:0px 0px 10px 10px" >nuken HTML5+</h1>
+
+Download the nuken HTML5+ package here! This is a nuken package that comes pre-installed with the following:<br>
+	<p><li style = "line-height:-5px;">Exclusive nuken Orange Theme</li></p>	
+<p><li style = "line-height:-5px;">nuken Color Picker Add-on</li></p>	
+<p><li style = "line-height:-5px;">nuken Handbook Add-on</li></p>	
+<p><li style = "line-height:-5px;">nuken Resources Add-on</li></p>	
+
+
+<center>	
+<p style = "background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;" onclick = "window.location.replace('packages/packages/html5_package.zip')"><img width = "5%"   src = "images/download_icon.png"></img>
+Download nuken package
+<p  onclick = "window.location.replace('#');"style = "font-size:12px;background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;">Keep browsing</p>
+    </center> 
+   </div>
+  </div>
+</div>
+
+<div id="p3" class="overlay">
+  <div class="popup" >
+    <a id = "closer3"  class="close" href="#">&times;</a>
+<img width = "50%" height = "25%" style = "background-color:white;top:0px;padding-left:25%;padding-right:25%;" src = "shop/packages/images/nuken_ed.png"></img>
+ <h1 style = "padding:2px;border-radius:0px 0px 10px 10px" >nuken Education</h1>
+
+Download the nuken Education package here! This is a nuken package that is offered to educators. <br><br>Those interested can download this package, drop their lesson templates into the corresponding folder (or link to lesson templates that are hosted elsewhere), and distribute the package to their students. nuken Education offers a custom user interface tailored to a school setting, a basic theme that's easy to help others navigate, limited access to the nuken Shop, and way for educators to share hands-on lessons with their students.
+
+<center>	
+<p style = "background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;" onclick = "window.location.replace('packages/packages/nuken_education.zip')"><img width = "5%"   src = "images/download_icon.png"></img>
+Download nuken package
+<p  onclick = "window.location.replace('#');"style = "font-size:12px;background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;">Keep browsing</p>
+    </center> 
+   </div>
+  </div>
+</div>
+
+</body>
+<!-- PACKAGES END-->
+
+
+<!-- TEMPLATES START -->
+
+
+<body>
+<div id="l1" class="overlay">
+  <div class="popup" >
+    <a id = "closer3"  class="close" href="#">&times;</a>
+<img width = "50%" height = "25%" style = "background-color:white;top:0px;padding-left:25%;padding-right:25%;" src = "../program_files/images/logo.png"></img>
+ <h1 style = "padding:2px;border-radius:0px 0px 10px 10px" >nuken v5.0 Templates</h1>
+Download the nuken v5.0 Templates template pack here! These are the default templates that come pre-installed with nuken v5.0: Blogger, Home Page, and Album Viewer.
+<center>	
+<p style = "background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;" onclick = "window.location.replace('packages/templates/nuken_default_template_pack.zip')"><img width = "5%"   src = "images/download_icon.png"></img>
+Download template pack
+<p  onclick = "window.location.replace('#');"style = "font-size:12px;background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;">Keep browsing</p>
+    </center> 
+   </div>
+  </div>
+</div>
+
+<div id="l2" class="overlay">
+  <div class="popup" >
+    <a id = "closer3"  class="close" href="#">&times;</a>
+<img width = "50%" height = "25%" style = "background-color:white;top:0px;padding-left:25%;padding-right:25%;" src = "../program_files/images/logo.png"></img>
+ <h1 style = "padding:15px;border-radius:0px 0px 10px 10px" >Groove-y templates</h1>
+Download the The Alder Groove template pack here! This is a collection of templates that you use to make your very own comics gallery, home page, and painting collection layouts!
+<center>	
+<p style = "background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;" onclick = "window.location.replace('packages/themes/YOUSHOULDNTBEHERE.html')"><img width = "5%"   src = "images/download_icon.png"></img>
+Download nuken | v5.0
+<p  onclick = "window.location.replace('#');"style = "font-size:12px;background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;">Keep browsing</p>
+    </center> 
+   </div>
+  </div>
+</div>
+
+
+</body>
+
+<!-- TEMPLATES END -->
+
+<!--- HELP START -->
+<body>
+<div id="themes_help" class="overlay">
+  <div class="popup" >
+    <a id = "closer3"  class="close" href="#">&times;</a>
+ <h1 style = "padding:10px;" >What are themes?</h1>
+nuken Themes change the appearance and layout of your nuken workspace. Make sure you have v5.0 or higher before downloading a theme! To use nuken Themes, click on a thumbnail image in the themes library - this will make a popup menu appear, asking you to confirm your decision. From there, click the "Download theme" button to download your file. A .zip file will be downloaded to your device's default downloads location. From there, extract the contents of the .zip file and extract it to this file path: <br><br>
+
+nuken/program_files/themes/selected/
+<br><br>
+Then start the nuken offline web app. Your selected theme wil automatically load in. Enjoy! You can view more instructions in the nuken Handbook add-on.
+<br><br>
+NOTE: Students using nuken Education cannot download themes.
+<center>	
+
+<p  onclick = "window.location.replace('#');"style = "font-size:15px;background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;">Okay, I got it!</p>
+    </center> 
+   </div>
+  </div>
+</div>
+
+
+<div id="addons_help" class="overlay">
+  <div class="popup" >
+    <a id = "closer3"  class="close" href="#">&times;</a>
+ <h1 style = "padding:10px;" >What are add-ons?</h1>
+nuken Add-ons bring additional functionality to your nuken workspace. Make sure you have v5.0 or higher before downloading an add-on package! To use nuken Add-ons, click on a thumbnail image in the add-ons library -  this will make a popup menu appear, asking you to confirm your decision. From there, click the "Download add-on" button to download your file. A .zip file will be downloaded to your device's default downloads location. From there, extract the contents of the .zip file and extract it to this file path: <br><br>
+
+nuken/program_files/addons/active/
+<br><br>
+You'll notice three slot folders in this file location. This is what order they will appear in when you view them in the offline nuken web app, so drop the files into whatever slot you want.
+Then start the nuken offline web app. Your active add-ons will be made available. Enjoy! You can view more instructions in the nuken Handbook add-on.
+(NOTE: Students using nuken Education cannot download add-ons from the nuken Shop.)
+<center>	
+
+<p  onclick = "window.location.replace('#');"style = "font-size:15px;background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;">Okay, I got it!</p>
+    </center> 
+   </div>
+  </div>
+</div>
+
+<div id="packages_help" class="overlay">
+  <div class="popup" >
+    <a id = "closer3"  class="close" href="#">&times;</a>
+ <h1 style = "padding:10px;" >What are packages?</h1>
+nuken Packages come pre-installed with things like exclusive themes and add-ons, added functionality, or a modified user interface. There's no folder to drop these into - simply download and extract these wherever you want! nuken Packages are pretty much special custom versions of nuken. Enjoy!
+<br><br>
+NOTE: Students using nuken Education cannot download packages directly.
+<center>	
+
+<p  onclick = "window.location.replace('#');"style = "font-size:15px;background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;">Okay, I got it!</p>
+    </center> 
+   </div>
+  </div>
+</div>
+
+<div id="templates_help" class="overlay">
+  <div class="popup" >
+    <a id = "closer3"  class="close" href="#">&times;</a>
+ <h1 style = "padding:10px;" >What are templates?</h1>
+nuken Templates allow you to import custom projects and code into your nuken workspace. You can access your installed templates in the import menu. You can only have one nuken Template pack active at a time - just extract the template pack file to:
+<br><br>
+nuken/program_files/templates/loaded/
+<br><br>
+NOTE: Students using nuken Education cannot download templates.
+<center>	
+
+<p  onclick = "window.location.replace('#');"style = "font-size:15px;background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;">Okay, I got it!</p>
+    </center> 
+   </div>
+  </div>
+</div>
+
+
+</body>
+<!-- HELP END -->
+
+<body>
+<div id="nuken" class="overlay">
+  <div class="popup" >
+    <a id = "closer3"  class="close" href="#">&times;</a>
+<img width = "50%" height = "25%" style = "background-color:white;top:0px;padding-left:25%;padding-right:25%;" src = "../program_files/images/logo.png"></img>
+ <h1 style = "padding:15px;border-radius:0px 0px 10px 10px" >nuken v5.0</h1>
+Download nuken v5.0! nuken is a webpage file editor that allows you to create, edit, preview, import, and save HTML files; with online and offline access. Customize your nuken workspace with free themes, add-ons, packages, and templates, available to all.
+
+<center>	
+<p style = "background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;" onclick = "window.location.replace('packages/packages/nuken.zip')"><img width = "5%"   src = "images/download_icon.png"></img>
+Download nuken | v5.0
+<p  onclick = "window.location.replace('#');"style = "font-size:12px;background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;">Keep browsing</p>
+    </center> 
+   </div>
+  </div>
+</div>
+
+
+
+
+
+
+</body>
 </html>
