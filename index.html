@@ -690,7 +690,7 @@ document.getElementById("supersecretmail").click();
 var isdark=false;
 var darken = function(){
 if (isdark===false){
-document.body.style.filter="invert(100%)";
+document.documentElement.style.filter = "invert(100%)";
 document.getElementById("import_list").style.backgroundColor="Transparent";
 document.getElementById("import_list").style.color="white";
 document.getElementById("import_list").style.borderColor="white";
@@ -698,7 +698,7 @@ document.getElementById("import_list").style.borderTopColor="Transparent";
 document.getElementById("import_dropdown").style.filter="invert(100%)";
 isdark = true;
 } else {
-document.body.style.filter="invert(0%)";
+document.documentElement.style.filter = "invert(0%)";
 document.getElementById("import_list").style.backgroundColor="white";
 document.getElementById("import_list").style.color="black";
 document.getElementById("import_list").style.borderColor="black";
