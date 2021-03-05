@@ -63,8 +63,8 @@ padding:15px;
 	padding:0px;
 	text-decoration: none;
 	transition: all 0.3s ease-out;
-	  position: absolute;
-  left: 10%;
+	  position: relative;
+  left: 5%;
   top: 2.45%;
   transform: translate(-50%, -50%);
 }
@@ -264,6 +264,29 @@ padding:10px;
 }
 
 
+button:hover {
+cursor:pointer;
+transition:all 0.5s;
+transform:scale(1.05);
+
+}
+
+#hoverback {
+transition: all 1s;
+}
+
+#hidey:hover {
+cursor:pointer;
+}
+
+#hoverback:hover {
+cursor:pointer;
+}
+
+#page_title:hover {
+cursor:pointer;
+}
+
 
 
 
@@ -272,8 +295,9 @@ padding:10px;
 </head>
 <body style = "overflow:hidden;">
 <div class = "editor_action_bar" >
-<img style = "width:40px;padding:5px;padding-top:9px" src = "images/shop.gif"></img>
-<h1>nuken Shop</h1>
+<img onclick = "window.location.replace('../index.html');" id = "hidey" onmouseout = "stayback();" src = "images/arrow.gif" style = "display:none;width:50px;opacity:0%" ></img>
+<img onmouseover = "this.style.transition= 'all 0.5s';this.style.paddingLeft='10px';goback();"  id = "hover_back" style = "width:40px;padding:5px;padding-top:9px" src = "images/shop.gif"></img>
+<h1 onmouseover = "goback()" onclick = "window.location.replace('../index.html')" onmouseout = "stayback()" id = "page_title" >nuken Shop</h1>
 <img onclick = "window.location.replace('#nuken');" style = "cursor:pointer;float:right;width:30px;padding-top:10px;padding-right:35px;" src = "images/logo.png" ><img>
 <img onclick = "window.location.replace('#p3');"style = "cursor:pointer;float:right;width:30px;padding-top:10px;padding-right:45px;" src = "images/education.png" ><img>
 </div>
@@ -291,11 +315,15 @@ padding:10px;
 <div class = "right_frame" ></div>
 <div id = "content">
 <center>
-<img style = "filter:invert(100%);margin-top:10%;opacity:50%;" src = "images/shop.gif"></img>
+<img style = "filter:invert(100%);margin-top:5%;opacity:50%;" src = "images/shop.gif"></img>
 <br>
 <br>
 <p style = "color:gray;font-size:40px;">Welcome to the nuken Shop!</p>
-<p style = "color:gray;font-size:20px;">Select a widget to the right to get started.</p>
+<button onclick = "window.location.replace('#nuken')" style = "font-family:'fonty';color:white;background-color:black;padding:10px;font-size:20px;width:50%;border:none;outline:none;border-radius:10px;" >Download nuken | v5.0</button>
+<br><br>
+<button onclick = "window.location.replace('#p3')"style = "font-family:'fonty';color:white;background-color:black;padding:10px;font-size:20px;width:50%;border:none;outline:none;border-radius:10px;" >Download nuken Education | v1.0</button>
+<br><br>
+<a href = "../index.html" style = "color:gray">Return to nuken Online Editor</a>
 </center>
 </div>
 <div  id = "theme_library" class = "library" style = "transition: all 0.5s;display:none;overflow:scroll;height:95%">
@@ -518,6 +546,27 @@ templates_activated = false;
 window.onload = function(){
 };
 
+var goback = function(){
+document.getElementById("hidey").style.display= "inline-block";
+document.getElementById("hidey").style.opacity= "0%";
+document.getElementById("hidey").style.transition= "all 1s";
+document.getElementById("hidey").style.opacity= "100%";
+document.getElementById("page_title").innerHTML = "Back to editing?";
+document.getElementById("page_title").style.paddingLeft = "20px";
+document.getElementById("page_title").style.backgroundColor= "Transparent";
+
+};
+
+var stayback = function(){
+document.getElementById("hidey").style.display= "none";
+document.getElementById("hidey").style.opacity= "100%";
+document.getElementById("hidey").style.transition= "all 1s";
+document.getElementById("hidey").style.opacity= "0%";
+document.getElementById("page_title").innerHTML = "nuken Shop";
+document.getElementById("page_title").style.paddingLeft = "0px";
+document.getElementById("page_title").style.backgroundColor= "Transparent";
+};
+
 
 </script>
 
@@ -705,7 +754,7 @@ Download add-on
     <a id = "closer3"  class="close" href="#">&times;</a>
 <img width = "50%" height = "25%" style = "background-color:white;top:0px;padding-left:25%;padding-right:25%;" src = "shop/addons/music.gif"></img>
  <h1 style = "padding:5px;border-radius:0px 0px 10px 10px" >nuken Music Player</h1>
-Download the nuken Music Player add-on here! With this add-on, you can hear your favorite MP3 files playing over your nuken workspace. Simply drop up to 20 MP3 files in your selected music folder, and click the play button. You're ready to rock!	
+Download the nuken Music Player add-on here! With this add-on, you can hear your favorite MP3 files playing over your nuken workspace. Simply select your song from the file upload menu, and this add-on will loop it for you! You're ready to rock!	
 		<center><br>
 <p style = "background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;" onclick = "window.location.replace('packages/addons/music_player_addon.zip')"><img width = "5%"   src = "images/download_icon.png"></img>
 Download add-on
