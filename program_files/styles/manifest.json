@@ -1,0 +1,16 @@
+{
+  "name": "Savi Assistant",
+  "short_name": "Savi",
+  "description": "A digital assistant",
+  "display": "fullscreen",
+  "start_url": "/?homescreen=1",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "files/image/apple-touch-icon.png",
+      "sizes": "167x167",
+      "type": "image/png"
+    }
+  ]
+}
