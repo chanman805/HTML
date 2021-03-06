@@ -23,9 +23,7 @@ background-position:center;
 color:black;
 font-family: 'fonty', sans-serif;
 font-size:15px;
-overflow:hidden;
 overflow-x:hidden;
-overflow-y:hidden;
 transition: all 0.5s;
 height: 100%;
 margin: 0px;
@@ -42,6 +40,8 @@ z-index:10000000000000000000000000000;
 }
 #playbutton {
 z-index:0;
+margin-top:-1.5px;
+
 }
 body {
  
@@ -183,6 +183,8 @@ cursor:pointer;
 }
 
 .overlay {
+ z-index:10000000000000000000000000000000000000000000!important;
+ 
   position: fixed;
   top: 50;
   bottom: 0;
@@ -194,6 +196,8 @@ cursor:pointer;
   opacity: 0;
 }
 .overlay:target {
+ z-index:10000000000000000000000000000000000000000000!important;
+ 
   visibility: visible;
   opacity: 1;
 }
@@ -205,6 +209,7 @@ cursor:pointer;
   border-radius:15px;
   width: 30%;
   position: relative;
+  z-index:10000000000000000000000000000000000000000000!important;
   transition: all 0.5s ease-in-out;
 }
 
@@ -254,7 +259,8 @@ cursor:pointer;
 
 .editor_action_bar {
 	background-color: black;
-	height: 56px;
+	height: 50px;
+	
 	color:white;
 }
 
@@ -267,6 +273,8 @@ cursor:pointer;
 	cursor: pointer;
 	transition: all 0.3s ease-out;
 	float:right;
+	margin:2.5px;
+	
 }
 
 .editor_action_bar input  {
@@ -274,21 +282,18 @@ cursor:pointer;
 	float:left;
 }
 .left_frame {
-	float: left;
-	width: -moz-calc(33% - 2px);
-	width: -webkit-calc(33% - 2px);
-	width: calc(33% - 2px);
+	width: 100%;
 
 }
 .right_frame {
-	width: 67%;
-	float: right;
+	width: 100%;
+}
+
+#new_frame {
+top:0%;
 }
 .right_frame, .left_frame {
-	//assuming that 80px + editor bar 56px for borders is the header's height
-	height: -moz-calc(100% - 136px);
-	height: -webkit-calc(100% - 136px);
-	height: calc(100% - 136px);
+
 }
 .dropdown {
 	position: absolute;
@@ -302,6 +307,7 @@ background-color:#e9e9e9;
 color:black;
 animation: textboxanimation 5s linear 2s infinite alternate;
 padding:20px;
+font-size:12px;
 }
 #cssbox {
 outline-color:black;
@@ -309,6 +315,7 @@ background-color:#e9e9e9;
 color:black;
 animation: textboxanimation 5s linear 2s infinite alternate;
 padding:20px;
+font-size:12px;
 }
 #box {
 outline-color:white;
@@ -395,31 +402,6 @@ transform:scaleX(-1);
 }
 
 
-.addons {
-  position: relative;
-  display: inline-block;
-}
-
-.addons-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 12px 16px;
-  z-index: 1;
-  
-}
-
-.addons:hover .addons-content {
-  display: block;
-margin-top:9px;
-margin-left:-75px;
-border: 0.5px solid gray;
-border-top: 0.5px solid Transparent; 
-color:black;
-}
-
 
 @keyframes textboxanimation {
   0%   {outline-color:white;}
@@ -501,98 +483,31 @@ z-index:-1;
 </div>	
 
 
-<div id="popup2" class="overlay">
-<img width = "25%" style = "filter:invert(100%);float:left;padding-top:25%;padding-left:0%" title = "Your file will appear as an icon somehwere right here..." src = "program_files/images/down.gif"></img>
-	<div class="popup"style = "height:75%;max-height:75%;width:35%;" >
-	<center>
-		<h1 style = "background-color:black;color:white;padding:10px;" >Your download is complete!</h1>
-		</center>
-		<br>
-		<a id = "closer" style = "display:none;" class="close" href="#">&times;</a>
-		<div class="content"style = "height:75%;max-height:75%;font-size:14.5px;" >
-			We hope you enjoy. Features of the offline nuken web app include:
-			<br>
-			<br>
-			<li>Full offline access, wherever you are</li>
-			<br>
-			<li>Themes, add-ons, and more templates available</li>
-			<br>
-			<li>Portability, ease of use, documentation</li>
-			<br>
-			<li>Extra features and modifications</li>
-			<br>
-			<br>
-			If you'd like to report an issue with your new setup, please do so by using the form below. You can still continue to use this online editor even with the offline web app installed. Have fun, we look forward to seeing what you will create with nuken!
-			<br>
-			<br>
-			<center>
-			<button style = "cursor:pointer;padding:7px;border:none;border-radius:10px;width:40%;"onclick = "document.getElementById('closer').click();">Sounds good!</button>
-<a style = "display:none" id = "hyet!" href = "https://forms.gle/uVLVYTCUYiCddewS9" target= "_blank"></a>
 
-			<button style = "cursor:pointer;padding:7px;border:none;border-radius:10px;width:40%;"onclick = "document.getElementById('hyet!').click();">I have an issue...</button>
-		</center>
-		</div>
-	</div>
-</div>	
 
 <div id="noimports" class="overlay">
 <div class = "popup">
 <center>
-<h1>Importing files isn't allowed in nuken Online Editor.</h1>
+<h1 style = "font-size:20px;" >Your file has been exported.</h1>
 </center>
-<p>We take your personal information very seriously. We have removed this feature from nuken Online Editor, as it poses a slight security threat. The chances of something bad happening to you via this method (of importing external HTML files) are extremely small, but rather than take that chance we have decided to drop the feature. We may allow users to import their own personal webpage files in a later update of nuken Online Editor, but for now, we invite you to download the offline versions of nuken; which all work as local files stored on your system or external storage device.</p>
 <center>
-<button onclick = "window.location.replace('program_files/shop.html');" style = "cursor:pointer;font-size:15px;background-color:black;color:white;padding:10px;border:none;border-radius:10px;outline:none;font-family:'fonty';" >Visit the nuken Shop</button>
-<br><br>
-<button onclick = "window.location.replace('#')" style = "cursor:pointer;font-size:15px;background-color:black;color:white;padding:10px;border:none;border-radius:10px;outline:none;font-family:'fonty';" >I understand, take me back</button>
+<p>Try logging onto your computer and using nuken! The nuken offline app offers a variety of content, including add-ons, themes, templates, and file imports!</p>
+<button onclick = "window.location.replace('#')" style = "cursor:pointer;font-size:15px;background-color:black;color:white;padding:10px;border:none;border-radius:10px;outline:none;font-family:'fonty';" >Back to editing</button>
 </center>
 </div>	
 </div>
 
-<div id="nukenED" class="overlay">
-<img width = "25%" style = "filter:invert(100%);float:left;padding-top:25%;padding-left:0%" title = "Your file will appear as an icon somehwere right here..." src = "program_files/images/down.gif"></img>
-	<div class="popup"style = "height:75%;max-height:75%;width:35%;" >
-	<center>
-		<h1 style = "background-color:black;color:white;padding:10px;" >Your download is complete!</h1>
-		</center>
-		<br>
-		<a id = "closer" style = "display:none;" class="close" href="#">&times;</a>
-		<div class="content"style = "height:75%;max-height:75%;font-size:14px;" >
-			Now that you've downloaded the web app, educator, be sure to:
-			<br>
-			<br>
-			<li>Use the included template to create your own hands-on lessons</li>
-			<br>
-			<li>Install add-ons that are approved for use with nuken Education</li>
-			<br>
-			<li>Zip the complete build and distribute it to your students</li>
-			<br>
-			<li>Come to us with any questions you may have about nuken!</li>
-			<br>
-			<br>
-			If you'd like to report an issue with your new setup, please do so by using the form below. You can still continue to use this online editor even with nuken Education installed.
-			<br>
-			<br>
-			<center>
-			<button style = "cursor:pointer;padding:7px;border:none;border-radius:10px;width:40%;"onclick = "document.getElementById('closer').click();">Sounds good!</button>
-<a style = "display:none" id = "hyet!" href = "https://forms.gle/uVLVYTCUYiCddewS9" target= "_blank"></a>
-
-			<button style = "cursor:pointer;padding:7px;border:none;border-radius:10px;width:40%;"onclick = "document.getElementById('hyet!').click();">Report an issue</button>
-		</center>
-		</div>
-	</div>
-</div>	
 
 
 
 
 <div class = "editor_action_bar">
-<img  title = "nuken" style = "padding:0px;margin-top:10px;margin-left:15px;border-width:0px;border-style:solid;"id = "logo" width = "2.75%" src ="program_files/images/logo.png"></img>
+<img  title = "nuken" style = "padding:15px;background-color:Transparent"id = "logo" width = "27px" src ="program_files/images/logo.png"></img>
 
 		
-		<input value="Page Title" title = "Always the hardest part, isn't it?" style = "padding:10px;margin-top:12.5px;margin-left:40px;border-width:0px;border-style:solid;"id="titlebox"/> 
-	<div class="editor_button right" onmouseenter="document.getElementById('dl_dropdown').style.display='block'" onmouseover="document.getElementById('dl_dropdown').style.display='block'"  onmouseout="document.getElementById('dl_dropdown').style.display='none'">
-		<button id="create" style = "z-index:1000000;"><img id = "exporter"width = "17px;" style = "z-index:99999;filter:invert(100%);background-color:Transparent;"src = "program_files/images/export.gif"></img></button>
+		<input value="Page Title" title = "Always the hardest part, isn't it?" style = "outline:none;text-align:center;border:none;padding:10px;margin-top:10px"id="titlebox"/> 
+	<div class="editor_button right" >
+		<button id="create" style = "z-index:1000000;"><img id = "exporter"width = "17px;" style = "z-index:99999;filter:invert(100%);background-color:Transparent;"src = "program_files/images/export.gif" onclick = "window.location.replace('#noimports')"></img></button>
 		<div  id="dl_dropdown" class="dropdown" style="display: none;"><div class="dropdown_content">
 		
 			<input title = "Go ahead. Be creative." style = "padding:10px;background-color:#e9e9e9;border-width:0px;border-style:solid;" id="filebox" value="index.html"/>
@@ -600,16 +515,17 @@ z-index:-1;
 			
 		</div></div>
 	</div>
+	
 	<div class="editor_button playa">
-		<button id="preview" onmouseleave = "document.getElementById('playa-content').style.opacity='0%'" onmouseover = "document.getElementById('playa-content').style.opacity='100%'"><img id = "playbutton" onclick = "document.getElementById('preview').click();" width = "17px;" style = "filter:invert(100%) contrast(150%);background-color:Transparent;"src = "program_files/images/play.gif"></img></button>
-	<div class="playa-content">
+		<button id="preview" onmouseleave = "document.getElementById('playa-content').style.opacity='0%'" onmouseover = "document.getElementById('playa-content').style.opacity='100%'"><img id = "playbutton" onclick = "document.getElementById('preview').click();pauser();" width = "17px;" style = "filter:invert(100%) contrast(150%);background-color:Transparent;"src = "program_files/images/play.gif"></img></button>
+	<div class="playa-content" style = "display:none">
 <input id = "checker_mccheckerson" style = "margin-right:5px;"type = "checkbox"></input>	
 Auto-run
   </div>
 	</div>
 		
 	<div class="editor_button" title = "Import" onmouseover="show_templates('import_list'); document.getElementById('import_dropdown').style.display='block'"  onmouseout="document.getElementById('import_dropdown').style.display='none'">
-		<button><img width = "17px;" onclick = "window.location.replace('#noimports')" id = "importer"style = "filter:invert(100%);background-color:Transparent;"src = "program_files/images/import.gif"></img></button>
+		<button><img width = "17px;" id = "importer"style = "filter:invert(100%);background-color:Transparent;"src = "program_files/images/import.gif"></img></button>
 		<div  id="import_dropdown" class="dropdown" style="display: none; z-index: 1;"><div id="import_list" class="dropdown_content">			
 				<a title="hello">one</a>
 		</div></div>
@@ -618,10 +534,10 @@ Auto-run
 	
 
 		
-	<div class="editor_button" onmouseover="document.getElementById('tools_dropdown').style.display='block'"  onmouseout="document.getElementById('tools_dropdown').style.display='none'">
+	<div style = "left:500px" class="editor_button" onmouseover="document.getElementById('tools_dropdown').style.display='block'"  onmouseout="document.getElementById('tools_dropdown').style.display='none'">
 		<button><img id = "tooler"width = "17px;" style = "filter:invert(100%);background-color:Transparent;"src = "program_files/images/tools.gif"></img></button>
 		<div  id="tools_dropdown" class="dropdown" style="display: none; z-index: 1;"><div class="dropdown_content">
-		   <img  src = "program_files/images/shop.gif" class = "tools"id = "shop_icon" width = "15%"title = "nuken Shop"style = "padding:5px;filter:invert(100%);border-radius:5px;"onclick = "window.location.replace('program_files/shop.html');"></img>
+		   <img  src = "program_files/images/shop.gif" class = "tools"id = "shop_icon" width = "15%"title = "nuken Shop"style = "display:none;padding:5px;filter:invert(100%);border-radius:5px;background-color:black;"onclick = "window.location.replace('program_files/shop.html');"></img>
 			<img class = "tools" id = "inverter" style = "width:15%;text-align:center;position:relative;background-color:#ffffff00;color:white;" title = "Invert the display" onclick = "darken()" width = "50px;" src = "program_files/images/invert.gif"></img>
 			<img class = "tools" id = "reloader" style = "width:15%;text-align:center;position:relative;;background-color:#ffffff00;color:white;" title = "Reload the page" onclick = "document.getElementById('puppy').click();" width = "50px;" src = "program_files/images/reload.gif"></img>
 			<img class = "tools" id = "showandtell" style = "width:24%;text-align:center;position:relative;background-color:#ffffff00;color:white;filter:contrast(110%);" title = "Tell your friends!" onclick = "mailer()" width = "50px" src = "program_files/images/share.gif"></img>
@@ -637,35 +553,52 @@ Auto-run
 			
 			<a id="supersecretmail" target = "_blank"href ="mailto:Enter your friend's emails here.?subject=Check this out!&body=I've been using this great new HTML file editor, nuken! It allows me to edit my webpage files in-browser, and even has an offline web-app that lets you preview the HTML on the same page. If you want to get in on the action, here's the link: %0D%0A%0D%0Ahttps://chanman805.github.io/nuken %0D%0A%0D%0AYou're gonna love it!"></a>
 			<a target = "_blank" id = "gitty" style = "display:none" href = "https://github.com/chanman805/HTML"></a>
-			<a id = "nukeny"style = "display:none" href ="program_files/packages/packages/nuken.zip"></a>
-<a id = "nukeny2"style = "display:none" href ="program_files/packages/packages/nuken_education.zip"></a>
-
+			
 		</div></div>
 	</div>		
-<img  src = "program_files/images/shop.gif" class = "editor_button"id = "shop_icon" title = "nuken Shop"style = "transform:scale(0.75);padding:5px;padding-top:10px;filter:invert(0%);border-radius:5px;"onclick = "window.location.replace('program_files/shop.html');"></img>
 			
 			
 </div>
 
-<div class="left_frame">
+<div class="left_frame" id = "lefty">
 
 <textarea title = "Almost done!" style = "width:100%; height: 56.5%;border-width:0px;border-style:solid;" id="cssbox">
 body {
 
 }</textarea>	
 <textarea title = "You got this." style = "width:100%;  height: 56.5%;border-width:0px;border-style:solid;" id="textbox"></textarea>
+
 </div>	
 
-<div class="right_frame" id="preview_frame">
-	<div style = "margin: 20px auto; margin-top:70px; width: 50%; text-align:center"><img id = "bigpreview"src = "program_files/images/download.gif" style = "margin: 0px auto; width: 100%" ></img></div>
-		<p style = "text-align:center; margin: 10px auto;padding:10px;width:80%;" >Your previewed files will appear here</p>
-		<p id = "download_button" onclick = "downloadnuken()" style  ="text-align:center; margin: 10px auto;padding:10px;width:80%;background-color:black;color:white;border-radius:10px;letter-spacing:-0.5px;" >Download our offline web app for more features | nuken v5.0</p>
-		<p id = "download_button2" onclick = "downloadnukenED()" style  ="text-align:center; margin: 10px auto;padding:10px;width:80%;background-color:black;color:white;border-radius:10px;letter-spacing:-0.5px;" >Download nuken for the classroom | nuken Education v 1.0</p>
+<div class="right_frame" style = "display:none;"id="preview_frame">
 		
 	</div>
 	
+<div style = "background-color:white;" id = "previewyboi">
+<p style = "text-align:center;font-size:20px;background-color:white;">Tap <img src = "program_files/images/play.gif" width = "10px;"></img> to preview your work!</p>
+<p style = "text-align:center;font-size:13px">Log onto a computer for more content.</p>
+<br>
 </div>
 <script>
+var ispaused = false;
+var pauser = function(){
+if (ispaused === false){
+document.getElementById('playbutton').src = "program_files/images/stop.png";
+document.getElementById('cssbox').style.display = "none";
+document.getElementById('textbox').style.display = "none";
+document.getElementById('preview_frame').style.display = "block";
+document.getElementById('previewyboi').style.paddingTop = "60px";
+
+ispaused = true;
+} else {
+document.getElementById('playbutton').src = "program_files/images/play.gif";
+document.getElementById('cssbox').style.display = "block";
+document.getElementById('textbox').style.display = "block";
+document.getElementById('preview_frame').style.display = "none";
+document.getElementById('previewyboi').style.paddingTop = "0px";
+ispaused = false;
+}
+};
 var downloadnuken = function(){
 document.getElementById("puppy2").click();
 document.getElementById("download_button").blur();
@@ -772,6 +705,8 @@ function autosave () {
     	docs[active_index].body = textbox.innerHTML;
     	docs[active_index].file = filebox.value;	
 }
+
+
 
 var docs = new Array();
 var active_index = 0;
@@ -882,16 +817,6 @@ function preview_code () {
 }
 
 
-window.mobileCheck = function() {
-  let check = false;
-  (function(a){if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4))) check = true;})(navigator.userAgent||navigator.vendor||window.opera);
-  if (check === true){
- window.location.replace('mobile.html');
- }
-};
-window.onload = function(){
-window.mobileCheck();
-};
 
 </script>
 
