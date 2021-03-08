@@ -18,7 +18,7 @@
 
 }
 body, html {
-background-color: white;
+background-color: black;
 background-repeat:no-repeat;
 background-position:center;
 color:black;
@@ -47,11 +47,11 @@ margin-top:-1.5px;
 body {
  
 
-    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein 2s; /* Firefox < 16 */
-        -ms-animation: fadein 2s; /* Internet Explorer */
-         -o-animation: fadein 2s; /* Opera < 12.1 */
-            animation: fadein 2s;
+    -webkit-animation: fadein 1.75s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 1.75s; /* Firefox < 16 */
+        -ms-animation: fadein 1.75s; /* Internet Explorer */
+         -o-animation: fadein 1.75s; /* Opera < 12.1 */
+            animation: fadein 1.75s;
 }
 
 @keyframes fadein {
@@ -106,7 +106,7 @@ textarea {
 }
 
 #create,#createoutput, .editor_action_bar .editor_button button {
-background-color:black;color:white;border:none;padding:10px;border-radius:12px;margin:0px;
+background-color:black;color:white;border:none;padding:10px;border-radius:10px;margin:0px;
 }
 
 #create:hover, #createoutput:hover, .editor_action_bar .editor_button button:hover  {
@@ -254,8 +254,8 @@ transition: all 0.5s;
 transform: scale(1.05);
 }
 
-#shop_icon:hover {
-cursor:pointer;
+#shop_icon {
+
 }
 
 .editor_action_bar {
@@ -269,12 +269,15 @@ cursor:pointer;
 	height: 36px;
 	display: inline-block;
 	font-size: 1em;
-	padding: 10px;
+	padding: 7px;
+	padding-top:12px;
+	
+	padding-bottom:12px;
 	text-decoration: none;
 	cursor: pointer;
 	transition: all 0.3s ease-out;
 	float:right;
-	margin:2.5px;
+	margin:0px;
 	
 }
 
@@ -308,7 +311,8 @@ background-color:#e9e9e9;
 color:black;
 animation: textboxanimation 5s linear 2s infinite alternate;
 padding:20px;
-font-size:12px;
+font-size:13px;
+font-family: "fonty";
 }
 #cssbox {
 outline-color:black;
@@ -316,7 +320,8 @@ background-color:#e9e9e9;
 color:black;
 animation: textboxanimation 5s linear 2s infinite alternate;
 padding:20px;
-font-size:12px;
+font-size:13px;
+font-family: "fonty";
 }
 #box {
 outline-color:white;
@@ -329,24 +334,28 @@ float:left;
 animation: textboxanimation 5s linear 2s infinite alternate;
 focus:none;
 font-family: fonty;
-font-size:15px;
+font-size:17px;
 }
 
+
+#titlebox {
+margin-top:6px!important;
+margin-left:6px;
+}
 #filebox {
 outline-color:black;
 }
 .dropdown_content {
 	position: relative;
 	background-color: #FFF;
-	border: 0.5px solid #111;
+	border: none;
 	display: inline-block;
 	border-radius: 1px;
 	padding: 10px;
-	top: 10px;
-	left:-10px;
+	margin-top:10px;
+	left:-15%;
 	transition: all 0.5s;
-	border-top: 0.5px solid Transparent;
-	box-shadow: 10px 10px 20px #66666650;
+	box-shadow: 10px 10px 20px #00000050;
 	
 }
 #dl_dropdown  {
@@ -412,7 +421,7 @@ transform:scaleX(-1);
 #import_dropdown {
 color:black;
 width:5%;
-margin-left:-12px;
+margin-left:-20px;
 }
 
 #preview:hover {
@@ -493,7 +502,7 @@ z-index:-1;
 </center>
 <center>
 <p>Try logging onto your computer and using nuken! The nuken offline app offers a variety of content, including add-ons, themes, templates, and file imports!</p>
-<button onclick = "window.location.replace('#titlebox')" style = "cursor:pointer;font-size:15px;background-color:black;color:white;padding:10px;border:none;border-radius:10px;outline:none;font-family:'fonty';" >Back to editing</button>
+<button onclick = "window.location.replace('#klondikebar')" style = "cursor:pointer;font-size:15px;background-color:black;color:white;padding:10px;border:none;border-radius:10px;outline:none;font-family:'fonty';" >Back to editing</button>
 </center>
 </div>	
 </div>
@@ -506,7 +515,7 @@ z-index:-1;
 </center>
 <center>
 <p>That way, you never lose it again! Follow the instructions for your device's OS to bookmark this site, and then add it to your home screen. <a href = "https://natomasunified.org/kb/add-website-to-mobile-device-home-screen/" style = "color:black" target= "_blank">Here's a link that can help.</a></p>
-<button onclick = "window.location.replace('#titlebox')" style = "cursor:pointer;font-size:15px;background-color:black;color:white;padding:10px;border:none;border-radius:10px;outline:none;font-family:'fonty';" >Back to editing</button>
+<button onclick = "window.location.replace('#klondikebar')" style = "cursor:pointer;font-size:15px;background-color:black;color:white;padding:10px;border:none;border-radius:10px;outline:none;font-family:'fonty';" >Back to editing</button>
 </center>
 </div>	
 </div>
@@ -515,12 +524,13 @@ z-index:-1;
 
 
 
-<div class = "editor_action_bar">
-<img  title = "nuken" style = "padding:15px;background-color:Transparent"id = "logo" width = "27px" src ="program_files/images/logo.png"></img>
+<div class = "editor_action_bar" id = "klondikebar">
+<img  title = "nuken" style = "padding:15px;background-color:Transparent;z-index:1000000!important;"id = "logo" width = "27px" src ="program_files/images/logo.png"></img>
 
-		
 		<input value="Page Title" title = "Always the hardest part, isn't it?" style = "outline:none;text-align:center;border:none;padding:10px;margin-top:10px"id="titlebox"/> 
-	<div class="editor_button right" >
+
+			<div class="editor_button right" >
+			
 		<button id="create" style = "z-index:1000000;"><img id = "exporter"width = "17px;" style = "z-index:99999;filter:invert(100%);background-color:Transparent;"src = "program_files/images/export.gif" onclick = "window.location.replace('#noimports')"></img></button>
 		<div  id="dl_dropdown" class="dropdown" style="display: none;"><div class="dropdown_content">
 		
@@ -537,19 +547,25 @@ z-index:-1;
 Auto-run
   </div>
 	</div>
+
+	
+	<div class="editor_button">
+		<button onclick = "window.location.replace('program_files/shop.html')"style = "padding:7px!important;"><img id = "shop_icon"  width = "27px;" style = "filter:invert(0%) contrast(150%);background-color:Transparent;"src = "program_files/images/big_shop.gif"></img></button>
+	</div>
 		
 	<div class="editor_button" title = "Import" onmouseover="show_templates('import_list'); document.getElementById('import_dropdown').style.display='block'"  onmouseout="document.getElementById('import_dropdown').style.display='none'">
 		<button><img width = "17px;" id = "importer"style = "filter:invert(100%);background-color:Transparent;"src = "program_files/images/import.gif"></img></button>
+		<center>
 		<div  id="import_dropdown" class="dropdown" style="display: none; z-index: 1;"><div id="import_list" class="dropdown_content">			
 				<a title="hello">one</a>
 		</div></div>
+		</center>
 	</div>	
 	
 	
-
 		
 	<div style = "left:500px" class="editor_button" onmouseover="document.getElementById('tools_dropdown').style.display='block'"  onmouseout="document.getElementById('tools_dropdown').style.display='none'">
-		<button><img id = "tooler"width = "17px;" style = "filter:invert(100%);background-color:Transparent;"src = "program_files/images/tools.gif"></img></button>
+		<button><img id = "tooler"width = "15px;" style = "filter:invert(100%);background-color:Transparent;"src = "program_files/images/tools.gif"></img></button>
 		<div  id="tools_dropdown" class="dropdown" style="display: none; z-index: 1;"><div class="dropdown_content">
 		   <img  src = "program_files/images/shop.gif" class = "tools"id = "shop_icon" width = "15%"title = "nuken Shop"style = "display:none;padding:5px;filter:invert(100%);border-radius:5px;background-color:black;"onclick = "window.location.replace('program_files/shop.html');"></img>
 			<img class = "tools" id = "inverter" style = "width:15%;text-align:center;position:relative;background-color:#ffffff00;color:white;" title = "Invert the display" onclick = "darken()" width = "50px;" src = "program_files/images/invert.gif"></img>
@@ -833,7 +849,11 @@ function preview_code () {
     
 	frame.write(html);	
 }
-
+var logo = document.getElementById('logo');
+window.onload = function(){
+document.body.style.transition = "all 0.5s";
+document.body.style.backgroundColor = "white";
+};
 
 
 </script>

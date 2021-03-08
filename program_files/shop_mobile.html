@@ -1,0 +1,605 @@
+<html>
+<head>
+<title>nuken Shop</title> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="manifest" href="styles/shop_manifest.json">
+<link REL="SHORTCUT ICON" HREF="images/shop.gif">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="keywords" content="html downloader tool">
+<meta name="description" content="nuken allows you to create webpage files in your browser. Fast, free, and all offline!">
+<meta name="author" content="Brett Docherty">
+<meta name="author" content="Chandler Mrotzek">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- this makes sure that the webpage is supported on all devices -->
+<style>
+@font-face {
+  font-family: "fonty";
+  src: url("styles/font.ttf");
+
+}
+body, html {
+background-color: #eeeeee;
+background-repeat:no-repeat;
+background-position:center;
+color:black;
+font-family: 'fonty', sans-serif;
+font-size:15px;
+transition: all 0.5s;
+height: 100%;
+margin: 0px;
+cursor: default;
+}
+
+
+
+
+
+h1 {
+text-align:center;
+background-color:black;
+color:white;
+padding:15px;
+}
+
+.editor_action_bar {
+	background-color: black;
+	height: 56px;
+	color:white;
+	
+}
+
+.editor_action_bar .editor_button  {
+	height: 36px;
+	display: inline;
+	font-size: 1em;
+	padding: 10px;
+	text-decoration: none;
+	cursor: pointer;
+	transition: all 0.3s ease-out;
+	float:right;
+}
+.editor_action_bar h1  {
+	display: inline-block;
+	font-size: 1.25em;
+	padding:0px;
+	text-decoration: none;
+	transition: all 0.3s ease-out;
+	  position: relative;
+  left: 5%;
+  top: 2.45%;
+  transform: translate(-50%, -50%);
+}
+
+.editor_action_bar input  {
+	
+	float:left;
+}
+
+h6 {
+font-size:15px;
+}
+textarea {
+  width: 100%;
+  min-height: 100px;
+  
+}
+
+
+
+.box {
+  width: 40%;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.2);
+  padding: 35px;
+  border: 2px solid #fff;
+  border-radius: 20px/50px;
+  background-clip: padding-box;
+  text-align: center;
+}
+
+.button {
+  font-size: 1em;
+  padding: 10px;
+  color: #fff;
+  border: 2px solid #06D85F;
+  border-radius: 0px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.button:hover {
+  background: #06D85F;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #000000c0;
+  transition: opacity 0.2s;
+  visibility: hidden;
+  opacity: 0;
+  z-index:100;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 30px auto;
+  padding: 25px;
+  padding-bottom:5px;
+  background: #fff;
+  border-radius:0px;
+  width: 70%;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+}
+
+.popup h1 {
+  margin-top: 0;
+  color: white;
+  border-radius:10px;
+  font-family: 'fonty', Arial, sans-serif;
+  font-size:17px!important;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #33333300;
+}
+.popup .close:hover {
+  color: #06D85F;
+}
+.popup .content {
+  max-height: 50%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+
+}}
+
+
+
+.left_frame {
+	float: left;
+width:20%;
+	overflow-y:hidden;
+		height:100%;
+
+}
+.right_frame {
+	float: right;
+	padding:10px;
+}
+
+
+#themes {
+background-color:#4a86e850;
+
+}
+#addons {
+background-color:#ff8a8a50;
+
+}
+#packages {
+background-color:#00ff0050;
+
+}
+#templates {
+background-color:#ffff0050;
+
+}
+.widget {
+padding:50px;
+font-size:50px;
+text-align:center;
+transition: all 0.5s;
+height:5%;
+}
+.widget:hover {
+cursor:pointer;
+transition:all 0.5s;
+filter:brightness(120%);
+opacity:50%;
+}
+
+.thumbnail{
+margin:25px;
+width:25%;
+height:30%;
+margin-left:50px;
+margin-right:-10px;
+object-fit:contain;
+}
+
+.thumbnail:hover {
+cursor:pointer;
+transition: all 0.5s;
+transform: scale(1.05);
+}
+
+.thumbnail_small{
+margin:25px;
+width:19%;
+height:20%;
+margin-left:50px;
+margin-right:-10px;
+object-fit:contain;
+}
+
+.thumbnail_small:hover {
+cursor:pointer;
+transition: all 0.5s;
+transform: scale(1.05);
+}
+
+.library::-webkit-scrollbar {
+    width: 1em;
+
+}
+
+.library::-webkit-scrollbar-track {
+  background-color:Transparent;
+
+}
+
+.library::-webkit-scrollbar-thumb {
+  background-color: lightgray;
+  opacity:50%;
+  border-radius:100px;
+
+}
+
+#themes_helper, #addons_helper, #packages_helper, #templates_helper {
+padding:10px;
+}
+
+
+button:hover {
+cursor:pointer;
+transition:all 0.5s;
+transform:scale(1.05);
+
+}
+
+#hoverback {
+transition: all 1s;
+}
+
+#hidey:hover {
+cursor:pointer;
+}
+
+#hoverback:hover {
+cursor:pointer;
+}
+
+#page_title {
+left:35%;
+}
+
+#page_title:hover {
+cursor:pointer;
+}
+
+
+
+
+
+</style>
+</head>
+<body style = "overflow:hidden;">
+<div class = "editor_action_bar" >
+<img onclick = "window.location.replace('../index.html');" id = "hidey" onmouseout = "stayback();" src = "images/arrow.gif" style = "display:none;width:50px;opacity:0%" ></img>
+<img onmouseover = "this.style.transition= 'all 0.5s';this.style.paddingLeft='10px';goback();"  id = "hover_back" style = "width:40px;padding:5px;padding-top:9px" src = "images/shop.gif"></img>
+<h1 onmouseover = "goback()" onclick = "window.location.replace('../index.html')" onmouseout = "stayback()" id = "page_title" >nuken Shop</h1>
+</div>
+
+<div class = "left_frame" style = "width:100%!important;" >
+
+<div title = "View the theme library!" class = "widget" id = "themes" onclick = "document.getElementById('themes_helper').click();" ><img width = "60px" src = "shop/themes_icon.png"></img><br><a id = "themes_helper" href = "#themes_help" style = "display:none;font-size:12px;color:black;">What are themes?</a></div>
+<div title = "View the add-on library!" class = "widget"id = "addons" onclick = "document.getElementById('addons_helper').click();"><img width = "60px" src = "shop/addons_icon.png"></img><br><a id = "addons_helper" href = "#addons_help" style = "display:none;font-size:12px;color:black;">What are add-ons?</a></div>
+<div title = "View the package library!" class = "widget"id = "packages" onclick = "document.getElementById('packages_helper').click();" ><img width = "60px" src = "shop/package_icon.png"></img><br><a id = "packages_helper" href = "#packages_help" style = "display:none;font-size:12px;color:black;">What are packages?</a></div>
+<div title = "View the template library!" class = "widget"id = "templates"onclick = "document.getElementById('templates_helper').click();"><img width = "60px" src = "shop/templates_icon.png"></img><br><a id = "templates_helper" href = "#templates_help" style = "display:none;font-size:12px;color:black;">What are templates?</a></div>
+<br>
+<center>
+<a style = "text-align:center;color:gray" href = "../index.html">Return to nuken Mobile Editor?</a>
+</center>
+</div>
+
+
+
+</body>
+<script>
+var blank = document.getElementById("content");
+var theme_library = document.getElementById("theme_library");
+var addon_library = document.getElementById("addon_library");
+var package_library = document.getElementById("package_library");
+var template_library = document.getElementById("template_library");
+var theme_widget = document.getElementById('themes');
+var addon_widget =  document.getElementById('addons');
+var package_widget =  document.getElementById('packages');
+var template_widget =  document.getElementById('templates');
+var left_side = document.getElementsByClassName('left_frame');
+
+var themes_activated = false;
+var addons_activated = false;
+var packages_activated = false;
+var templates_activated = false;
+
+var themes_helper = document.getElementById('themes_helper');
+var addons_helper = document.getElementById('addons_helper');
+var packages_helper = document.getElementById('packages_helper');
+var templates_helper = document.getElementById('templates_helper');
+
+var onlythemes = function(){
+themes_activated = true;
+addons_activated = false;
+packages_activated = false;
+templates_activated = false;
+themes_helper.style.display = "block";
+addons_helper.style.display = "none";
+packages_helper.style.display = "none";
+templates_helper.style.display = "none";
+};
+
+var onlyaddons = function(){
+themes_activated = false;
+addons_activated = true;
+packages_activated = false;
+templates_activated = false;
+themes_helper.style.display = "none";
+addons_helper.style.display = "block";
+packages_helper.style.display = "none";
+templates_helper.style.display = "none";
+};
+
+var onlypackages = function(){
+themes_activated = false;
+addons_activated = false;
+packages_activated = true;
+templates_activated = false;
+themes_helper.style.display = "none";
+addons_helper.style.display = "none";
+packages_helper.style.display = "block";
+templates_helper.style.display = "none";
+};
+
+var onlytemplates = function(){
+themes_activated = false;
+addons_activated = false;
+packages_activated = false;
+templates_activated = true;
+themes_helper.style.display = "none";
+addons_helper.style.display = "none";
+packages_helper.style.display = "none";
+templates_helper.style.display = "block";
+};
+
+var show_all_themes = function(){
+if (themes_activated === false){
+blank.style.display = "none";
+theme_library.style.display = "block";
+addon_library.style.display = "none";
+package_library.style.display = "none";
+template_library.style.display = "none";
+theme_widget.style.filter = "grayscale(0%)";
+addon_widget.style.filter = "grayscale(100%)";
+package_widget.style.filter = "grayscale(100%)";
+template_widget.style.filter = "grayscale(100%)";
+onlythemes();
+
+
+} else {
+blank.style.display = "block";
+theme_library.style.display = "none";
+addon_library.style.display = "none";
+package_library.style.display = "none";
+template_library.style.display = "none";
+theme_widget.style.filter = "grayscale(0%)";
+addon_widget.style.filter = "grayscale(0%)";
+package_widget.style.filter = "grayscale(0%)";
+template_widget.style.filter = "grayscale(0%)";
+themes_activated = false;
+themes_helper.style.display = "none";
+}
+
+};
+
+var show_all_addons = function(){
+if (addons_activated === false){
+blank.style.display = "none";
+theme_library.style.display = "none";
+addon_library.style.display = "block";
+package_library.style.display = "none";
+template_library.style.display = "none";
+theme_widget.style.filter = "grayscale(100%)";
+addon_widget.style.filter = "grayscale(0%)";
+package_widget.style.filter = "grayscale(100%)";
+template_widget.style.filter = "grayscale(100%)";
+onlyaddons();
+addons_helper.style.display = "block";
+} else {
+blank.style.display = "block";
+theme_library.style.display = "none";
+addon_library.style.display = "none";
+package_library.style.display = "none";
+template_library.style.display = "none";
+theme_widget.style.filter = "grayscale(0%)";
+addon_widget.style.filter = "grayscale(0%)";
+package_widget.style.filter = "grayscale(0%)";
+template_widget.style.filter = "grayscale(0%)";
+addons_activated = false;
+addons_helper.style.display = "none";
+}
+};
+
+var show_all_packages = function(){
+if (packages_activated === false){
+blank.style.display = "none";
+theme_library.style.display = "none";
+addon_library.style.display = "none";
+package_library.style.display = "block";
+template_library.style.display = "none";
+theme_widget.style.filter = "grayscale(100%)";
+addon_widget.style.filter = "grayscale(100%)";
+package_widget.style.filter = "grayscale(0%)";
+template_widget.style.filter = "grayscale(100%)";
+onlypackages();
+packages_helper.style.display = "block";
+} else {
+blank.style.display = "block";
+theme_library.style.display = "none";
+addon_library.style.display = "none";
+package_library.style.display = "none";
+template_library.style.display = "none";
+theme_widget.style.filter = "grayscale(0%)";
+addon_widget.style.filter = "grayscale(0%)";
+package_widget.style.filter = "grayscale(0%)";
+template_widget.style.filter = "grayscale(0%)";
+packages_activated = false;
+packages_helper.style.display = "none";
+}
+};
+
+var show_all_templates = function(){
+if (templates_activated === false){
+blank.style.display = "none";
+theme_library.style.display = "none";
+addon_library.style.display = "none";
+package_library.style.display = "none";
+template_library.style.display = "block";
+theme_widget.style.filter = "grayscale(100%)";
+addon_widget.style.filter = "grayscale(100%)";
+package_widget.style.filter = "grayscale(100%)";
+template_widget.style.filter = "grayscale(0%)";
+onlytemplates();
+} else {
+blank.style.display = "block";
+theme_library.style.display = "none";
+addon_library.style.display = "none";
+package_library.style.display = "none";
+template_library.style.display = "none";
+theme_widget.style.filter = "grayscale(0%)";
+addon_widget.style.filter = "grayscale(0%)";
+package_widget.style.filter = "grayscale(0%)";
+template_widget.style.filter = "grayscale(0%)";
+templates_activated = false;
+}
+};
+
+
+
+var goback = function(){
+document.getElementById("hidey").style.display= "inline-block";
+document.getElementById("hidey").style.opacity= "0%";
+document.getElementById("hidey").style.transition= "all 1s";
+document.getElementById("hidey").style.opacity= "100%";
+document.getElementById("page_title").innerHTML = "Back to editing?";
+document.getElementById("page_title").style.paddingLeft = "20px";
+document.getElementById("page_title").style.backgroundColor= "Transparent";
+
+};
+
+var stayback = function(){
+document.getElementById("hidey").style.display= "none";
+document.getElementById("hidey").style.opacity= "100%";
+document.getElementById("hidey").style.transition= "all 1s";
+document.getElementById("hidey").style.opacity= "0%";
+document.getElementById("page_title").innerHTML = "nuken Shop";
+document.getElementById("page_title").style.paddingLeft = "0px";
+document.getElementById("page_title").style.backgroundColor= "Transparent";
+};
+
+
+</script>
+
+
+
+
+<body>
+<div id="themes_help" class="overlay">
+  <div class="popup" >
+    <a id = "closer3"  class="close" href="#">&times;</a>
+ <h1 style = "padding:10px;" >What are themes?</h1>
+nuken Themes change the appearance and layout of your nuken workspace. You can download themes for nuken by visiting this site on a computer! The nuken Mobile Editor doesn't allow for user customization, unfortunately, but it's all the more reason to check out the offline web app. 
+<img width = "100%" src = "shop/themes/cat.gif"></img>
+It allows users to modify their setup as they like, and download custom content like themes, add-ons, and templates.
+<center>	
+
+<p  onclick = "window.location.replace('#');"style = "font-size:15px;background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;">Okay, I got it!</p>
+    </center> 
+   </div>
+  </div>
+</div>
+
+
+<div id="addons_help" class="overlay">
+  <div class="popup" >
+    <a id = "closer3"  class="close" href="#">&times;</a>
+ <h1 style = "padding:10px;" >What are add-ons?</h1>
+nuken Add-ons allow users to bring additional functionality to their nuken setup. You can download add-ons for nuken by visiting this site on a computer! The nuken Mobile Editor doesn't allow for user customization, unfortunately, but it's all the more reason to check out the offline web app. 
+<center>
+<br><img style = "padding:10px;padding-top:0px;" width = "50%" src = "shop/addons/lesson.jpg"></img><br>
+</center>
+It allows users to load in up to three add-ons, or, by using an add-on extender, any number they choose!
+<center>	
+
+<p  onclick = "window.location.replace('#');"style = "font-size:15px;background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;">Okay, I got it!</p>
+    </center>  
+   </div>
+  </div>
+</div>
+
+<div id="packages_help" class="overlay">
+  <div class="popup" >
+    <a id = "closer3"  class="close" href="#">&times;</a>
+ <h1 style = "padding:10px;" >What are packages?</h1>
+nuken Packages are custom builds of nuken or other downloadable content. You can download nuken Packages by visiting this site on a computer! The nuken Mobile Editor doesn't allow for user customization, unfortunately, but it's all the more reason to check out the offline web app. 
+<center>
+<br><img style = "padding:10px;padding-top:0px;" width = "50%" src = "shop/packages/images/html5.png"></img><br>
+</center>
+nuken Packages could contain things like a different user interface, more features, or a custom theme layout!
+<center>	
+
+<p  onclick = "window.location.replace('#');"style = "font-size:15px;background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;">Okay, I got it!</p>
+    </center>  
+   </div>
+  </div>
+</div>
+
+<div id="templates_help" class="overlay">
+  <div class="popup" >
+    <a id = "closer3"  class="close" href="#">&times;</a>
+ <h1 style = "padding:10px;" >What are templates?</h1>
+nuken Templates allow you to import someone else's blank project into nuken via the import menu. You can download templates for nuken by visiting this site on a computer! The nuken Mobile Editor doesn't allow for user customization, but you've probably seen a brief demo of this feature. It's all the more reason to check out the offline web app! 
+<center>
+<br><img style = "padding:10px;padding-top:0px;" width = "50%" src = "images/logo.png"></img><br>
+</center>
+nuken Templates make it easy for you to load in a specific webpage type with just a click.
+<center>	
+
+<p  onclick = "window.location.replace('#');"style = "font-size:15px;background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;">Okay, I got it!</p>
+    </center>  
+   </div>
+  </div>
+</div>
+
+
+</body>
+<!-- HELP END -->
+
+</html>
