@@ -422,6 +422,7 @@ transform:scaleX(-1);
 color:black;
 width:5%;
 margin-left:-20px;
+
 }
 
 #preview:hover {
@@ -556,7 +557,7 @@ Auto-run
 	<div class="editor_button" title = "Import" onmouseover="show_templates('import_list'); document.getElementById('import_dropdown').style.display='block'"  onmouseout="document.getElementById('import_dropdown').style.display='none'">
 		<button><img width = "17px;" id = "importer"style = "filter:invert(100%);background-color:Transparent;"src = "program_files/images/import.gif"></img></button>
 		<center>
-		<div  id="import_dropdown" class="dropdown" style="display: none; z-index: 1;"><div id="import_list" class="dropdown_content">			
+		<div  id="import_dropdown" class="dropdown" style="display: none; z-index: 1;"><div id="import_list" style = "background-color:white" class="dropdown_content">			
 				<a title="hello">one</a>
 		</div></div>
 		</center>
@@ -672,7 +673,7 @@ var isdark=false;
 var darken = function(){
 if (isdark===false){
 document.documentElement.style.filter = "invert(100%)";
-document.getElementById("import_list").style.backgroundColor="Transparent";
+document.getElementById("import_list").style.backgroundColor="black";
 document.getElementById("import_list").style.color="white";
 document.getElementById("import_list").style.borderColor="white";
 document.getElementById("import_list").style.borderTopColor="Transparent";
