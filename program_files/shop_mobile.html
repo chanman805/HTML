@@ -177,7 +177,7 @@ textarea {
 
 .left_frame {
 	float: left;
-width:20%;
+width:100%;
 	overflow-x:hidden;
 		height:100%;
 
@@ -347,161 +347,11 @@ var addons_helper = document.getElementById('addons_helper');
 var packages_helper = document.getElementById('packages_helper');
 var templates_helper = document.getElementById('templates_helper');
 
-var onlythemes = function(){
-themes_activated = true;
-addons_activated = false;
-packages_activated = false;
-templates_activated = false;
-themes_helper.style.display = "block";
-addons_helper.style.display = "none";
-packages_helper.style.display = "none";
-templates_helper.style.display = "none";
-};
-
-var onlyaddons = function(){
-themes_activated = false;
-addons_activated = true;
-packages_activated = false;
-templates_activated = false;
-themes_helper.style.display = "none";
-addons_helper.style.display = "block";
-packages_helper.style.display = "none";
-templates_helper.style.display = "none";
-};
-
-var onlypackages = function(){
-themes_activated = false;
-addons_activated = false;
-packages_activated = true;
-templates_activated = false;
-themes_helper.style.display = "none";
-addons_helper.style.display = "none";
-packages_helper.style.display = "block";
-templates_helper.style.display = "none";
-};
-
-var onlytemplates = function(){
-themes_activated = false;
-addons_activated = false;
-packages_activated = false;
-templates_activated = true;
-themes_helper.style.display = "none";
-addons_helper.style.display = "none";
-packages_helper.style.display = "none";
-templates_helper.style.display = "block";
-};
-
-var show_all_themes = function(){
-if (themes_activated === false){
-blank.style.display = "none";
-theme_library.style.display = "block";
-addon_library.style.display = "none";
-package_library.style.display = "none";
-template_library.style.display = "none";
-theme_widget.style.filter = "grayscale(0%)";
-addon_widget.style.filter = "grayscale(100%)";
-package_widget.style.filter = "grayscale(100%)";
-template_widget.style.filter = "grayscale(100%)";
-onlythemes();
 
 
-} else {
-blank.style.display = "block";
-theme_library.style.display = "none";
-addon_library.style.display = "none";
-package_library.style.display = "none";
-template_library.style.display = "none";
-theme_widget.style.filter = "grayscale(0%)";
-addon_widget.style.filter = "grayscale(0%)";
-package_widget.style.filter = "grayscale(0%)";
-template_widget.style.filter = "grayscale(0%)";
-themes_activated = false;
-themes_helper.style.display = "none";
-}
 
-};
 
-var show_all_addons = function(){
-if (addons_activated === false){
-blank.style.display = "none";
-theme_library.style.display = "none";
-addon_library.style.display = "block";
-package_library.style.display = "none";
-template_library.style.display = "none";
-theme_widget.style.filter = "grayscale(100%)";
-addon_widget.style.filter = "grayscale(0%)";
-package_widget.style.filter = "grayscale(100%)";
-template_widget.style.filter = "grayscale(100%)";
-onlyaddons();
-addons_helper.style.display = "block";
-} else {
-blank.style.display = "block";
-theme_library.style.display = "none";
-addon_library.style.display = "none";
-package_library.style.display = "none";
-template_library.style.display = "none";
-theme_widget.style.filter = "grayscale(0%)";
-addon_widget.style.filter = "grayscale(0%)";
-package_widget.style.filter = "grayscale(0%)";
-template_widget.style.filter = "grayscale(0%)";
-addons_activated = false;
-addons_helper.style.display = "none";
-}
-};
 
-var show_all_packages = function(){
-if (packages_activated === false){
-blank.style.display = "none";
-theme_library.style.display = "none";
-addon_library.style.display = "none";
-package_library.style.display = "block";
-template_library.style.display = "none";
-theme_widget.style.filter = "grayscale(100%)";
-addon_widget.style.filter = "grayscale(100%)";
-package_widget.style.filter = "grayscale(0%)";
-template_widget.style.filter = "grayscale(100%)";
-onlypackages();
-packages_helper.style.display = "block";
-} else {
-blank.style.display = "block";
-theme_library.style.display = "none";
-addon_library.style.display = "none";
-package_library.style.display = "none";
-template_library.style.display = "none";
-theme_widget.style.filter = "grayscale(0%)";
-addon_widget.style.filter = "grayscale(0%)";
-package_widget.style.filter = "grayscale(0%)";
-template_widget.style.filter = "grayscale(0%)";
-packages_activated = false;
-packages_helper.style.display = "none";
-}
-};
-
-var show_all_templates = function(){
-if (templates_activated === false){
-blank.style.display = "none";
-theme_library.style.display = "none";
-addon_library.style.display = "none";
-package_library.style.display = "none";
-template_library.style.display = "block";
-theme_widget.style.filter = "grayscale(100%)";
-addon_widget.style.filter = "grayscale(100%)";
-package_widget.style.filter = "grayscale(100%)";
-template_widget.style.filter = "grayscale(0%)";
-onlytemplates();
-} else {
-blank.style.display = "block";
-theme_library.style.display = "none";
-addon_library.style.display = "none";
-package_library.style.display = "none";
-template_library.style.display = "none";
-theme_widget.style.filter = "grayscale(0%)";
-addon_widget.style.filter = "grayscale(0%)";
-package_widget.style.filter = "grayscale(0%)";
-template_widget.style.filter = "grayscale(0%)";
-templates_activated = false;
-}
-};
 
 
 
