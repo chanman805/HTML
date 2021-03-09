@@ -106,7 +106,7 @@ textarea {
 }
 
 #create,#createoutput, .editor_action_bar .editor_button button {
-background-color:black;color:white;border:none;padding:10px;border-radius:10px;margin:0px;
+background-color:black;color:white;border:none;padding:10px;border-radius:10px;margin:-4px;
 }
 
 #create:hover, #createoutput:hover, .editor_action_bar .editor_button button:hover  {
@@ -266,13 +266,12 @@ transform: scale(1.05);
 }
 
 .editor_action_bar .editor_button  {
-	height: 36px;
-	display: inline-block;
+	height: 45px;
+	display: block;
 	font-size: 1em;
 	padding: 7px;
-	padding-top:12px;
-	
-	padding-bottom:12px;
+	padding-top:16px!important;
+	padding-bottom:11px;
 	text-decoration: none;
 	cursor: pointer;
 	transition: all 0.3s ease-out;
@@ -478,6 +477,84 @@ z-index:-1;
 </style>
 </head>
 <body>
+<div id="popup7" class="overlay">
+	<div class="popup" >
+	<center>
+		<h1 style = "font-size:20px">Your file was successfully imported.</h1>
+		</center>
+		<br>
+		<a id = "closer" style = "display:none;" class="close" href="#">&times;</a>
+		<div class="content">
+			Files created with nuken should load in seamlessly, but HTML from external sources may not display correctly. Make sure your code is formatted correctly!
+<br>
+			<br>
+			<center>
+			<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;width:60%;"onclick = "document.getElementById('closer').click();">Okay, I got it!</button>
+		</center>
+		</div>
+	</div>
+</div>	
+
+<div id="popup8" class="overlay">
+	<div class="popup" >
+	<center>
+		<h1 style = "font-size:20px;">Your file is not formatted correctly.</h1>
+		</center>
+		<br>
+		<a id = "closer" style = "display:none;" class="close" href="#">&times;</a>
+		<div class="content">
+			Files created with nuken should load in seamlessly. Make sure your code was formatted correctly! 
+		
+			<br>
+			<br>
+			<center>
+			<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;width:60%;"onclick = "document.getElementById('closer').click();">Okay, I got it!</button>
+		</center>
+		</div>
+	</div>
+</div>	
+
+<div id="nocssfound" class="overlay">
+	<div class="popup" >
+	<center>
+		<h1 style = "font-size:20px">Your file wasn't imported correctly.</h1>
+		</center>
+		<br>
+		<a id = "closer" style = "display:none;" class="close" href="#">&times;</a>
+		<div class="content">
+We couldn't find any inline CSS in your file. Make sure your code was formatted correctly!			
+			<br>
+			<br>
+			<center>
+			<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;width:100%;"onclick = "document.getElementById('cssbox').value = 'body, html {\nbackground-color:black;\ncolor:white;\n}';document.getElementById('closer').click();document.getElementById('preview').click();">Use the default stylesheet</button>
+			<br>
+			<br>
+					<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;width:100%;"onclick = "document.getElementById('fileInput').click();document.getElementById('preview').click();">Use a different file.</button>
+		</center>
+		</div>
+	</div>
+</div>	
+
+<div id="incorrectformatting" class="overlay">
+	<div class="popup" >
+	<center>
+		<h1 style = "font-size:20px">Your file wasn't imported correctly.</h1>
+		</center>
+		<br>
+		<a id = "closer" style = "display:none;" class="close" href="#">&times;</a>
+		<div class="content" style = "height:100%;">
+Your file uses external CSS stylesheets, which can't be imported here. Make sure to use inline CSS!
+			<center>
+<br>
+					<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;width:100%;margin-bottom:10px"onclick = "document.getElementById('importer').click();document.getElementById('preview').click();">Use a different file.</button>
+<br>		
+				<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;width:100%;"onclick = "document.getElementById('closer').click();document.getElementById('cssbox').value = '';document.getElementById('textbox').value = '';document.getElementById('titlebox').value = 'Blank Assignment';document.getElementById('filebox').value = 'index.html';document.getElementById('preview').click();showplane();">Leave the boxes blank.</button>
+		</center>
+		</div>
+	</div>
+</div>	
+
+	
 <div id="popup1" class="overlay">
 	<div class="popup" >
 		<h1>Are you sure about this?</h1>
@@ -537,7 +614,8 @@ z-index:-1;
 		
 			<input title = "Go ahead. Be creative." style = "padding:10px;background-color:#e9e9e9;border-width:0px;border-style:solid;" id="filebox" value="index.html"/>
 			<a download="index.html" id="downloadlink" style="display: none">Download</a>
-			
+			<input style = "display:none" id="fileInput" type="file" name="file"accept=".html, .htm, .css, .txt" />
+
 		</div></div>
 	</div>
 	
@@ -552,6 +630,10 @@ Auto-run
 	
 	<div class="editor_button">
 		<button onclick = "window.location.replace('program_files/shop.html')"style = "padding:7px!important;"><img id = "shop_icon"  width = "27px;" style = "filter:invert(0%) contrast(150%);background-color:Transparent;"src = "program_files/images/big_shop.gif"></img></button>
+	</div>
+	
+		<div class="editor_button">
+		<button onclick = "document.getElementById('fileInput').click();"style = "padding:7px!important;"><img id = "new_import"  width = "18px;" style = "filter:invert(100%) contrast(150%);background-color:Transparent;padding:2px"src = "program_files/images/new.gif"></img></button>
 	</div>
 		
 	<div class="editor_button" title = "Import" onmouseover="show_templates('import_list'); document.getElementById('import_dropdown').style.display='block'"  onmouseout="document.getElementById('import_dropdown').style.display='none'">
@@ -615,6 +697,124 @@ body {
 <br><br>
 </div>
 <script>
+//START
+var showplane = function(){
+document.getElementById('bigpreview').style.display = "inline-block";
+document.getElementById('hovertext').style.display = "inline-block";
+};
+
+function init(){
+  document.getElementById('fileInput').addEventListener('change', handleFileSelect, false);
+}
+
+function handleFileSelect(event){
+  const reader = new FileReader()
+  reader.onload = handleFileLoad;
+  reader.readAsText(event.target.files[0])
+}
+
+function handleFileLoad(event){
+  console.log(event);
+var str = event.target.result;
+if (str.includes("stylesheet")&&str.includes("<link")){
+window.location.replace('#incorrectformatting');
+} else{
+if (str.includes("<body>") && str.includes("</body>")){
+window.location.replace("#popup7");
+document.getElementById('textbox').value = str.split('<body>').pop().split('</body>')[0];
+document.getElementById('filebox').value = "index_v2.html"
+document.getElementById('playbutton').click();
+document.getElementById('preview').click();
+document.getElementById('preview').click();
+
+if (str.includes("<style>") && str.includes("</style>")){
+document.getElementById('cssbox').value =  str.split('<style>').pop().split('</style>')[0];
+} else {
+document.getElementById('cssbox').value = `Is this the real life?
+Is this just fantasy?
+Caught in a landslide
+No escape from reality
+Open your eyes
+Look up to the skies and see
+I'm just a poor boy
+I need no sympathy
+Because I'm easy come, easy go
+Little high, little low
+Any way the wind blows doesn't really matter to me, to me
+Mama, just killed a man
+Put a gun against his head
+Pulled my trigger, now he's dead
+Mama, life had just begun
+But now I've gone and thrown it all away
+Mama, ooh
+Didn't mean to make you cry
+If I'm not back again this time tomorrow
+Carry on, carry on
+As if nothing really matters
+Too late, my time has come
+Sends shivers down my spine
+Body's aching all the time
+Goodbye everybody, I've got to go
+Gotta leave you all behind and face the truth
+Mama, ooh (any way the wind blows)
+I don't wanna die
+I sometimes wish I'd never been born at all
+I see a little silhouetto of a man
+Scaramouche, Scaramouche, will you do the Fandango?
+Thunderbolt and lightning very very frightening me
+Gallileo, Gallileo
+Gallileo, Gallileo
+Gallileo Figaro, magnifico
+I'm just a poor boy, nobody loves me
+He's just a poor boy from a poor family
+Spare him his life from this monstrosity
+Easy come easy go, will you let me go?
+Bismillah! No, we will not let you go (let him go)
+Bismillah! We will not let you go (let him go)
+Bismillah! We will not let you go (let me go)
+Will not let you go (let me go)
+Never, never, never, never let me go
+No, no, no, no, no, no, no
+Oh, mama mia, mama mia
+Mama mia, let me go
+Beelzebub has a devil put aside for me
+For me
+For me
+So you think you can stone me and spit in my eye?
+So you think you can love me and leave me to die?
+Oh, baby
+Can't do this to me, baby
+Just gotta get out, just gotta get right outta here
+Nothing really matters
+Anyone can see
+Nothing really matters
+Nothing really matters to me
+Any way the wind blows
+`;
+window.location.replace("#nocssfound");
+}
+
+document.getElementById('preview').click();
+if (str.includes("<title>") && str.includes("</title>")){
+document.getElementById('titlebox').value = str.split('<title>').pop().split('</title>')[0]+" (Recovered)";
+
+} else {
+document.getElementById('titlebox').value = "Imported File (No title)";
+}
+
+document.getElementById('preview').click();
+} else {
+window.location.replace("#popup8");
+}
+}
+}
+  
+
+
+
+
+
+
 var ispaused = false;
 var pauser = function(){
 if (ispaused === false){
@@ -852,6 +1052,7 @@ function preview_code () {
 }
 var logo = document.getElementById('logo');
 window.onload = function(){
+init();
 document.body.style.transition = "all 0.5s";
 document.body.style.backgroundColor = "white";
 };
