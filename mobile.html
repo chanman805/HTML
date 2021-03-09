@@ -106,7 +106,7 @@ textarea {
 }
 
 #create,#createoutput, .editor_action_bar .editor_button button {
-background-color:black;color:white;border:none;padding:10px;border-radius:10px;margin:-4px;
+background-color:black;color:white;border:none;padding:10px;border-radius:10px;margin:-5px;
 }
 
 #create:hover, #createoutput:hover, .editor_action_bar .editor_button button:hover  {
@@ -620,7 +620,7 @@ Your file uses external CSS stylesheets, which can't be imported here. Make sure
 	</div>
 	
 	<div class="editor_button playa">
-		<button id="preview" onmouseleave = "document.getElementById('playa-content').style.opacity='0%'" onmouseover = "document.getElementById('playa-content').style.opacity='100%'"><img id = "playbutton" onclick = "document.getElementById('preview').click();pauser();" width = "17px;" style = "filter:invert(100%) contrast(150%);background-color:Transparent;"src = "program_files/images/play.gif"></img></button>
+		<button id="preview" onmouseleave = "document.getElementById('playa-content').style.opacity='0%'" onmouseover = "document.getElementById('playa-content').style.opacity='100%'"><img id = "playbutton" onclick = "document.getElementById('preview').click();pauser();" width = "20px;" style = "filter:invert(100%) contrast(150%);background-color:Transparent;"src = "program_files/images/play.gif"></img></button>
 	<div class="playa-content" style = "display:none">
 <input id = "checker_mccheckerson" style = "margin-right:5px;"type = "checkbox"></input>	
 Auto-run
@@ -629,15 +629,15 @@ Auto-run
 
 	
 	<div class="editor_button">
-		<button onclick = "window.location.replace('program_files/shop.html')"style = "padding:7px!important;"><img id = "shop_icon"  width = "27px;" style = "filter:invert(0%) contrast(150%);background-color:Transparent;"src = "program_files/images/big_shop.gif"></img></button>
+		<button onclick = "window.location.replace('program_files/shop.html')"style = "padding:7px!important;"><img id = "shop_icon"  width = "30px;" style = "filter:invert(0%) contrast(150%);background-color:Transparent;"src = "program_files/images/big_shop.gif"></img></button>
 	</div>
 	
 		<div class="editor_button">
-		<button onclick = "document.getElementById('fileInput').click();"style = "padding:7px!important;"><img id = "new_import"  width = "18px;" style = "filter:invert(100%) contrast(150%);background-color:Transparent;padding:2px"src = "program_files/images/new.gif"></img></button>
+		<button onclick = "document.getElementById('fileInput').click();"style = "padding:7px!important;"><img id = "new_import"  width = "20px;" style = "filter:invert(100%) contrast(150%);background-color:Transparent;padding:2px"src = "program_files/images/new.gif"></img></button>
 	</div>
 		
 	<div class="editor_button" title = "Import" onmouseover="show_templates('import_list'); document.getElementById('import_dropdown').style.display='block'"  onmouseout="document.getElementById('import_dropdown').style.display='none'">
-		<button><img width = "17px;" id = "importer"style = "filter:invert(100%);background-color:Transparent;"src = "program_files/images/import.gif"></img></button>
+		<button><img width = "20px;" id = "importer"style = "filter:invert(100%);background-color:Transparent;"src = "program_files/images/import.gif"></img></button>
 		<center>
 		<div  id="import_dropdown" class="dropdown" style="display: none; z-index: 1;"><div id="import_list" style = "background-color:white" class="dropdown_content">			
 				<a title="hello">one</a>
@@ -648,7 +648,7 @@ Auto-run
 	
 		
 	<div style = "left:500px" class="editor_button" onmouseover="document.getElementById('tools_dropdown').style.display='block'"  onmouseout="document.getElementById('tools_dropdown').style.display='none'">
-		<button><img id = "tooler"width = "17px;" style = "filter:invert(100%);background-color:Transparent;"src = "program_files/images/tools.gif"></img></button>
+		<button><img id = "tooler"width = "20px;" style = "filter:invert(100%);background-color:Transparent;"src = "program_files/images/tools.gif"></img></button>
 		<div  id="tools_dropdown" class="dropdown" style="display: none; z-index: 1;"><div class="dropdown_content">
 		   <img  src = "program_files/images/shop.gif" class = "tools"id = "shop_icon" width = "15%"title = "nuken Shop"style = "display:none;padding:5px;filter:invert(100%);border-radius:5px;background-color:black;"onclick = "window.location.replace('program_files/shop.html');"></img>
 			<img class = "tools" id = "inverter" style = "width:15%;text-align:center;position:relative;background-color:#ffffff00;color:white;" title = "Invert the display" onclick = "darken()" width = "50px;" src = "program_files/images/invert.gif"></img>
