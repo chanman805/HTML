@@ -11,6 +11,7 @@
 <meta name="author" content="Chandler Mrotzek">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- this makes sure that the webpage is supported on all devices -->
 <style>
+
 @font-face {
   font-family: "fonty";
   src: url("styles/font.ttf");
@@ -29,6 +30,44 @@ margin: 0px;
 cursor: default;
 }
 
+body {
+ 
+
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
 
 
 
@@ -298,8 +337,6 @@ cursor:pointer;
 <img onclick = "window.location.replace('../index.html');" id = "hidey" onmouseout = "stayback();" src = "images/arrow.gif" style = "display:none;width:50px;opacity:0%" ></img>
 <img onmouseover = "this.style.transition= 'all 0.5s';this.style.paddingLeft='10px';goback();"  id = "hover_back" style = "width:40px;padding:5px;padding-top:9px" src = "images/shop.gif"></img>
 <h1 onmouseover = "goback()" onclick = "window.location.replace('../index.html')" onmouseout = "stayback()" id = "page_title" >nuken Shop</h1>
-<img onclick = "window.location.replace('#nuken');" style = "cursor:pointer;float:right;width:30px;padding-top:10px;padding-right:35px;" src = "images/logo.png" ><img>
-<img onclick = "window.location.replace('#p3');"style = "cursor:pointer;float:right;width:30px;padding-top:10px;padding-right:45px;" src = "images/education.png" ><img>
 </div>
 
 <div class = "left_frame" >
@@ -352,6 +389,8 @@ cursor:pointer;
 <img onclick = "window.location.replace('#a9');" class = "thumbnail_small"  style = "background-color:Transparent" src = "shop/addons/template.gif" ></img>
 <img onclick = "window.location.replace('#a10');" class = "thumbnail_small"  style = "background-color:Transparent" src = "shop/addons/calculator.png" ></img>
 <img onclick = "window.location.replace('#a11');" class = "thumbnail_small"  style = "background-color:Transparent" src = "shop/addons/resources.gif" ></img>
+<img onclick = "window.location.replace('#a12');" class = "thumbnail_small"  style = "background-color:white" src = "shop/addons/browser.gif" ></img>
+
 </div>
 
 <div  id = "package_library" class = "library" style = "transition: all 0.5s;display:none;overflow:scroll;height:95%">
@@ -557,6 +596,7 @@ window.mobileCheck = function() {
 };
 window.onload = function(){
 window.mobileCheck();
+document.body.style.backgroundColor="#eeeeee";
 };
 
 var goback = function(){
@@ -927,6 +967,22 @@ Download the My Resources add-on here! nuken Education comes pre-installed with 
 	<center><p style = "background-color:orange;padding:2px;border-radius:5px;"><b>This add-on is approved for use with nuken Education.</b></p>
 	
 <p style = "background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;" onclick = "window.location.replace('packages/addons/resources_addon.zip')"><img width = "5%"   src = "images/download_icon.png"></img>
+Download add-on
+<p  onclick = "window.location.replace('#');"style = "font-size:12px;background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;">Keep browsing</p>
+    </center> 
+   </div>
+  </div>
+</div>
+
+<div id="a12" class="overlay">
+  <div class="popup" >
+    <a id = "closer3"  class="close" href="#">&times;</a>
+<img width = "50%" height = "25%" style = "background-color:white;top:0px;padding-left:25%;padding-right:25%;padding-bottom:5%;" src = "shop/addons/browser.gif"></img>
+ <h1 style = "padding:5px;border-radius:0px 0px 10px 10px" >nuken Analytics</h1>
+Download the nuken Analytics add-on here! nuken Analytics is a tool for web developers that gives them information on their system's name, OS, user agent, and browser capabilites. This information can then be used to build better, more responsive webpages!
+<center>
+	
+<p style = "background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;" onclick = "window.location.replace('packages/addons/nuken_analytics_addon.zip')"><img width = "5%"   src = "images/download_icon.png"></img>
 Download add-on
 <p  onclick = "window.location.replace('#');"style = "font-size:12px;background-color:black;padding:10px;padding-left:-10px;padding-right:-10px;border-radius:10px;color:white;cursor:pointer;">Keep browsing</p>
     </center> 
