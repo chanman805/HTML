@@ -896,7 +896,7 @@ function load_template (index) {
     	titlebox = document.getElementById("titlebox"),
     	filebox = document.getElementById("filebox");
     	
-    	titlebox.value = templates[index].title;
+    	titlebox.value = "My Project";
     	cssbox.innerHTML = templates[index].css;
     	textbox.innerHTML = templates[index].body;
     	
@@ -911,10 +911,11 @@ function show_templates (id) {
 		  var tmp = "<div class=\"inline-block\" onClick=\"load_template(" + i + "); preview_code ();\">"
 			+ "<div class=\"dropdown_icon\" style=\""
 			+ " color: " + templates[i]['template_color'] + ";"
-			+ " background-image: " + templates[i]['template_bg'] + ";"
+			+ " background-color: " + templates[i]['template_bg'] + ";"
 			+ " border: 0px solid " + templates[i]['template_color'] + ";"
 			+ " border-top: 0px solid " + templates[i]['template_color'] + ";"
-			+ "\">&#60; &#47; &#62;"
+			+ "margin:-2.5px;"
+			+ "\">"+templates[i]['template_icon']
 			+ "</div>"
 			+ "<a title=\"" + templates[i]['title'] + "\">" 
 			+ templates[i]['title'] + "</a>" 
@@ -949,30 +950,9 @@ var active_index = 0;
 var templates = new Array();
 var templates_imported = false;
 
-const hello_world_doc = {
-	title: 'My Project',
-	headers: '<meta></meta>',
-	css: 'body {\n \tbackground-color: #CCC;\n \tmargin: 0px;\n }\nh1 {\n \tbackground-color: #333;\n \tcolor: #FFF;\n \tpadding: 30px;\n \ttext-align: center;\n }',
-	body: '<h1>Hello World</h1>',
-	file: 'index.html',
-	template_color : '#333',
-	template_bg : 'linear-gradient(180deg, #EEE, #DDD)',
-	saved: true
-};
-templates.push(hello_world_doc);
-
-const sweet_pea_doc = {
-	title: 'Example Template',
-	headers: '<meta></meta>',
-	css: "body {\n \tbackground-image: linear-gradient(180deg, green, black);\n \tcolor: lime; \n\tfont-family: 'Courier New', monospace;\n }",
-	body: '<h1>This is a preview of a cool feature in nuken, the ability to import templates.</h1>\n\n<p>Download an offline version of nuken to import your own webpage files into the editor!</p>',
-	file: 'index.html',
-	template_color : 'green',
-	template_bg : 'linear-gradient(120deg, green, black)',
-	saved: true
-};
-templates.push(sweet_pea_doc);
-
+</script>
+<script src = "program_files/styles/templates.js"></script>
+<script>
 load_template(0);
 
 		
