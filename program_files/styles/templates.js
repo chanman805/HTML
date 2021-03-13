@@ -15,13 +15,15 @@ templates.push(hello_world_doc);
 const blogger = {
 	title: '', //The name of the lesson.
 	headers: '<meta></meta>', 
-	css: `body, html {
+	css: `
+	@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Nanum+Brush+Script&display=swap');
+	body, html {
 background-color:white;
 background-size:100%;
 background-repeat:no-repeat;
 background-position:top;
 color:black;
-font-family:'Brush Script MT';
+font-family:'Nanum Brush Script', cursive;
 }
 .navbar {
 background-color:gray;
@@ -35,7 +37,7 @@ font-size:30px;
 }
 h1 {
 font-size:30px;
-font-family: 'Garamond';
+font-family:  'EB Garamond', serif;
 color:white;
 }
 h2 {
@@ -47,14 +49,14 @@ margin-top:-50px;
 }
 .body {
 padding:20px;
-font-family: 'Garamond';
+font-family:  'EB Garamond', serif;
 font-size:17px;
 width:90%;
 }
  .subtitle {
 padding-right:50px;
  padding-top:0px;
- font-family:'Garamond';
+ font-family: 'EB Garamond', serif;
  color:gray;
  }
 
@@ -106,13 +108,15 @@ templates.push(blogger);
 const landing = {
 	title: '', //The name of the lesson.
 	headers: '<meta></meta>', 
-	css: `body, html {
+	css: `
+	@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Nanum+Brush+Script&display=swap');
+	body, html {
 background-color:black;
 background-size:100%;
 background-repeat:no-repeat;
 background-position:top;
 color:black;
-font-family:'Garamond';
+font-family: 'EB Garamond', serif;
 }
 .navbar {
 background-color:black;
@@ -124,7 +128,7 @@ font-size:30px;
 
 h1 {
 font-size:30px;
-font-family: 'Garamond';
+font-family:  'EB Garamond', serif;
 color:white;
 }
 
@@ -199,14 +203,16 @@ templates.push(landing);
 const album = {
 	title: '', //The name of the lesson.
 	headers: '<meta></meta>', 
-	css: `body, html {
+	css: `
+	@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Nanum+Brush+Script&display=swap');
+	body, html {
 background-color:black;
 background-image: linear-gradient(black, black, green, green);
 background-size:100%;
 background-repeat:no-repeat;
 background-position:top;
 color:white;
-font-family:'Brush Script MT';
+font-family:'Nanum Brush Script', cursive;
 overflow-x:hidden;
 }
 .navbar {
@@ -220,7 +226,7 @@ font-size:30px;
 
 h1 {
 font-size:30px;
-font-family: 'Garamond';
+font-family:  'EB Garamond', serif;
 color:white;
 }
  .tile {
