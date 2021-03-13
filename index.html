@@ -192,6 +192,7 @@ cursor:pointer;
   transition: opacity 500ms;
   visibility: hidden;
   opacity: 0;
+  z-index:100000;
 }
 .overlay:target {
   visibility: visible;
@@ -475,7 +476,7 @@ width:100%;
 height:65%;
 scrolling:no;
 }
-#download_button:hover, #download_button2:hover {
+#download_button:hover, #download_button2:hover, #mobile_button:hover {
 cursor:pointer;
 transition:all 1s;
 transform:scale(1.025);
@@ -645,6 +646,17 @@ Your file references external CSS stylesheets - and those stylesheets can't be i
 </div>	
 </div>
 
+<div id="mobile" class="overlay">
+<div class = "popup">
+<center>
+<h1>nuken | Mobile Editor</h1>
+</center>
+<p>Using nuken on your smartphone or tablet is easy - just visit this same page on your device, and you'll be able to use a nuken Editor that's been tailored to smaller screen sizes. Features of the nuken Mobile Editor include a simplified user interface, external file importing and exporting, and access to the nuken Shop. Plus, you get three free templates you can use to get started on your projects! Please enjoy the nuken Mobile Editor.</p><center>
+<button onclick = "window.location.replace('#')" style = "cursor:pointer;font-size:15px;background-color:black;color:white;padding:10px;border:none;border-radius:10px;outline:none;font-family:'fonty';" >I got it, take me back</button>
+</center>
+</div>	
+</div>
+
 <div id="nukenED" class="overlay">
 <img width = "25%" style = "filter:invert(100%);float:left;padding-top:25%;padding-left:0%" title = "Your file will appear as an icon somehwere right here..." src = "program_files/images/down.gif"></img>
 	<div class="popup"style = "height:75%;max-height:75%;width:35%;" >
@@ -756,9 +768,10 @@ body {
 
 <div class="right_frame" id="preview_frame">
 	<div style = "margin: 20px auto; margin-top:70px; width: 50%; text-align:center"><img id = "bigpreview"src = "program_files/images/download.gif" style = "margin: 0px auto; width: 100%" ></img></div>
-		<p style = "text-align:center; margin: 10px auto;padding:10px;width:80%;" >Your previewed files will appear here</p>
-		<p id = "download_button" onclick = "downloadnuken()" style  ="text-align:center; margin: 10px auto;padding:10px;width:80%;background-color:black;color:white;border-radius:10px;letter-spacing:-0.5px;" >Download our offline web app for more features | nuken v5.0</p>
-		<p id = "download_button2" onclick = "downloadnukenED()" style  ="text-align:center; margin: 10px auto;padding:10px;width:80%;background-color:black;color:white;border-radius:10px;letter-spacing:-0.5px;" >Download nuken for the classroom | nuken Education v 1.0</p>
+		<p style = "text-align:center; margin: 10px auto;padding:10px;width:80%;font-size:12px;margin-bottom:-5px;margin-top:-10px" >Your previewed files will appear here</p>
+		<p id = "download_button" onclick = "downloadnuken()" style  ="text-align:center; margin: 10px auto;padding:7px;width:80%;background-color:black;color:white;border-radius:0px;letter-spacing:-0.5px;" >Download our offline web app for more features | nuken v5.0</p>
+		<p id = "download_button2" onclick = "downloadnukenED()" style  ="text-align:center; margin: 10px auto;padding:7px;width:80%;background-color:black;color:white;border-radius:0px;letter-spacing:-0.5px;" >Download nuken for the classroom | nuken Education v1.0</p>
+		<p id = "mobile_button" onclick = "window.location.replace('#mobile')" style  ="text-align:center; margin: 10px auto;padding:7px;width:80%;background-color:black;color:white;border-radius:0px;letter-spacing:-0.5px;" >Use nuken on the go | nuken Mobile Editor v5.0.7</p>
 		
 	</div>
 	
@@ -886,14 +899,11 @@ window.location.replace("#popup8");
 
 var downloadnuken = function(){
 document.getElementById("puppy2").click();
-document.getElementById("download_button").blur();
-document.getElementById("download_button").style.marginTop="150%";
+
 document.getElementById("nukeny").click();
 };
 var downloadnukenED = function(){
 document.getElementById("puppyED").click();
-document.getElementById("download_button2").blur();
-document.getElementById("download_button2").style.marginTop="150%";
 document.getElementById("nukeny2").click();
 }
 var uptodate = true;
