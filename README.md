@@ -32,5 +32,5 @@ Visit https://chanman805.github.io/nuken on a computer!
 # nuken Education
 nuken Education is designed as a way for educators to share hands-on lessons with their students. Web design / CTE educators can upload their custom lessons and content, and it all works offline and on-the-go! Any computer with a web browser can run nuken - Chromebook to Thinkpad.
 
-Visit http://nuken.digitalartathome.com/program_files/shop.html#p3
+Visit http://nuken.digitalartathome.com/program_files/shop.html#p3 on a computer!
 
