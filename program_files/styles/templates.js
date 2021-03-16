@@ -7,7 +7,7 @@ const hello_world_doc = {
 	file: 'index.html',
 	template_color : '#333',
 	template_bg : 'black',
-	 template_icon: "<img onclick = 'document.getElementById('preview').click();' title = 'Blogger'style = 'filter:invert(0%);margin:-5px;margin-left:-8px;margin-right:-8px'src = 'program_files/images/logo.png' width = '30px' ></img>",
+	 template_icon: "<img onclick = 'document.getElementById('preview').click();' title = 'Blogger'style = 'filter:invert(0%);margin:-5px;margin-left:-8px;margin-right:-8px'src = 'http://nuken.digitalartathome.com/program_files/images/logo.png' width = '30px' ></img>",
 	saved: true
 };
 templates.push(hello_world_doc);
