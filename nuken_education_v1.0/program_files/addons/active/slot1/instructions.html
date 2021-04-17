@@ -1,0 +1,153 @@
+<style>
+body, html {
+background-color:white;
+color:black;
+font-family:'Verdana';
+transition:all 0.5s;
+font-size:14px;
+}
+
+h1 {
+text-align:center;
+}
+
+.iwata {
+text-align:center;
+padding:14px;
+background-color:black;
+color:white;
+}
+.iwata:hover {
+transition:all 0.5s;
+transform: scale(1.1);
+cursor:pointer;
+}
+butt {
+font-size:10px;
+}
+bold {
+font-weight:bold;
+}
+a:link {
+color:black;
+}
+a:hover {
+cursor:pointer;
+}
+#standingupschool2 {
+font-size:13px;
+}
+#standingupschool3 {
+font-size:11px;
+}
+img:hover {
+cursor:pointer;
+}
+</style>
+<title>nuken Helper</title>
+<body>
+<h1>Need help?</h1>
+<p class = "iwata" id = "market" onclick = "howto();">How do I import files?</p>
+<p style = "display:none;line-height:21px" id = "standingupschool">
+To import a file into nuken, simply click on the <img width = "5%" src = "../../../images/import.gif"></img> icon. A popup menu should appear, and you can chose what HTML file you want to import. If the selected file doesn't work, nuken will let you know.
+</p>
+<p class = "iwata" id = "home" onclick = "themes()">Things that won't work</p>
+<p style = "display:none;line-height:19px;" id = "standingupschool2">You probably have noticed by now that things like add-ons and themes don't work in nuken Education Edition. This isn't a mistake on our part...It's so that your educator will be able to see what add-ons you are using for your assignments (no cheating!), and to simplify help sessions with students ("Click on the arrow icon" becomes a vague direction when you have a custom theme loaded in, doesn't it?). If you want to install an add-on or modify your nuken Education theme, let your educator know. <i>Themes and Add-ons downloaded from the nuken Shop and simply dropped into the normal folders will not work. Your educator will give you instructions on how to download them, if you need them at all.</i>
+</p>
+<p class = "iwata" id = "beef"onclick = "addons()">I think I have a problem</p>
+<p style = "display:none;line-height:19px;font-size:13px" id = "standingupschool3">
+If you have an issue with your nuken Education setup, let your educator know. If you are unable to use the <img width = "5%" src = "../../../images/share.gif"></img> icon (in the <img width = "5%" src = "../../../images/tools.gif"></img> menu) to send an email to your educator, then let them know about your problem through...oh, I don't know...conventional means? Phone calls, snail mail - heck, even shipping yourself first-class could work. If you're looking for the nuken Issue Report form, you're not going to find it here. It's been dropped from this release, unfortunately.
+
+<p class = "iwata" onclick = "window.location.replace('addon.html');">Go back</p>
+<center>
+<img title = "Thank you for using nuken Education Edition!" id = "logogogotheresnostoppingmeeeeeee" style = "background-color:black;border-radius:5px;filter:invert(100%)" width= "30%" src = "images/logo.png"></img>
+</center>
+<a style = "display:none" id = "hyet!" href = "https://forms.gle/uVLVYTCUYiCddewS9" target= "_blank"></a>
+<a style = "display:none" id = "ungh!" href ="https://chanman805.github.io/nuken/program_files/shop.html" target= "_blank"></a>
+<a style = "display:none" id = "haa!" href = "https://chanman805.github.io/nuken" target= "_blank"></a>
+</body>
+<script>
+var zelda = false;
+var hider = function(){
+if (zelda === true){
+document.getElementById('logogogotheresnostoppingmeeeeeee').style.display = "block";
+zelda = false;
+} else {
+document.getElementById('logogogotheresnostoppingmeeeeeee').style.display = "none";
+zelda = true;
+}
+};
+var oathtoorder = function(){
+document.getElementById("ungh!").click();
+};
+var songoftime = function(){
+document.getElementById("haa!").click();
+};
+var songofhealing = function(){
+document.getElementById("hyet!").click();
+};
+var v1 = false;
+var howto = function(){
+if (v1 === false){
+hider();
+document.getElementById("standingupschool").style.display = "block";
+v1 = true;
+} else {
+hider();
+document.getElementById("standingupschool").style.display = "none";
+v1 = false;
+}
+};
+
+
+var v2 = false;
+var themes = function(){
+if (v2 === false){
+hider();
+document.getElementById("standingupschool2").style.display = "block";
+document.getElementById("market").style.display = "none";
+v2 = true;
+} else {
+hider();
+document.getElementById("standingupschool2").style.display = "none";
+document.getElementById("market").style.display = "block";
+v2 = false;
+}
+};
+
+var v3 = false;
+var addons = function(){
+if (v3 === false){
+hider();
+document.getElementById("standingupschool3").style.display = "block";
+document.getElementById("market").style.display = "none";
+document.getElementById("home").style.display = "none";
+v3 = true;
+} else {
+hider();
+document.getElementById("standingupschool3").style.display = "none";
+document.getElementById("market").style.display = "block";
+document.getElementById("home").style.display = "block";
+v3 = false;
+}
+};
+
+var v4 = false;
+var butwaittheresmore = function(){
+if (v4 === false){
+hider();
+document.getElementById("standingupschool4").style.display = "block";
+document.getElementById("market").style.display = "none";
+document.getElementById("home").style.display = "none";
+document.getElementById("beef").style.display = "none";
+v4 = true;
+} else {
+hider();
+document.getElementById("standingupschool4").style.display = "none";
+document.getElementById("market").style.display = "block";
+document.getElementById("home").style.display = "block";
+document.getElementById("beef").style.display = "block";
+v4 = false;
+}
+};
+</script>
