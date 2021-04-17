@@ -1,0 +1,491 @@
+<html>
+<link id = "page-css" rel="stylesheet" href="program_files/styles/default_stylesheet.css">
+<img src = "program_files/themes/selected/theme_verification_check.gif" style = "display:none" onload = "youlivetoseeanotherday()" onerror = "chuckisnotpleased()"></img>
+<img src = "program_files/addons/active/slot1/addon_verification.gif" style = "display:none" onload = "addon1found()" onerror = "noaddon1()"></img>
+<img src = "program_files/addons/active/slot2/addon_verification.gif" style = "display:none" onload = "addon2found()" onerror = "noaddon2()"></img>
+<img src = "program_files/addons/active/slot3/addon_verification.gif" style = "display:none" onload = "addon3found()" onerror = "noaddon3()"></img>
+<head>
+
+<title>nuken (v4.0)</title> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link REL="SHORTCUT ICON" HREF="program_files/images/logo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="keywords" content="html downloader tool">
+<meta name="description" content="This is an HTML downloader tool for downloading HTML files.">
+<meta name="author" content="Brett Docherty">
+<meta name="author" content="Chandler Mrotzek">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- this makes sure that the webpage is supported on all devices -->
+</head>
+<body>
+<a style = "display:none"id = "shoplink" target = "_blank" href = "https://chanman805.github.io/nuken/program_files/shop.html"></a>
+<div id = "hide" style = "z-index:99;filter:blur(3px) brightness(50%);background-color:black;background-image:url('program_files/images/spotlight.gif');background-repeat:no-repeat;background-position:0 0;background-size:50% 30%;padding:100%;display:none;position:absolute;top:0;left:0;"width="200%" height = "200%" ></div>
+
+<div id = "navbar">
+<h1 class = "realcontent" style = "text-align:left;padding:0px;" >nuken <<img id = "logo"width = "2%" src ="program_files/images/logo.png">></img>
+
+<img id = "wifi" title = "No connection" width="2.5%" style = "float:right;padding-left:10px;padding-right:10px;" ></img>
+
+<img id = "shop_icon" title = "nuken Theme Shop" width="2.5%" onclick = "shopcheck()" style = "float:right;padding-left:10px;padding-right:10px;" ></img>
+
+<div style = "float:right;padding-left:10px;padding-right:10px;" class="dropdown">
+  <img class = "dropbtn"style = "float:right;" width = "15%" src = "program_files/images/plus.gif"></img>
+  <div title = "Your Installed Add-ons" class="dropdown-content">
+    <a id = "addon1" target="_blank"onclick = "document.getElementById('addonpopup1').click();">You have no add-ons installed</a>
+    <a id = "addon2"target="_blank"onclick = "document.getElementById('addonpopup2').click();"></a>
+    <a id = "addon3"target="_blank"onclick = "document.getElementById('addonpopup3').click();"></a>
+  </div>
+</div>
+</div>
+
+
+<div  class = "content realcontent"  >
+<p class = "realcontent" >What's the title?</p> 
+<input class = "realcontent" value = "My Project" title = "Always the hardest part, isn't it?" id="titlebox"/> 
+<br>
+<br>
+<p class = "realcontent" >Enter the file name here.</p> <input title = "Go ahead. Be creative." id="filebox" value="index.html"/>
+<button class = "butt realcontent"id="create">Create file</button> <button class = "butt" id="preview">Preview file</button><a download="index.html" id="downloadlink" style="display: none">Download</a>
+<br><p>
+Enter your HTML (body) here.
+</p><textarea  class = "realcontent" title = "You got this."  id="textbox"><h1>This is a header tag</h1>
+
+<script>
+//enter your JS here.
+</script></textarea>
+<br>
+<p  class = "realcontent" >
+Type in your CSS!
+</p>
+<textarea class = "realcontent"  title = "Almost done!"  id="cssbox">body {
+background-color:red;
+}</textarea>
+<img id = "downloadpreview" class = "realcontent previewy" src = imagepath+"download.gif" style = "border-radius:30px;width: 20%;position:absolute;padding-left: 23%;margin-top: -20%;" ></img>
+<p class = "realcontent previewy"id = "previewone" >Your previewed files will appear here</p>
+<img class = "realcontent tools" id = "inverter" title = "Invert the display" onclick = "darken()"></img>
+<img class = "realcontent tools" id = "reloader" title = "Reload the page" onclick = "document.getElementById('puppy').click();" width = "5%;"></img>
+<img class = "realcontent tools" id = "showandtell" title = "Tell your friends!" onclick = "mailer()" ></img>
+<img class = "realcontent tools" id = "github" title = "Contribute to the project" onclick = "github()" width = "5%;"></img>
+  <a id = "puppy"class="realcontent button" style = "display:none;"href="#popup1"></a>
+  <a id = "puppy2"class="realcontent button" style = "display:none;"href="#popup2"></a>
+   <a id = "puppy3"class="realcontent button" style = "display:none;"href="#popup3"></a>
+      <a id = "addonpopup1"class="realcontent button" style = "display:none;"href="#popup4"></a>
+	  <a id = "addonpopup2"class="realcontent button" style = "display:none;"href="#popup5"></a>
+	  <a id = "addonpopup3"class="realcontent button" style = "display:none;"href="#popup6"></a>
+
+
+<div id="popup4" class="overlay">
+  <div style = "border-radius:0px" class=" realcontent popup" >
+    <a id = "closer" style = "display:none;" class="realcontent close" href="#">&times;</a>
+    <div class="content">
+<iframe id = "addonslot1" scrolling = "no"style = "width:95%;height:50%;border-radius:10px;border:none" src= "program_files/addons/active/slot1/addon.html"></iframe>
+
+<br>
+<br>
+<center>
+<button  class = "realcontent" style = "cursor:pointer;background-color:black;color:white;padding:10px;border:none;border-radius:10px;width:50%;"onclick = "document.getElementById('closer').click();">Close Add-on</button>
+    </center>
+	</div>
+  </div>
+</div>
+
+<div id="popup5" class="overlay">
+  <div style = "border-radius:0px" class=" realcontent popup" >
+    <a id = "closer" style = "display:none;" class="realcontent close" href="#">&times;</a>
+    <div class="content">
+<iframe id = "addonslot2" scrolling = "no"style = "width:95%;height:50%;border-radius:10px;border:none" src= "program_files/addons/active/slot2/addon.html"></iframe>
+
+<br>
+<br>
+<center>
+<button  class = "realcontent" style = "cursor:pointer;background-color:black;color:white;padding:10px;border:none;border-radius:10px;width:50%;"onclick = "document.getElementById('closer').click();">Close Add-on</button>
+    </center>
+	</div>
+  </div>
+</div>
+
+<div id="popup6" class="overlay">
+  <div style = "border-radius:0px" class=" realcontent popup" >
+    <a id = "closer" style = "display:none;" class="realcontent close" href="#">&times;</a>
+    <div class="content">
+<iframe id = "addonslot3" scrolling = "no"style = "width:95%;height:50%;border-radius:10px;border:none" src= "program_files/addons/active/slot3/addon.html"></iframe>
+
+<br>
+<br>
+<center>
+<button  class = "realcontent" style = "cursor:pointer;background-color:black;color:white;padding:10px;border:none;border-radius:10px;width:50%;"onclick = "document.getElementById('closer').click();">Close Add-on</button>
+    </center>
+	</div>
+  </div>
+</div>
+
+
+<div id="popup1" class="overlay">
+  <div style = "border-radius:0px;color:black" class=" realcontent popup" >
+    <h1>Are you sure about this?</h1>
+	<br>
+    <a id = "closer" style = "display:none;" class="realcontent close" href="#">&times;</a>
+    <div class="realcontent content">
+We advise you to save your work before reloading the page. Are you sure you want to do this anyway?
+<br>
+<br>
+<button  class = "realcontent" style = "cursor:pointer;background-color:black;color:white;padding:10px;border:none;border-radius:10px;width:30%;"onclick = "document.getElementById('closer').click();window.location.reload(true);">Reload</button>
+<button  class = "realcontent" style = "cursor:pointer;background-color:black;color:white;padding:10px;border:none;border-radius:10px;width:30%;"onclick = "document.getElementById('closer').click();">Don't</button>
+    </div>
+  </div>
+</div>
+
+<div id="popup2" class="overlay">
+  <div class="popup" >
+    <a id = "closer2"  class="close" href="#">&times;</a>
+    <div >
+You didn't enter a valid file path! Remember to enter the file path for an existing HTML file, no other files or file types will be displayed. <br><br>HTML files end with .html or .htm, so check in your file browser to make sure the HTML file is compatible with this viewer. 
+<br><br>
+If you think this is a bug, please let us know.
+<br>
+<br>
+<center>
+<button  class = "realcontent" style = "cursor:pointer;background-color:black;color:white;padding:10px;border:none;border-radius:10px;width:30%;"onclick = "document.getElementById('closer2').click();">Okay</button>
+</center>   
+   </div>
+  </div>
+</div>
+
+<div id="popup3" class="overlay">
+  <div class="popup" >
+    <a id = "closer3"  class="close" href="#">&times;</a>
+    <div>
+ <h1>You're not connected to the internet</h1>
+
+ Sorry, right now you're offline. If you'd like to view online content, connect to the internet in your device settings. <br><br>If you think this is a bug, try reloading the page.
+ <br>
+ <br>
+<center>
+<button  class = "realcontent" style = "cursor:pointer;background-color:black;color:white;padding:10px;border:none;border-radius:10px;width:30%;"onclick = "document.getElementById('closer3').click();">Okay</button>
+</center>   
+   </div>
+  </div>
+</div>
+
+<a id="supersecretmail" target = "_blank"href ="mailto:Enter your friend's emails here.?subject=Check this out!&body=I've been using this great new HTML file editor, nuken! It allows me to edit my webpage files in-browser, and even has an offline web-app that lets you preview the HTML on the same page. If you want to get in on the action, here's the link: %0D%0A%0D%0Ahttps://chanman805.github.io/nuken %0D%0A%0D%0AYou're gonna love it!"></a>
+<a target = "_blank" id = "gitty" style = "display:none" href = "https://github.com/chanman805/HTML"></a>
+<br>
+<br>
+<br>
+<br>
+<br>
+<input id = "fileX" class = "butt" value = "c:/" title = "This tool can only output HTML files (.html)" ></input>
+<button class = "butt" id="createoutput" style = "display:inline-block;" onclick = "cowabunga()">View existing file</button>
+<div id="previewframe" >
+	<iframe style = "width: 100%;height: 100%;border:none;border-radius:5px;" id = "newframe" ></iframe>
+</div>
+<img id = "comp" onclick = "win95boi()" width = "3%" ></img>
+<img id = "phone"onclick = "steveyjobs()"width = "2.75%"></img>
+</div>
+
+<script>
+var imagepath = "program_files/images/";
+var userisediting = false;
+var themeselected=false;
+var addon1=false;
+var addon2=false;
+var addon3=false;
+var chuckisnotpleased = function(){
+var themeselected=false;
+};
+
+var noaddon1 = function(){
+var addon1 = false;
+document.getElementById("addon1").style.display="none";
+};
+var noaddon2 = function(){
+var addon2 = false;
+document.getElementById("addon2").style.display="none";
+};
+var noaddon3 = function(){
+var addon3 = false;
+document.getElementById("addon3").style.display="none";
+};
+
+
+var addon1found = function(){
+document.getElementById("addon1").innerHTML  = "<img style = 'background-color:white;' width = '90%' src = 'program_files/addons/active/slot1/preview.gif'></img>";
+};
+
+var addon2found = function(){
+document.getElementById("addon2").innerHTML  = "<img style = 'background-color:white;' width = '90%' src = 'program_files/addons/active/slot2/preview.gif'></img>";
+};
+
+var addon3found = function(){
+document.getElementById("addon3").innerHTML  = "<img style = 'background-color:white;' width = '90%' src = 'program_files/addons/active/slot3/preview.gif'></img>";
+};
+
+
+
+var youlivetoseeanotherday = function(){
+document.getElementById("page-css").href = "program_files/themes/selected/theme.css";
+imagepath = "program_files/themes/selected/images/";
+};
+var systemonline = false;
+
+
+var settrue = function(){
+emulationhack = true;
+};
+var setfalse = function(){
+emulationhack = false;
+};
+var emulationhack = false;
+var MR_RESETTI = function(){
+document.getElementById("previewframe").style = "background-color:white;width: 40%;height: 66%;position:absolute;margin-left: 27%;margin-top: -40%;";
+document.getElementById("comp").style = "position:absolute;margin-top:-40%;margin-left:21.25%;";
+document.getElementById("phone").style = "position:absolute;margin-top:-35%;margin-left:21%;";
+document.getElementById("previewframe").style.display = "inline";
+document.getElementById("comp").style.display = "inline";
+document.getElementById("phone").style.display = "inline";
+document.getElementById("comp").src=imagepath+"computer.gif";
+document.getElementById("phone").src=imagepath+"phone.gif";
+document.getElementById("previewframe").style.zIndex = "0";
+document.getElementById("phone").style.zIndex = "0";
+document.getElementById("hide").style.display="none";
+var cusid_ele = document.getElementsByClassName('previewy');
+for (var i = 0; i < cusid_ele.length; ++i) {
+    var item = cusid_ele[i];  
+item.style.opacity = '100%';
+}
+setTimeout(setfalse,500);
+};
+var win95boi = function(){
+document.getElementById("previewframe").style.display = "inline";
+document.getElementById("comp").src=imagepath+"close.gif";
+document.getElementById("previewframe").style.transition = "all 0.75s";
+document.getElementById("previewframe").style.backgroundColor = "white";
+document.getElementById("previewframe").style.width = "100%";
+document.getElementById("previewframe").style.height = "100%";
+document.getElementById("previewframe").style.position = "absolute";
+document.getElementById("previewframe").style.marginLeft = "-28.25%";
+document.getElementById("previewframe").style.marginTop = "-50.25%";
+document.getElementById("comp").style.transition = "all 0.75s";
+document.getElementById("comp").style.marginLeft = "62.5%";
+document.getElementById("comp").style.marginTop = "-5%";
+document.getElementById("comp").style.width = "8%";
+document.getElementById("comp").style.height = "14%";
+document.getElementById("comp").style.borderRadius = "10px";
+document.getElementById("phone").style.display = "none";
+
+setTimeout(settrue,500);
+};
+var steveyjobs = function(){
+document.getElementById("phone").src=imagepath+"close.gif";
+document.getElementById("previewframe").style.display = "inline";
+document.getElementById("previewframe").style.transition = "all 0.75s, z-index 1s";
+document.getElementById("previewframe").style.zIndex = "100";
+document.getElementById("phone").style.zIndex = "100";
+document.getElementById("previewframe").style.backgroundColor = "white";
+document.getElementById("previewframe").style.width = "30%";
+document.getElementById("previewframe").style.height = "90%";
+document.getElementById("previewframe").style.position = "absolute";
+document.getElementById("previewframe").style.marginLeft = "7%";
+document.getElementById("previewframe").style.marginTop = "-47.5%";
+document.getElementById("hide").style.display="block";
+document.getElementById("hide").style.opacity="85%";
+document.getElementById("phone").style.transition = "all 0.75s";
+document.getElementById("phone").style.marginLeft = "62.5%";
+document.getElementById("phone").style.marginTop = "-2.5%";
+document.getElementById("phone").style.width = "8%";
+document.getElementById("phone").style.height = "14%";
+document.getElementById("phone").style.borderRadius = "10px";
+var cusid_ele = document.getElementsByClassName('previewy');
+for (var i = 0; i < cusid_ele.length; ++i) {
+    var item = cusid_ele[i];  
+item.style.opacity = '0%';
+}
+
+setTimeout(settrue,500);
+
+};
+
+var cowabunga = function(){
+if (document.getElementById("fileX").value.includes(".html")){
+userisediting = false;
+document.getElementById("newframe").src="file:///"+document.getElementById('fileX').value;
+document.getElementById("createoutput").innerHTML = "Reload preview frame";
+document.getElementById("previewframe").style.display = "inline";
+document.getElementById("comp").style.display = "inline";
+document.getElementById("phone").style.display = "inline";
+
+} else {
+document.getElementById("puppy2").click();
+}
+};
+
+var checkitycheck = function(){
+if (document.getElementById('fileX').value === ""){
+document.getElementById("createoutput").innerHTML = "View existing file";
+}
+};
+var isdark=false;
+var darken = function(){
+if (isdark===false){
+document.body.style.filter="invert(100%)";
+isdark = true;
+} else {
+document.body.style.filter="invert(0%)";
+isdark=false;
+}
+};
+
+var wifichecker = function(){
+if (navigator.onLine){
+document.getElementById("wifi").src = imagepath+"connected.gif";
+document.getElementById("wifi").title = "Connected to the internet";
+systemonline = true;
+} else {
+document.getElementById("wifi").src = imagepath+"disconnected.gif";
+document.getElementById("wifi").title = "No connection";
+systemonline = false;
+}
+};
+
+
+var shopcheck = function(){
+if (navigator.onLine){
+document.getElementById("shoplink").click();
+} else {
+document.getElementById("puppy3").click();
+}
+};
+
+var github = function(){
+if (systemonline === true){
+document.getElementById("gitty").click();
+} else {
+document.getElementById("puppy3").click();
+}
+};
+var mailer = function(){
+if (systemonline === true){
+document.getElementById("supersecretmail").click();
+} else {
+document.getElementById("puppy3").click();
+}
+};
+
+
+window.onload = function(){
+document.getElementById("comp").src = imagepath+"computer.gif";
+document.getElementById("downloadpreview").src = imagepath+"download.gif";
+document.getElementById("github").src = imagepath+"github.gif";
+document.getElementById("inverter").src = imagepath+"invert.gif";
+document.getElementById("wifi").src = imagepath+"loader.gif";
+document.getElementById("phone").src = imagepath+"phone.gif";
+document.getElementById("reloader").src = imagepath+"reload.gif";
+document.getElementById("showandtell").src = imagepath+"share.gif";
+document.getElementById("shop_icon").src = imagepath+"shop.gif";
+document.getElementById("logo").src = imagepath+"logo.png";
+document.body.style.transition = "all 0.5s";
+document.body.style.opacity = "100%";
+setInterval(wifichecker,3650);
+};
+
+(function () {
+var textFile = null,
+  makeTextFile = function (text) {
+    var data = new Blob([text], {type: "text/html", endings:"native"});
+
+    // If we are replacing a previously generated file we need to
+    // manually revoke the object URL to avoid memory leaks.
+    if (textFile !== null) {
+      window.URL.revokeObjectURL(textFile);
+    }
+
+    textFile = window.URL.createObjectURL(data);
+
+    return textFile;
+  };
+  
+  makeHTML = function() {
+	var html = "<html>\n<head>\n<title>\n"
+    	+ titlebox.value
+		+ "\n</title>\n" 
+    	+ "<style>\n"
+    	+ cssbox.value
+    	+ "\n</style>\n"
+    	+ "</head>\n<body>\n"
+    	+ textbox.value
+    	+ "\n</body>\n</html>\n";		
+	return html;
+  }
+
+  var create = document.getElementById("create"),
+  		textbox = document.getElementById("textbox"),
+    	cssbox = document.getElementById("cssbox"),
+    	titlebox = document.getElementById("titlebox"),
+    	filebox = document.getElementById("filebox");
+
+  create.addEventListener("click", function () {
+    var link = document.getElementById("downloadlink");
+    
+    var html = "<html>\n<head>\n<title>\n"
+    	+ titlebox.value
+      + "\n</title>\n" 
+    	+ "<style>\n"
+    	+ cssbox.value
+    	+ "\n</style>\n"
+    	+ "</head>\n<body>\n"
+    	+ textbox.value
+    	+ "\n</body>\n</html>\n";
+    
+ 		link.download = filebox.value;
+    link.href = makeTextFile(html);   
+    link.style.display = "none";
+	link.click();
+  }, false);
+  
+  preview.addEventListener("click", function () {
+	userisediting = true;
+    var previewframe = document.getElementById("previewframe");
+	previewframe.style.display= "inline";
+document.getElementById("createoutput").innerHTML = "Reload preview frame";
+document.getElementById("previewframe").style.display = "inline";
+document.getElementById("comp").style.display = "inline";
+document.getElementById("phone").style.display = "inline";
+
+		previewframe.innerHTML = "<iframe style=\"width: 100%;height: 100%;border:none;border-radius:5px;\" id=\"newframe\">" + html + "</iframe>";
+
+    var newframe = document.getElementById("newframe");
+	var frame = (newframe.contentWindow || newframe.contentDocument); //Cross-browser support
+	if (frame.document) { frame = frame.document; }	
+
+    var html = makeHTML(); 
+    
+	frame.write(html);	
+  }, false);
+  
+})();
+
+
+window.onclick = function(){
+if (emulationhack === true){
+MR_RESETTI();
+}
+};
+
+window.addEventListener("keydown", event => {
+  if (event.isComposing || event.keyCode === 229) {
+    return;
+  }
+  if (userisediting === true){
+  document.getElementById("preview").click();
+  }
+});
+
+
+window.onunload = function(){
+       document.getElementById("puppy1").click();
+	    document.getElementById("puppy2").click();
+		 document.getElementById("puppy3").click();
+    };
+	</script>
+
+</html>
