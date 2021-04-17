@@ -1,0 +1,2 @@
+Hey there, educator! Welcome to nuken Education v2.0. Keep on the lookout for these README.txt files scattered throughout the nuken build. They explain what's going on and what you can do about it!
+You can also visit the nuken Help Center for more information.
