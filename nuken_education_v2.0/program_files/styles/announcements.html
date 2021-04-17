@@ -1,0 +1,135 @@
+<style>
+@font-face {
+  font-family: "fonty";
+  src: url("font.ttf");
+
+}
+body, html {
+overflow:hidden;
+font-family:fonty;
+font-size:12px;
+
+}
+
+#loader  {
+transition: all 1s;
+}
+
+.announce_window::-webkit-scrollbar {
+    width: 1em;
+}
+
+.announce_window::-webkit-scrollbar-track {
+  background-color:#efefef50;
+}
+
+.announce_window::-webkit-scrollbar-thumb {
+  background-color: lightgray;
+  border-radius:0px;
+}
+
+
+</style>
+<body>
+<center>
+<img id = "loader" style = "color:black;" width = "30%" height = "65%"src = "../images/loader.gif" ></img>
+<iframe id = "feed"  class = "announce_window"style = "display:none;border:none;outline:none"width = "100%" height = "90%"src = "http://nuken.digitalartathome.com/program_files/styles/latest.html"></iframe>
+
+<p id = "errortext"></p>
+</center>
+</body>
+<script src = "../feed.js"></script>
+<script>
+var mr_start_i_dont_feel_so_good = false;
+var loader = document.getElementById('loader');
+var feed = document.getElementById('feed');
+var errortext = document.getElementById('errortext');
+
+window.onload = function(){
+if (navigator.onLine){
+loader.style.height = "0%";
+loader.style.opacity = "0%";
+feed.style.display = "inline-block";
+if (feed_url==="NONE"){
+} else {
+feed.src = feed_url;
+}
+} else {
+loader.src = "../images/disconnected.gif";
+loader.style.opacity = "100%";
+errortext.innerHTML = "You're not connected to the Internet.";
+feed.style.display = "none";
+
+var changer = function(){
+loader.src = "../images/reload.gif";
+};
+
+
+var changer2 = function(){
+loader.src = "../images/disconnected.gif";
+};
+
+var rotater = function(){
+loader.style.transition="transform 0.7s";
+loader.style.transform="rotate(360deg)";
+};
+
+var rotater2 = function(){
+loader.style.transition="transform 0.0s";
+loader.style.transform="rotate(0deg)";
+};
+
+var fadeout = function(element){
+element.style.transition = "all 0.2s";
+setTimeout(changer,170);
+element.style.opacity = "0%";
+setTimeout(fadein,200);
+setTimeout(rotater,300);
+
+};
+
+
+var fadein = function(){
+loader.style.transition = "all 0.2s";
+loader.style.opacity = "100%";
+};
+
+var fadein2 = function(){
+loader.style.transition = "opacity 0.2s";
+loader.style.opacity = "100%";
+};
+
+var fadeout2 = function(element){
+element.style.transition = "all 0.2s";
+setTimeout(changer2,170);
+element.style.opacity = "0%";
+setTimeout(fadein2,200);
+setTimeout(rotater2,300);
+
+};
+
+
+
+loader.onmouseover = function(){
+fadeout(loader);
+errortext.innerHTML = "Click to refresh your announcement feed.";
+loader.style.cursor = "pointer";
+mr_start_i_dont_feel_so_good = true;
+
+};
+
+loader.onmouseleave = function(){
+fadeout2(loader);
+errortext.innerHTML = "You're not connected to the Internet.";
+loader.style.cursor = "auto";
+mr_start_i_dont_feel_so_good = false;
+};
+}
+};
+
+document.body.onclick = function(){
+if (mr_start_i_dont_feel_so_good = true){
+window.location.reload(true);
+}
+};
+</script>
