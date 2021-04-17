@@ -1,4 +1,4 @@
-var feed_url = "http://nuken.digitalartathome.com/program_files/styles/feeds/education.html";
+var feed_url = "http://nuken.digitalartathome.com/editor/program_files/styles/feeds/education.html";
 //If you don't have a feed and you don't want students to access or interact with this feature,
 //REPLACE the above text with: 
 
