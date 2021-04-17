@@ -1,0 +1,624 @@
+@font-face {
+  font-family: "fonty";
+  src: url("font.ttf");
+
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -80%);
+}
+
+#mydiv, #mydiv2, #mydiv3 {
+  position: absolute;
+  z-index: 0;
+  background-color: black;
+  text-align: center;
+  border: 0.5px solid #00ff00;
+  overflow:hidden;
+  width:384px;
+  height: 450px;
+  border-radius:0px;
+  padding:10px;
+  padding-bottom:50px;
+  box-shadow: 20px 20px 0px #00ff00;
+  color:#00ff00;
+}
+
+#preload {
+transition: all 1s steps(4);
+}
+
+#shop_frame {
+transition: all 1s steps(10)!important;
+}
+
+
+
+#mydivheader, #mydivheader2, #mydivheader3 {
+  padding: 0.5px!important;
+  cursor: grab;
+  z-index: 0;
+  background-color: Transparent;
+  color: #00ff00;
+  overflow:hidden;
+}
+
+#mydivheader img, #mydivheader2 img, #mydivheader3 img {
+ filter:invert(100%);
+}
+
+#mydivheader p, #mydivheader2 p, #mydivheader3 p {
+color:#00ff00!important;
+}
+
+
+#mydivheader:active {
+cursor:grabbing;
+}
+body, html {
+background-color: black;
+background-repeat:no-repeat;
+background-position:center;
+color:black;
+font-family: 'fonty', sans-serif;
+font-size:15px;
+overflow:hidden;
+overflow-x:hidden;
+overflow-y:hidden;
+transition: all 0.5s steps(3);
+height: 100%;
+margin: 0px;
+cursor: default;
+
+}
+textarea::-webkit-scrollbar {
+    width: 1em;
+}
+
+textarea::-webkit-scrollbar-track {
+  background-color:black;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: black;
+  border: 1px dotted #00ff00;
+}
+
+
+
+.popup button {
+color:#00ff00;
+background-color:black;
+border: 0.5px dashed #00ff00!important;
+border-radius:0px!important;
+font-family: 'fonty';
+}
+#create, #exporter {
+z-index:10000000000000000000000000000;
+}
+#playbutton {
+z-index:0;
+width:15px!important;
+height:18px!important;
+}
+
+body {
+ 
+
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.content {
+padding-left:10px;
+}
+
+.h1 {
+text-align:center;
+background-color:black;
+font-size: 2em;
+color:white;
+padding:15px;
+}
+
+
+h6 {
+font-size:15px;
+}
+textarea {
+  width: 100%;
+  min-height: 100px;
+  
+}
+
+.spin:hover {
+transition: all 0.5s steps(3);
+transform:rotate(-360deg);
+}
+
+.hover:hover{
+transition: all 0.5s steps(2);
+transform:scale(1.1);
+}
+
+
+
+#create,#createoutput, .editor_action_bar .editor_button button {
+background-color:Transparent;color:white;border:none;padding:10px;border-radius:12px;margin:0px;
+font-family: 'fonty';
+}
+
+#create:hover, #createoutput:hover, .editor_action_bar .editor_button button:hover  {
+background-color:black;
+transform: scale(1.05);
+cursor:pointer;
+transition:all 0.2s steps(2);
+border-radius:10px;
+}
+
+
+
+
+
+.box {
+  width: 40%;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.2);
+  padding: 35px;
+  border: 2px solid #fff;
+  border-radius: 20px/50px;
+  background-clip: padding-box;
+  text-align: center;
+}
+
+.button {
+  font-size: 1em;
+  padding: 10px;
+  color: #fff;
+  border: 2px solid #111;
+  border-radius: 20px/50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out steps(3);
+}
+.button:hover {
+  background: #06D85F;
+}
+
+.overlay {
+  position: fixed;
+  top: 50;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #000000c0;
+  transition: opacity 500ms steps(3);
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+#tooler {
+	height:17px!important;
+width:17px!important;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: black;
+  border-radius:0px;
+  width: 30%;
+  position: relative;
+  transition: all 0.5s ease-in-out steps(4);
+  overflow:hidden;
+  color:#00ff00;
+  border: 0.5px solid #00ff00;
+    box-shadow: 20px 20px 0px #00ff00;
+}
+
+.popup h1 {
+  margin-top: 0;
+  color: #00ff00;
+  font-family: 'fonty';
+  font-size:20px!important;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  
+  font-weight: bold;
+  text-decoration: none;
+  color: #33333300;
+}
+.popup .close:hover {
+  color: #06D85F;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: hidden;
+  color:#00ff00;
+  font-size:13px;
+
+  
+}
+
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+overflow:hidden;
+  }
+  .popup{
+    width: 70%;
+  }
+}
+.tools {
+padding:1px;
+}
+.tools:hover {
+cursor:pointer;
+transition: all 0.5s steps(3);
+transform: scale(1.05);
+}
+
+#shop_icon:hover {
+cursor:pointer;
+}
+
+#shop_icon {
+height:35px;
+}
+
+.editor_action_bar {
+	background-color: black;
+	height: 56px;
+	color:white;
+}
+
+.editor_action_bar .editor_button  {
+	height: 36px;
+	display: inline-block;
+	font-size: 1em;
+	padding: 10px;
+	text-decoration: none;
+	cursor: pointer;
+	transition: all 0.3s ease-out steps(3);
+	float:right;
+}
+
+.editor_action_bar input  {
+	
+	float:left;
+}
+.left_frame {
+	float: left;
+	width: -moz-calc(33% - 2px);
+	width: -webkit-calc(33% - 2px);
+	width: calc(33% - 2px);
+
+}
+.right_frame {
+	width: 67%;
+	float: right;
+}
+.right_frame, .left_frame {
+	//assuming that 80px + editor bar 56px for borders is the header's height
+	height: -moz-calc(100% - 136px);
+	height: -webkit-calc(100% - 136px);
+	height: calc(100% - 60px);
+}
+.dropdown {
+	position: absolute;
+	z-index: 100; 
+
+}
+
+#bigpreview {
+width:125%!important;
+height:70%!important;
+margin-left:-50px!important;
+}
+
+#textbox {
+outline-color:#00ff00;
+background-color:black;
+color:#00ff00;
+padding:20px;
+font-family: 'fonty';
+background-image: none!important;
+}
+#cssbox, #jsbox {
+outline-color:#00ff00;
+background-color:black;
+color:#00ff00;
+padding:20px;
+font-family: 'fonty';
+background-image: none!important;
+}
+#box {
+outline-color:white;
+}
+
+
+#titlebox, #logo {
+outline-color:white;
+background-color:black;
+color:#00ff00;
+float:left;
+focus:none;
+font-family: fonty;
+font-size:15px;
+border-radius:2px;
+}
+
+#logo {
+background-color:Transparent;
+}
+
+#titlebox {
+margin-top:10px!important;
+color:black;
+}
+
+#showandtell {
+width:50px!important;
+height:35px;
+margin-bottom:0px!important;
+}
+
+
+
+
+#filebox {
+outline-color:black;
+background-color:black!important;
+color:#00ff00;
+font-family:'fonty';
+border-radius:0px;
+}
+.dropdown_content, #import_list {
+	position: relative;
+	background-color: #00ff00;
+	border: none;
+	display: inline-block;
+	border-radius: 0px 0px 0px 0px;
+	padding: 10px;
+	top: 10px;
+	left:-10px;
+	transition: all 0.5s steps(3);
+	
+	box-shadow: 10px 10px 0px black;
+	
+}
+#dl_dropdown  {
+	
+margin-left:-150px;
+border-radius:10px;
+}
+
+#dl_dropdown button  {
+background-color:black;
+border-radius:0px!important;
+color:#00ff00;
+}
+.right {
+	float:right;
+	
+}
+.right .dropdown .dropdown_content {
+	/*assuming that the dropdown content is 180px*/
+	right:180px;
+}
+h1 {
+	margin: 0px;
+}
+textarea {
+	resize: none;
+}
+iframe {
+	border: 0px solid #FFF;
+	width: 100%;
+	height: 92%;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+.dropdown_button {
+	margin: 5px 10px;
+	font-size: 12px;
+}
+.dropdown_icon {
+	padding: 10px 10px;
+	width: 30px; margin: 0px auto 10px auto;
+	text-align: center;
+}
+#reloader:hover {
+transition:all 0.5s steps(3);
+transform:rotate(-360deg);
+
+}
+#logo:hover {
+cursor:pointer;
+}
+
+#bullhorn {
+transform:scale(1.0);
+}
+
+#slot1, #slot2, #slot3 {
+padding:4.5px;
+}
+
+#inverter:hover {
+transition:all 0.5s steps(3);
+transform:scaleX(-1);
+
+}
+
+
+.addons {
+  position: relative;
+  display: inline-block;
+}
+
+.addons-content {
+  display: none;
+  position: absolute;
+  background-color: #00ff00;
+  min-width: 160px;
+  box-shadow: 10px 10px 0px black;
+  padding: 12px 16px;
+  z-index: 1;
+  border-radius: 0px 0px 0px 0px;
+  border:none!important;
+ 
+  
+}
+
+.addons-content img {
+	filter:hue-rotate(90deg) grayscale(50%) contrast(150%);
+}
+
+.addons:hover .addons-content {
+  display: block;
+margin-top:9px;
+margin-left:-75px;
+border: 0.5px solid white;
+border-top: 0.5px solid Transparent; 
+color:black;
+}
+
+
+@keyframes textboxanimation {
+  0%   {outline-color:white;}
+  50%  {outline-color:black; }
+  100% {outline-color:white; }
+}
+#import_dropdown {
+	
+color:Transparent;
+width:5%;
+margin-left:-12px;
+}
+
+#preview:hover {
+transition:all 0.5s steps(3);
+transform: matrix(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+}
+
+#preview_frame {
+height:100%;
+}
+
+button {
+outline:none;
+}
+
+.playa{
+  position: relative;
+  display: inline-block;
+  
+}
+
+.playa-content {
+  opacity:0%;
+  position: absolute;
+  background-color: #00ff00;
+  min-width: 90px;
+  box-shadow: 10px 10px 0px black;
+  padding: 10px;
+  z-index: 1;
+  border:none!important;
+  border-radius:0px 0px 00px 00px;
+  
+}
+
+#checker_mccheckerson {
+filter:invert(100%);
+}
+
+.playa:hover .playa-content {
+  opacity:100%;
+margin-top:9px;
+margin-left:-35px;
+border: 0.5px solid white;
+border-top: 0.5px solid Transparent; 
+color:black;
+}
+
+.addon-body {
+width:100%;
+height:65%;
+scrolling:no;
+}
+
+
+.left_frame::-webkit-scrollbar {
+    width: 1em;
+}
+
+.left_frame::-webkit-scrollbar-track {
+  background-color:black;
+}
+
+.left_frame::-webkit-scrollbar-thumb {
+  background-color: black;
+  border: 1px dotted #00ff00;
+}
+
+#announce_window::-webkit-scrollbar {
+    width: 1em;
+}
+
+#announce_window::-webkit-scrollbar-track {
+  background-color:black;
+}
+
+#announce_window::-webkit-scrollbar-thumb {
+   background-color: black;
+  border: 1px dotted #00ff00;
+}
