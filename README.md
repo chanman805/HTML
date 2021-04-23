@@ -3,7 +3,7 @@ nuken is an HTML file editor, with cross-platform and offline access. Edit and p
 
 If you plan to actually use nuken and you're wondering where to officially start, it's here:
 
-# [nuken | Create, Edit, Share](http://nuken.digitalartathome.com/) 
+## [nuken | Create, Edit, Share](http://nuken.digitalartathome.com/) 
 <br />
 
 
