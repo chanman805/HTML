@@ -5,6 +5,7 @@ If you plan to actually use nuken and you're wondering where to officially start
 
 ### [nuken | Create, Edit, Share](http://nuken.digitalartathome.com/) 
 <br />
+We appreciate your support! If you notice anything wrong with our archive here, feel free to contact us via our site.
 
 
 
