@@ -251,7 +251,7 @@ Thank you for using v6.0, it was a lot of fun to work on! <br><br><center>We loo
 <center>
 
 <button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"onclick = "document.getElementById('closer').click();"><img width = "20px" style = "filter:invert(100%);"class = "hover" src = "program_files/images/close.gif"></img></button>
-		<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"  onclick = "document.getElementById('iframe1').src = 'program_files/addons/active/slot1/addon.html'"><img width = "20px" class = "spin" id = "reload1"style = "filter:invert(100%);"src = "program_files/images/reload.gif"></img></button>
+		<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"  onclick = "document.getElementById('iframe1').src = 'program_files/addons/active/slot1/addon.html';document.getElementById('addon_widget_iframe_1').src = 'program_files/addons/active/slot1/addon.html';"><img width = "20px" class = "spin" id = "reload1"style = "filter:invert(100%);"src = "program_files/images/reload.gif"></img></button>
 	<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"onclick = "pin_addon1()"><img id = "pin1" class = "hover" width = "15px" style = "filter:invert(100%);"src = "program_files/images/pin.gif"></img></button>
 	
 		</center>
@@ -268,7 +268,7 @@ Thank you for using v6.0, it was a lot of fun to work on! <br><br><center>We loo
 		<br>
 		<center>
 		<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"onclick = "document.getElementById('closer').click();"><img width = "20px" style = "filter:invert(100%);"class = "hover" src = "program_files/images/close.gif"></img></button>
-		<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;" onclick = "document.getElementById('iframe2').src = 'program_files/addons/active/slot2/addon.html'"><img id = "reload2"width = "20px" class = "spin" style = "filter:invert(100%);"src = "program_files/images/reload.gif"></img></button>
+		<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;" onclick = "document.getElementById('iframe2').src = 'program_files/addons/active/slot2/addon.html';document.getElementById('addon_widget_iframe_2').src = 'program_files/addons/active/slot2/addon.html';"><img id = "reload2"width = "20px" class = "spin" style = "filter:invert(100%);"src = "program_files/images/reload.gif"></img></button>
 	<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"onclick = "pin_addon2()"><img id = "pin2" class = "hover"width = "15px" style = "filter:invert(100%);"src = "program_files/images/pin.gif"></img></button>
 		</center>
 		</div>
@@ -283,7 +283,7 @@ Thank you for using v6.0, it was a lot of fun to work on! <br><br><center>We loo
 			<br>
 			<center>
 			<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"onclick = "document.getElementById('closer').click();"><img width = "20px" style = "filter:invert(100%);"class = "hover" src = "program_files/images/close.gif"></img></button>
-		<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"onclick = "document.getElementById('iframe3').src = 'program_files/addons/active/slot3/addon.html'"><img id = "reload3" width = "20px" class = "spin" style = "filter:invert(100%);"src = "program_files/images/reload.gif"></img></button>
+		<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"onclick = "document.getElementById('iframe3').src = 'program_files/addons/active/slot3/addon.html';document.getElementById('addon_widget_iframe_3').src = 'program_files/addons/active/slot3/addon.html';"><img id = "reload3" width = "20px" class = "spin" style = "filter:invert(100%);"src = "program_files/images/reload.gif"></img></button>
 	<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"onclick = "pin_addon3()"><img id = "pin3" class = "hover"width = "15px" style = "filter:invert(100%);"src = "program_files/images/pin.gif"></img></button>
 		</center>
 			</div>
@@ -331,9 +331,9 @@ Auto-run
 
 			<button><img id = "addoner"width = "17px;" style = "filter:invert(100%);background-color:Transparent;"src = "program_files/images/addon.gif"></img></button>
   <div class="addons-content">
-  <img id = "slot1" ondrag = "this.style.transition = 'all 0.15s';this.style.opacity = '0%';this.style.transform = 'scale(1.5)';" ondragend = "document.getElementById('pin1').click();this.style.opacity = '100%';this.style.transform = 'scale(1)';" style = "width:25%;" onclick = "document.getElementById('addon1button').click();" onerror = 'this.style.display="none";counter = counter+1;if(counter===3){document.getElementById("shopNO").style.display = "inline";document.getElementById("errorboi").style.display = "inline-block";}' src = "program_files/addons/active/slot1/addon_verification.gif"></img>
- <img id = "slot2"   ondrag = "this.style.transition = 'all 0.15s';this.style.opacity = '0%';this.style.transform = 'scale(1.5)';" ondragend = "document.getElementById('pin2').click();this.style.opacity = '100%';this.style.transform = 'scale(1)';"style = "width:25%;"onclick = "document.getElementById('addon2button').click();"onerror = 'this.style.display="none";counter = counter+1;if(counter===3){document.getElementById("shopNO").style.display = "inline";document.getElementById("errorboi").style.display = "inline-block";}'src = "program_files/addons/active/slot2/addon_verification.gif"></img>
- <img id = "slot3"   ondrag = "this.style.transition = 'all 0.15s';this.style.opacity = '0%';this.style.transform = 'scale(1.5)';" ondragend = "document.getElementById('pin3').click();this.style.opacity = '100%';this.style.transform = 'scale(1)';"style = "width:25%;"onclick = "document.getElementById('addon3button').click();"onerror = 'this.style.display="none";counter = counter+1;if(counter===3){document.getElementById("shopNO").style.display = "inline";document.getElementById("errorboi").style.display = "inline-block";}'src = "program_files/addons/active/slot3/addon_verification.gif"></img>
+  <img id = "slot1" ondrag = "this.style.transition = 'all 0.15s';this.style.opacity = '0%';this.style.transform = 'scale(1.5)';" ondragend = "document.getElementById('pin1').click();this.style.opacity = '100%';this.style.transform = 'scale(1)';" style = "width:25%;" onclick = "document.getElementById('addon1button').click();expand1();" onerror = 'this.style.display="none";counter = counter+1;if(counter===3){document.getElementById("shopNO").style.display = "inline";document.getElementById("errorboi").style.display = "inline-block";}' src = "program_files/addons/active/slot1/addon_verification.gif"></img>
+ <img id = "slot2"   ondrag = "this.style.transition = 'all 0.15s';this.style.opacity = '0%';this.style.transform = 'scale(1.5)';" ondragend = "document.getElementById('pin2').click();this.style.opacity = '100%';this.style.transform = 'scale(1)';"style = "width:25%;"onclick = "document.getElementById('addon2button').click();expand2();"onerror = 'this.style.display="none";counter = counter+1;if(counter===3){document.getElementById("shopNO").style.display = "inline";document.getElementById("errorboi").style.display = "inline-block";}'src = "program_files/addons/active/slot2/addon_verification.gif"></img>
+ <img id = "slot3"   ondrag = "this.style.transition = 'all 0.15s';this.style.opacity = '0%';this.style.transform = 'scale(1.5)';" ondragend = "document.getElementById('pin3').click();this.style.opacity = '100%';this.style.transform = 'scale(1)';"style = "width:25%;"onclick = "document.getElementById('addon3button').click();expand3();"onerror = 'this.style.display="none";counter = counter+1;if(counter===3){document.getElementById("shopNO").style.display = "inline";document.getElementById("errorboi").style.display = "inline-block";}'src = "program_files/addons/active/slot3/addon_verification.gif"></img>
 
  <center>
 <img id = "shopNO" onclick = "document.getElementById('shop_icon').click();"width = "70px" style = "background-color:black;padding:10px;border-radius:10px;opacity:100%;"src = "program_files/images/shop.gif"></img>
@@ -414,7 +414,7 @@ var x = 3.14;
   <img width = "15px;"  class = "hover" src = "program_files/images/unpin.gif"></img>
   </button>
   </div>
-  <iframe width = "50%" height = "100%" src = "program_files/addons/active/slot1/addon.html"></iframe>
+  <iframe id = "addon_widget_iframe_1"width = "50%" height = "100%" src = "program_files/addons/active/slot1/addon.html"></iframe>
   <center>
   <p style = "text-align:center;padding:7px;color:gray;margin-top:0px;font-size:10px;">Please be aware that this content will continute to run in the background.</p>
 </center>
@@ -427,7 +427,7 @@ var x = 3.14;
   <img width = "15px;" class = "hover"src = "program_files/images/unpin.gif"></img>
   </button>
   </div>
-  <iframe width = "50%" height = "100%" src = "program_files/addons/active/slot2/addon.html"></iframe>
+  <iframe id = "addon_widget_iframe_2"width = "50%" height = "100%" src = "program_files/addons/active/slot2/addon.html"></iframe>
   <center>
   <p style = "text-align:center;padding:7px;color:gray;margin-top:0px;font-size:10px;">Please be aware that this content will continute to run in the background.</p>
 </center>
@@ -440,7 +440,7 @@ var x = 3.14;
   <img width = "15px;" class = "hover" src = "program_files/images/unpin.gif"></img>
   </button>
   </div>
-  <iframe width = "50%" height = "100%" src = "program_files/addons/active/slot3/addon.html"></iframe>
+  <iframe id = "addon_widget_iframe_3"width = "50%" height = "100%" src = "program_files/addons/active/slot3/addon.html"></iframe>
   <center>
   <p style = "text-align:center;padding:7px;color:gray;margin-top:0px;font-size:10px;">Please be aware that this content will continute to run in the background.</p>
 </center>
@@ -452,6 +452,42 @@ var x = 3.14;
 var reload_feed = function(){
 document.getElementById('announce_window').src = document.getElementById('announce_window').src;
 console.log('nuken Announcements Feed was successfully reloaded!');
+};
+
+var expand1 = function(){
+slot1.style.transition = 'all 0.5s';
+slot1.style.opacity = '0%';
+slot1.style.transform = 'scale(1.5)';
+setTimeout(function(){
+slot1.style.transition = 'all 0.1s';
+slot1.style.opacity = '100%';
+slot1.style.transform = 'scale(1)';
+
+},500);
+};
+
+var expand2 = function(){
+slot2.style.transition = 'all 0.5s';
+slot2.style.opacity = '0%';
+slot2.style.transform = 'scale(1.5)';
+setTimeout(function(){
+slot2.style.transition = 'all 0.1s';
+slot2.style.opacity = '100%';
+slot2.style.transform = 'scale(1)';
+
+},500);
+};
+
+var expand3 = function(){
+slot3.style.transition = 'all 0.5s';
+slot3.style.opacity = '0%';
+slot3.style.transform = 'scale(1.5)';
+setTimeout(function(){
+slot3.style.transition = 'all 0.1s';
+slot3.style.opacity = '100%';
+slot3.style.transform = 'scale(1)';
+
+},500);
 };
 
 var bullhorn = document.getElementById('bullhorn');
@@ -496,7 +532,7 @@ window.location.replace('#');
 console.log('Reset user position.');
 };
 var reset_shop = function(){
-shop_frame.src = "http://nuken.digitalartathome.com/program_files/shop.html";
+shop_frame.src = "http://nuken.digitalartathome.com/editor/program_files/shop.html";
 console.log('Reset nuken Shop frame.');
 };
 var return_edit = function(){
@@ -830,6 +866,9 @@ document.getElementById("puppy3").click();
 uptodate=true;
 }
 } else {
+
+shop_frame.src = "program_files/styles/offline.html";
+
 console.log('nuken is offline!');
 uptodate=true;
 }
@@ -984,5 +1023,4 @@ function preview_code () {
 
 </script>
 <script src = "program_files/styles/drag.js"></script>
-<script src = "program_files/styles/browser.js"></script>
 </html>
