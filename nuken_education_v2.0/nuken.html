@@ -255,7 +255,7 @@ Thank you for using v6.0, it was a lot of fun to work on! <br><br><center>We loo
 <center>
 
 <button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"onclick = "document.getElementById('closer').click();"><img width = "20px" style = "filter:invert(100%);"class = "hover" src = "program_files/images/close.gif"></img></button>
-		<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"onclick = "document.getElementById('iframe1').src = 'program_files/addons/active/slot1/addon.html'"><img width = "20px" class = "spin" style = "filter:invert(100%);"src = "program_files/images/reload.gif"></img></button>
+		<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"onclick = "document.getElementById('iframe1').src = 'program_files/addons/active/slot1/addon.html';document.getElementById('addon_widget_iframe_1').src = 'program_files/addons/active/slot1/addon.html'"><img width = "20px" class = "spin" style = "filter:invert(100%);"src = "program_files/images/reload.gif"></img></button>
 	<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"onclick = "pin_addon1()"><img id = "pin1" class = "hover" width = "15px" style = "filter:invert(100%);"src = "program_files/images/pin.gif"></img></button>
 	
 		</center>
@@ -272,7 +272,7 @@ Thank you for using v6.0, it was a lot of fun to work on! <br><br><center>We loo
 		<br>
 		<center>
 		<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"onclick = "document.getElementById('closer').click();"><img width = "20px" style = "filter:invert(100%);"class = "hover" src = "program_files/images/close.gif"></img></button>
-		<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"onclick = "document.getElementById('iframe2').src = 'program_files/addons/active/slot2/addon.html'"><img width = "20px" class = "spin" style = "filter:invert(100%);"src = "program_files/images/reload.gif"></img></button>
+		<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"onclick = "document.getElementById('iframe2').src = 'program_files/addons/active/slot2/addon.html';document.getElementById('addon_widget_iframe_2').src = 'program_files/addons/active/slot2/addon.html'"><img width = "20px" class = "spin" style = "filter:invert(100%);"src = "program_files/images/reload.gif"></img></button>
 	<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"onclick = "pin_addon2()"><img id = "pin2" class = "hover"width = "15px" style = "filter:invert(100%);"src = "program_files/images/pin.gif"></img></button>
 		</center>
 		</div>
@@ -287,7 +287,7 @@ Thank you for using v6.0, it was a lot of fun to work on! <br><br><center>We loo
 			<br>
 			<center>
 			<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"onclick = "document.getElementById('closer').click();"><img width = "20px" style = "filter:invert(100%);"class = "hover" src = "program_files/images/close.gif"></img></button>
-		<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"onclick = "document.getElementById('iframe3').src = 'program_files/addons/active/slot3/addon.html'"><img width = "20px" class = "spin" style = "filter:invert(100%);"src = "program_files/images/reload.gif"></img></button>
+		<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"onclick = "document.getElementById('iframe3').src = 'program_files/addons/active/slot3/addon.html';document.getElementById('addon_widget_iframe_3').src = 'program_files/addons/active/slot3/addon.html'"><img width = "20px" class = "spin" style = "filter:invert(100%);"src = "program_files/images/reload.gif"></img></button>
 	<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"onclick = "pin_addon3()"><img id = "pin3" class = "hover"width = "15px" style = "filter:invert(100%);"src = "program_files/images/pin.gif"></img></button>
 		</center>
 			</div>
@@ -334,13 +334,13 @@ Auto-run
 	</div>	
 	
 	
-	<div class="editor_button addons" title = "Your Add-ons">
+	<div id = "addons_dropdown" class="editor_button addons" title = "Your Add-ons">
 
 			<button><img id = "addoner"width = "17px;" style = "filter:invert(100%);background-color:Transparent;"src = "program_files/images/addon.gif"></img></button>
   <div class="addons-content">
-  <img id = "slot1" ondrag = "this.style.transition = 'all 0.15s';this.style.opacity = '0%';this.style.transform = 'scale(1.5)';" ondragend = "document.getElementById('pin1').click();this.style.opacity = '100%';this.style.transform = 'scale(1)';" style = "width:25%;" onclick = "document.getElementById('addon1button').click();" onerror = 'this.style.display="none";counter = counter+1;if(counter===3){document.getElementById("shopNO").style.display = "inline";document.getElementById("errorboi").style.display = "inline-block";}' src = "program_files/addons/active/slot1/addon_verification.gifz"></img>
- <img id = "slot2"   ondrag = "this.style.transition = 'all 0.15s';this.style.opacity = '0%';this.style.transform = 'scale(1.5)';" ondragend = "document.getElementById('pin2').click();this.style.opacity = '100%';this.style.transform = 'scale(1)';"style = "width:25%;"onclick = "document.getElementById('addon2button').click();"onerror = 'this.style.display="none";counter = counter+1;if(counter===3){document.getElementById("shopNO").style.display = "inline";document.getElementById("errorboi").style.display = "inline-block";}'src = "program_files/addons/active/slot2/addon_verification.gifz"></img>
- <img id = "slot3"   ondrag = "this.style.transition = 'all 0.15s';this.style.opacity = '0%';this.style.transform = 'scale(1.5)';" ondragend = "document.getElementById('pin3').click();this.style.opacity = '100%';this.style.transform = 'scale(1)';"style = "width:25%;"onclick = "document.getElementById('addon3button').click();"onerror = 'this.style.display="none";counter = counter+1;if(counter===3){document.getElementById("shopNO").style.display = "inline";document.getElementById("errorboi").style.display = "inline-block";}'src = "program_files/addons/active/slot3/addon_verification.gifz"></img>
+  <img id = "slot1" ondrag = "this.style.transition = 'all 0.15s';this.style.opacity = '0%';this.style.transform = 'scale(1.5)';" ondragend = "document.getElementById('pin1').click();this.style.opacity = '100%';this.style.transform = 'scale(1)';" style = "width:25%;" onclick = "document.getElementById('addon1button').click();expand1();" onerror = 'this.style.display="none";counter = counter+1;if(counter===3){document.getElementById("shopNO").style.display = "inline";document.getElementById("errorboi").style.display = "inline-block";}' src = "program_files/addons/active/slot1/addon_verification.gifz"></img>
+ <img id = "slot2"   ondrag = "this.style.transition = 'all 0.15s';this.style.opacity = '0%';this.style.transform = 'scale(1.5)';" ondragend = "document.getElementById('pin2').click();this.style.opacity = '100%';this.style.transform = 'scale(1)';"style = "width:25%;"onclick = "document.getElementById('addon2button').click();expand2();"onerror = 'this.style.display="none";counter = counter+1;if(counter===3){document.getElementById("shopNO").style.display = "inline";document.getElementById("errorboi").style.display = "inline-block";}'src = "program_files/addons/active/slot2/addon_verification.gifz"></img>
+ <img id = "slot3"   ondrag = "this.style.transition = 'all 0.15s';this.style.opacity = '0%';this.style.transform = 'scale(1.5)';" ondragend = "document.getElementById('pin3').click();this.style.opacity = '100%';this.style.transform = 'scale(1)';"style = "width:25%;"onclick = "document.getElementById('addon3button').click();expand3();"onerror = 'this.style.display="none";counter = counter+1;if(counter===3){document.getElementById("shopNO").style.display = "inline";document.getElementById("errorboi").style.display = "inline-block";}'src = "program_files/addons/active/slot3/addon_verification.gifz"></img>
 
  <center>
 <img id = "shopNO" width = "70px" style = "background-color:Transparent;padding:0px;border-radius:10px;opacity:50%;"src = "program_files/images/shop.gif"></img>
@@ -372,7 +372,7 @@ Auto-run
 		</div></div>
 	</div>	
 
-<div class="editor_button" id = "conveniently_named_trending_div" onmouseover="document.getElementById('trending_dropdown').style.display='block'"  onmouseout="document.getElementById('trending_dropdown').style.display='none'">
+<div class="editor_button" id = "conveniently_named_trending_div" onmouseleave = "reload_feed();"onmouseover="document.getElementById('trending_dropdown').style.display='block'"  onmouseout="document.getElementById('trending_dropdown').style.display='none'">
 		<button><img id = "bullhorn"width = "17px;" style = "filter:invert(100%);background-color:Transparent;"src = "program_files/images/announce.gif"></img></button>
 		<div  id="trending_dropdown" class="dropdown" style="display: none; z-index: 1;"><div class="dropdown_content">
 		<p style = "color:black;margin:0px;margin-bottom:-2px;padding:0px;text-align:center">Your educator's announcements</p>
@@ -415,7 +415,7 @@ var x = 3.14;
   <img width = "15px;"  class = "hover" src = "program_files/images/unpin.gif"></img>
   </button>
   </div>
-  <iframe width = "50%" height = "100%" src = "program_files/addons/active/slot1/addon.html"></iframe>
+  <iframe id = "addon_widget_iframe_1"width = "50%" height = "100%" src = "program_files/addons/active/slot1/addon.html"></iframe>
   <center>
   <p style = "text-align:center;padding:7px;color:gray;margin-top:0px;font-size:10px;">Please be aware that this content will continute to run in the background.</p>
 </center>
@@ -428,7 +428,7 @@ var x = 3.14;
   <img width = "15px;" class = "hover"src = "program_files/images/unpin.gif"></img>
   </button>
   </div>
-  <iframe width = "50%" height = "100%" src = "program_files/addons/active/slot2/addon.html"></iframe>
+  <iframe id = "addon_widget_iframe_2"width = "50%" height = "100%" src = "program_files/addons/active/slot2/addon.html"></iframe>
   <center>
   <p style = "text-align:center;padding:7px;color:gray;margin-top:0px;font-size:10px;">Please be aware that this content will continute to run in the background.</p>
 </center>
@@ -441,7 +441,7 @@ var x = 3.14;
   <img width = "15px;" class = "hover" src = "program_files/images/unpin.gif"></img>
   </button>
   </div>
-  <iframe width = "50%" height = "100%" src = "program_files/addons/active/slot3/addon.html"></iframe>
+  <iframe id = "addon_widget_iframe_3" width = "50%" height = "100%" src = "program_files/addons/active/slot3/addon.html"></iframe>
   <center>
   <p style = "text-align:center;padding:7px;color:gray;margin-top:0px;font-size:10px;">Please be aware that this content will continute to run in the background.</p>
 </center>
@@ -450,6 +450,46 @@ var x = 3.14;
 </div>
 <script>
 //START
+
+var expand1 = function(){
+slot1.style.transition = 'all 0.5s';
+slot1.style.opacity = '0%';
+slot1.style.transform = 'scale(1.5)';
+setTimeout(function(){
+slot1.style.transition = 'all 0.1s';
+slot1.style.opacity = '100%';
+slot1.style.transform = 'scale(1)';
+
+},500);
+};
+
+var expand2 = function(){
+slot2.style.transition = 'all 0.5s';
+slot2.style.opacity = '0%';
+slot2.style.transform = 'scale(1.5)';
+setTimeout(function(){
+slot2.style.transition = 'all 0.1s';
+slot2.style.opacity = '100%';
+slot2.style.transform = 'scale(1)';
+
+},500);
+};
+
+var expand3 = function(){
+slot3.style.transition = 'all 0.5s';
+slot3.style.opacity = '0%';
+slot3.style.transform = 'scale(1.5)';
+setTimeout(function(){
+slot3.style.transition = 'all 0.1s';
+slot3.style.opacity = '100%';
+slot3.style.transform = 'scale(1)';
+
+},500);
+};
+
+var reload_feed = function(){
+document.getElementById('announce_window').src = document.getElementById('announce_window').src;
+};
 
 var hideboxes = function(){
 document.getElementById('cssbox').readOnly=true;
