@@ -83,26 +83,27 @@ document.getElementById('create').style.marginTop = "20px";
 reset_button();
 };
 
+var tick = '`';
 var create_lesson = function(){
 	if (created === false){
 		download_button.style.display = "inline-block";
 		output_box.style.display = "inline-block";
-var output = `const lesson = {
-title: "`+lesson_name.value+`",
+		
+var output = `const template = { 
+title: `+tick+lesson_name.value+tick+`,
 headers: '<meta></meta>', 
-css: "`+css.value+`", 
-jss: "`+js.value+`",
-body:"`+html.value+`", 
+css: `+tick+css.value+tick+`, 
+jss: `+tick+js.value+tick+`,
+body:`+tick+html.value+tick+`, 
 name: '`+lesson_name.value+`',
-file: 'assignment.html', 
+file: 'index.html', 
 template_color : '#FFFFFF',
 template_bg : '#da21fe', 
-template_icon: "LS",
+template_icon: 'TM',
 saved: true
 };
-templates.push(lesson);
+templates.push(template);
 `;
-
 
 
 
