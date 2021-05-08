@@ -93,7 +93,7 @@ var output = `const template = {
 title: `+tick+lesson_name.value+tick+`,
 headers: '<meta></meta>', 
 css: `+tick+css.value+tick+`, 
-jss: `+tick+js.value+tick+`,
+js: `+tick+js.value+tick+`,
 body:`+tick+html.value+tick+`, 
 name: '`+lesson_name.value+`',
 file: 'index.html', 
