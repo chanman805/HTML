@@ -1,385 +1,319 @@
-const template1 = { 
-title: ``,
-headers: '<meta></meta>', 
-css: `
 
-body, html {
-background-color:lightgreen;
+const blogger = {
+	title: '', //The name of the lesson.
+	headers: '<meta></meta>', 
+	css: `body, html {
+background-color:white;
+background-size:100%;
+background-repeat:no-repeat;
+background-position:top;
 color:black;
-font-family: 'Arial';
+font-family:'Garamond';
 }
-hr {
-background-color:green;
-color:black;
-padding:1px;
-border-radius:10px;
+.navbar {
+background-color:gray;
+color:white;
+padding:10px;
+text-align:center;
+font-size:40px;
 }
+.content {
 
-button {
+}
+h1 {
+font-size:30px;
+font-family: 'Garamond';
+color:white;
+}
+h2 {
+font-size:15px;
+}
+#title {
+	margin:10px;
+margin-top:-50px;
+}
+.body {
 padding:20px;
-font-size:20px;
-cursor:pointer;
-border: 5px dashed lightgreen;
-border-radius:20px;
-}
-
-button:hover {
-transform:scale(1.05);
-}
-
-#date {
-background-color:beige;
+font-family: 'Garamond';
+font-size:17px;
 width:50%;
-border-radius:20px;
+float:left;
 }
+ .subtitle {
+ float:right;padding-right:50px;
+ padding-top:0px;
+ font-family:'Garamond';
+ color:gray;
+ }
 
-#time {
-background-color:orange;
-width:50%;
-border-radius:20px;
-
-}
-
-`, 
-js: `
-var intGo;
-
-var displayDate = function(){
-var d = new Date();
-var day = d.getDate();
-var month = d.getMonth() +1;
-var year = d.getFullYear();
-
-document.getElementById("date").innerHTML = "Today's date is " + month + "/"+day+"/"+year;
-
-};
-
-var displayTime = function(){
-var d = new Date();
-var hour = d.getHours();
-var minute = d.getMinutes();
-var second = d.getSeconds();
-var end = "";
-
-if (minute < 10){
-minute = "0" + minute;
-}
-
-if (second < 10){
-second = "0" + second;
-}
-
-if (hour > 12){ 
-
-if (document.getElementById("24_hour_time").checked){
-hour = hour;
-end = "";
-} else {
-hour = hour -12;
-end = "pm";
-}
-
-}else {
-
-if (document.getElementById("24_hour_time").checked){
-end = "";
-} else {
-end = "am";
-}
-
-}
-
-document.getElementById("time").innerHTML = "The current time is "+ hour + ":" + minute + ":" + second + " "+end;
-
-};
-
-document.getElementById("auto_run").addEventListener('change', e => {
-
-    if(e.target.checked){
-displayTime();
-        intGo = setInterval(displayTime,1000);
-    } else {
-clearInterval(intGo);
-}
-});
-
-window.onerror = function(){
-alert("Hey, something went wrong.");
-};`,
-body:`
-
-<center>
-<hr>
-<h1>Date / Time Tool</h1>	
-<hr>
-<br>
-<button style = "background-color:beige" onclick = "displayDate()" >What is today's date?</button>
-<br>
-<p id = "date" ></p>
-<button style = "background-color:orange" onclick = "displayTime()" >What is today's time?</button>
-<br>
-<p id = "time" ></p>
-<br><hr>
-<h2>Options</h2>
-<input id = "24_hour_time" type = "checkbox">Turn on 24-hour time</input>
-<br>
-<br>
-<input id = "auto_run" type = "checkbox">Auto-run time function</input>
-</center>
-`, 
-name: 'Date / Time Tool',
-file: 'index.html', 
-template_color : '#FFFFFF',
-template_bg : 'lightgreen', 
- template_icon: "<img onclick = 'document.getElementById('preview').click();' title = 'Date / Time Tool'style = 'filter:invert(0%);margin:-5px;margin-left:-8px;margin-right:-8px'src = 'program_files/templates/loaded/images/date.png' width = '30px' height = '30px'></img>", //Put text, an image tag, or a video tag here!
-saved: true
-};
-templates.push(template1);
-
-const template2 = { 
-title: ``,
-headers: '<meta></meta>', 
-css: `
-
-body, html {
-background-color:#0000ff20;
-color:black;
-font-family: "Courier New";
-}
-hr {
-background-color:black;
-color:black;
-padding:1px;
-border-radius:10px;
-}
-
-button {
-font-family: "Courier New";
-padding:20px;
-font-size:20px;
-cursor:pointer;
-box-shadow: 5px 5px 5px black;
-border-radius:200px;
-}
-
-button:hover {
-transform:scale(1.05);
-box-shadow: 10px 10px 10px black;
-transition: all 0.2s steps(2);
-}
-
-#dimensions_o {
-background-color:green;
-width:50%;
-}
-
-#dimensions_i {
-background-color:pink;
-width:50%;
-
-}
-
-
-
-`, 
-js: `
-var r1_answer = Math.round(Math.random()*5);
-var r2_answer = Math.round(Math.random()*5); 
-var r3_answer = Math.round(Math.random()*5);
-
-var score = 0;
-
-var randomNumbers = function(){
-
-var userInput = prompt("Can you guess what number I'm thinking of? Hint: You shouldn't guess above 5.");
-
-var finalAnswer = parseInt(userInput);
-if (finalAnswer === r1_answer){
-alert("You won this round! You are awarded "+r1_answer + " points.");
-score = score + r1_answer;
-randomLetters();
-} else {
-alert("You were off by "+(r1_answer - finalAnswer+". Game over!"));
-printResults();
-}
-
-};
-
-var randomLetters = function(){
-
-const alphabet = "aabcdefghijklmnopqrstuvwxyz";
-
-if (r2_answer<1){
-r2_answer = r2_answer +1;
-}
-
-const randomCharacter = alphabet[r2_answer];
-
-userInput = prompt('Can you guess what lowercase letter I'+"'"+'m thinking of? Hint: anything past "f" is way off.');
-
-
-if (userInput === randomCharacter){
-alert("You won this round! You are awarded "+r2_answer + " points.");
-score = score + r2_answer;
-randomQuestion();
-} else {
-alert('The letter I was thinking of  was "' + randomCharacter+'". Game over!');
-printResults();
-}
-};
-
-var randomQuestion = function(){
-
-var questions= ["There are fifty states in the U.S.", "0 is the only number that can't be represented in Roman Numerals.", "Brazil is larger than Russia.", "Texas is the largest U.S. state.", "Bats are an insect species."];
-
-
-var answerBank = ["true", "true", "false", "false", "false"];
-
-var userQuestion = questions[r3_answer];
-
-alert('This is the final round. Please type "true" or "false" as your answer. Good luck!');
-
-var userInput = prompt(userQuestion);
-
-if (userInput === answerBank[r3_answer]){
-alert("Congratulations, your answer was correct - and you've been awarded "+r3_answer+ " points. Your results will be printed onscreen.");
-score = score + r3_answer;
-} else {
-alert("Oh no, and you were so close to winning too! Unfortunately, your answer was incorrect. Game over!");
-printResults();
-}
-};
-
-var printResults = function(){
-document.getElementById("scorecard").innerHTML = "<b>Score: "+score+"</b>";
-document.getElementById("results").style.display = "block";
-};
-
-var startGame = function(){
-document.getElementById("playbutton").style.display = "none";
-document.getElementById("instructions").style.display = "none";
-randomNumbers();
-};
-
-
-`,
-body:`
-
-<center>
-<br>
-<hr>
-<h1>The Dialog Boxes Game</h1>	
-<hr>
-<br>
-<button id = "playbutton"style = "width:150px;height:150px;background-color:red;margin-bottom:50px;" onclick = "startGame()" >Play</button>
-<div id = "instructions">
-<h2>How do I play this game?</h2>
-<p style = "width:60%">The rules are simple. Do what the popup dialog boxes tell you to do!</p>
+`, //This will get auto-populated into the CSS box.
+	body: `<div class = "navbar">
+	<img title = "Site icon?" width = "45px" src = "https://static.thenounproject.com/png/710544-200.png" style = "filter:invert(100%);float:left" ></img>
+	The Proper Pauper
+	</div>
+	<img id = "preview_image" title = "Hmm. The Eagles come to mind for some reason." width = "100%" height = "50%" src = "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"></img>
+	</div class = "content" >
+	<h1 id = "title" >Welcome to the big city!</h1>
+	</div>
+	<div class = "body"><b>Lorem ipsum dolor sit amet consectetur adipisicing elit.</b> Maxime mollitia,
+molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
+optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis
+obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam
+nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,
+tenetur error, harum nesciunt ipsum debitis quas aliquid. Reprehenderit,
+quia. Quo neque error repudiandae fuga? Ipsa laudantium molestias eos 
+sapiente officiis modi at sunt excepturi expedita sint? Sed quibusdam
+recusandae alias error harum maxime adipisci amet laborum. Perspiciatis 
+minima nesciunt dolorem! Officiis iure rerum voluptates a cumque velit 
+quibusdam sed amet tempora. Sit laborum ab, eius fugit doloribus tenetur 
+fugiat, temporibus enim commodi iusto libero magni deleniti quod quam 
+consequuntur! Commodi minima excepturi repudiandae velit hic maxime
+doloremque. Quaerat provident commodi consectetur veniam similique ad 
+earum omnis ipsum saepe, voluptas, hic voluptates pariatur est explicabo 
+fugiat, dolorum eligendi quam cupiditate excepturi mollitia maiores labore 
+suscipit quas? Nulla, placeat. Voluptatem quaerat non architecto ab laudantium
+modi minima sunt esse temporibus sint culpa, recusandae aliquam numquam 
+totam ratione voluptas quod exercitationem fuga. Possimus quis earum veniam 
+quasi aliquam eligendi, placeat qui corporis!
 </div>
-<div style = "display:none" id = "results">
-<h2>Your results</h2>
-<p id = "scorecard" style = "background-color:#00ff00;width:50%"><b>Final score: 0</b></p>
-<p style = "width:40%">Please reload the page to play again! I hope you had fun.</p>
-<p></p>
-</div>
-</center>
+<img width = "39%" title = "Take a peek." style = "float:right;padding:0px;padding-top:15px;padding-right:0px;" src = "https://images.unsplash.com/photo-1507090960745-b32f65d3113a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"></img>
+
+<p class = "subtitle">Life in the big city looks like this.</p>
+
+<img width = "39%" title = "Some tall buildings!" style = "float:right;padding:10px;padding-top:0px;padding-right:0px;" src = "https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"></img>
+
+
+
+	`, //This will appear in the HTML/JS box.
+name: 'New Blog Page', //The assignment's name, in the top left of the screen.
+	file: 'blog.html', //The actual file name, when it's exported.
+	template_color : 'Transparent', //The text color of the lesson icon.
+	template_bg : 'black', //The background color of the lesson icon.
+    template_icon: "<img onclick = 'document.getElementById('preview').click();' title = 'Blogger'style = 'filter:invert(100%);margin:-5px;margin-left:-8px;margin-right:-8px'src = 'program_files/templates/loaded/images/blogger.png' width = '30px' ></img>", //Put text, an image tag, or a video tag here!
+	js:
+`var congrats = function(){
 	
-
-`, 
-name: 'The Dialog Boxes Game',
-file: 'index.html', 
-template_color : '#FFFFFF',
-template_bg : '#0000ff20', 
- template_icon: "<img onclick = 'document.getElementById('preview').click();' title = 'The Dialog Boxes Game'style = 'filter:invert(0%);margin:-5px;margin-left:-8px;margin-right:-8px'src = 'program_files/templates/loaded/images/dialog.png' width = '30px' height = '30px'></img>", //Put text, an image tag, or a video tag here!
-
-saved: true
-};
-templates.push(template2);
-
-const template3 = { 
-title: ``,
-headers: '<meta></meta>', 
-css: `
-body, html {
-background-color:lightblue;
-color:black;
-}
-hr {
-background-color:black;
-color:black;
-padding:1px;
-border-radius:10px;
-}
-
-button {
-padding:20px;
-font-size:20px;
-cursor:pointer;
-}
-
-button:hover {
-transform:scale(1.05);
-}
-
-#dimensions_o {
-background-color:green;
-width:50%;
-}
-
-#dimensions_i {
-background-color:pink;
-width:50%;
-
-}
-
-
-`, 
-js: `
-var findInnerDimensions = function(){
-var x = window.innerWidth;
-var y = window.innerHeight;
-
-document.getElementById("dimensions_i").innerHTML = "Your inner viewport dimensions: "+x+" x " +y+" pixels";
+alert("Congratulations! You're our 100th reader. You win the grand prize!");
 
 };
 
-var findOuterDimensions = function(){
-var a = window.outerWidth;
-var b = window.outerHeight;
+window.onscroll = function(ev) {
+	
+    if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
 
-document.getElementById("dimensions_o").innerHTML = "Your outer viewport dimensions: "+a+" x " +b+" pixels";
-
+      setTimeout(congrats,500);
+    }
 };
-
-
-
 `,
-body:`
-<center>
-<hr>
-<h1>Viewport Dimensions Tool</h1>	
-<hr>
-<br>
-<button style = "background-color:pink" onclick = "findInnerDimensions()" >Find my screen's inner dimensions</button>
-<br>
-<p id = "dimensions_i" ></p>
-<button style = "background-color:green" onclick = "findOuterDimensions()" >Find my screen's outer dimensions</button>
-<br>
-<p id = "dimensions_o" ></p>
-<br><hr>
-<h2>How do I use this tool?</h2>
-<p style = "width:70%">Click on a button to find the inner or outer dimensions of your viewport. The returned value of the function will be printed directly below the button you click. This is a very helpful tool for developers, who want to see how large or how small their user's viewport is!</p>
-</center>
-	
-`, 
-name: 'Viewport Dimensions Tool',
-file: 'vd_tool.html', 
-template_color : 'black',
-template_bg : 'lightblue', 
- template_icon: "<img onclick = 'document.getElementById('preview').click();' title = 'Viewport Dimensions Tool'style = 'filter:invert(0%);margin:-5px;margin-left:-8px;margin-right:-8px'src = 'program_files/templates/loaded/images/viewport.png' width = '30px' height = '30px'></img>", //Put text, an image tag, or a video tag here!
-
-saved: true
+	saved: true
 };
-templates.push(template3);
 
 
+templates.push(blogger);
+
+const landing = {
+	title: '', //The name of the lesson.
+	headers: '<meta></meta>', 
+	css: `body, html {
+background-color:black;
+background-size:100%;
+background-repeat:no-repeat;
+background-position:top;
+color:black;
+font-family:'Garamond';
+}
+
+#preview_image {
+transition: all 1s;
+}
+
+.navbar {
+background-color:black;
+color:white;
+padding:10px;
+text-align:center;
+font-size:40px;
+}
+
+h1 {
+font-size:30px;
+font-family: 'Garamond';
+color:white;
+}
+
+#title {
+	margin:10px;
+margin-top:-50px;
+}
+
+ .tile {
+	 width:30%;
+	 height:30%;
+ object-fit:cover;
+ padding:10px;
+  padding-bottom:10px;
+  padding-top:10px;
+ }
+ .tile:hover {
+	 cursor:pointer;
+ transition: all 0.5s;
+ transform:scale(1.05);
+ filter:contrast(120%);
+ }
+ .middlebar {
+ background-color:black;
+color:white;
+padding:10px;
+text-align:center;
+font-size:20px;
+ }
+
+`, //This will get auto-populated into the CSS box.
+	body: `<div class = "navbar">
+<img title = "Site icon?" width = "45px" src = "https://static.thenounproject.com/png/1050-200.png" style = "float:left;filter:invert(100%)" ></img>
+The Big Idea
+</div>]
+
+<img id = "preview_image" style = "padding-bottom:-10px;" title = "That's right. EVERYTHING." width = "100%" height = "50%" src = "https://images.unsplash.com/photo-1600132806608-231446b2e7af?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80"></img>
+
+</div class = "content" >
+<h1 id = "title" >What do we do? Everything.</h1>
+</div>
+
+<br>
+
+<center>
+<img class = "tile"width = "39%" title = "This is a photo."  src = "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2389&q=80"></img>
+
+<img class = "tile"width = "39%" title = "This is also a photo."  src = "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2552&q=80"></img>
+
+<img class = "tile"width = "39%" title = "You can add these little blurbs to your own images!"  src = "https://images.unsplash.com/photo-1469598614039-ccfeb0a21111?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80"></img>
+
+</center>
+
+<div class = "middlebar" >Does this answer your many questions?</div>
+
+<center>
+
+<img class = "tile"width = "39%" title = "Try using the <title> tag."  src = "https://images.unsplash.com/photo-1597592201324-d8d1e13f4f62?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80"></img>
+
+<img class = "tile"width = "39%" title = "Making nuken v6.0 was definitely a lot of fun!"  src = "https://images.unsplash.com/photo-1524397057410-1e775ed476f3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"></img>
+
+<img class = "tile"width = "39%" title = "Remember me?"  src = "https://upload.wikimedia.org/wikipedia/commons/3/36/Grizzly_Denali_edit.jpg"></img>
+
+</center>
+
+	`, //This will appear in the HTML/JS box.
+name: 'New Home Page', //The assignment's name, in the top left of the screen.
+	file: 'index.html', //The actual file name, when it's exported.
+	template_color : 'Transparent', //The text color of the lesson icon.
+	template_bg : 'black', //The background color of the lesson icon.
+    template_icon: "<img onclick = 'document.getElementById('preview').click();' title = 'Landing Page'style = 'filter:invert(100%);margin:-5px;margin-left:-8px;margin-right:-8px'src = 'program_files/templates/loaded/images/landing_page.png' width = '30px' ></img>", //Put text, an image tag, or a video tag here!
+	js: 
+`var x = 24;
+var blurb = "This is a string!";
+
+window.onclick = function(){
+
+x = "The window has been clicked!";		
+alert(x);
+
+};
+	`,
+	saved: true
+};
+
+
+templates.push(landing);
+
+const album = {
+	title: '', //The name of the lesson.
+	headers: '<meta></meta>', 
+	css: `body, html {
+background-color:black;
+background-image: linear-gradient(black, black, #34014a, purple);
+background-size:100%;
+background-repeat:no-repeat;
+background-position:top;
+color:white;
+font-family:'Georgia';
+overflow-x:hidden;
+}
+.navbar {
+background-color:black;
+color:white;
+padding:15px;
+text-align:center;
+font-size:30px;
+
+}
+
+h1 {
+font-size:30px;
+font-family: 'Garamond';
+color:white;
+}
+ .tile {
+	 filter:hue-rotate(180deg);
+	 width:90%;
+	 height:30%;
+ object-fit:cover;
+padding:5px;
+transition:all 1s;
+ }
+ .tile:hover {
+	 cursor:pointer;
+ transition: all 1s, transform 1s;
+ 	 transition-delay:0.5s;
+ width:85%;
+ height:85%;
+ filter:hue-rotate(0deg) contrast(120%);
+ transform:rotate(360deg);
+ }
+ .middlebar {
+ background-color:black;
+color:white;
+padding:10px;
+text-align:center;
+font-size:20px;
+ }
+
+`, //This will get auto-populated into the CSS box.
+	body: `<div class = "navbar">
+		Brett's 2nd Birthday 
+	</div>
+	<br>
+	<center>
+<img class = "tile"width = "100%" title = "Brett was looking forward to his second birthday!"  src = "https://upload.wikimedia.org/wikipedia/commons/3/36/Grizzly_Denali_edit.jpg"></img>
+<br>
+<img class = "tile"width = "100%" title = "Brett's house was decorated so nicely."  src = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Headquarters_of_Denali_National_Park_and_Preserve_%2826974559489%29.jpg/1599px-Headquarters_of_Denali_National_Park_and_Preserve_%2826974559489%29.jpg"></img>
+<br>
+<img class = "tile"width = "100%" title = "Brett was so excited to take a bite of his cake, until he realized that it was coconut once again..."  src = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project_%28454045%29.jpg/948px-Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project_%28454045%29.jpg"></img>
+<br>
+<img class = "tile"width = "100%" title = "Another picture of Brett's house. I just can't get enough of it!"  src = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Headquarters_of_Denali_National_Park_and_Preserve_%2826974559489%29.jpg/1599px-Headquarters_of_Denali_National_Park_and_Preserve_%2826974559489%29.jpg"></img>
+<br>
+<img class = "tile"width = "100%" title = "It was almost Brett's nap time."  src = "https://upload.wikimedia.org/wikipedia/commons/3/36/Grizzly_Denali_edit.jpg"></img>
+<br>
+<img class = "tile"width = "100%" title = "Thanks, everybody! My second birthday party was a blast."  src = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project_%28454045%29.jpg/948px-Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project_%28454045%29.jpg"></img>
+</center>
+
+	`, //This will appear in the HTML/JS box.
+name: 'New Album Viewer', //The assignment's name, in the top left of the screen.
+	file: 'album.html', //The actual file name, when it's exported.
+	template_color : 'Transparent', //The text color of the lesson icon.
+	template_bg : 'black', //The background color of the lesson icon.
+    template_icon: "<img onclick = 'document.getElementById('preview').click();' title = 'Album Viewer'style = 'filter:invert(100%);margin:-5px;margin-left:-8px;margin-right:-8px'src = 'program_files/templates/loaded/images/album.png' width = '30px' height = '27px'></img>", //Put text, an image tag, or a video tag here!
+	js: 
+`
+window.onclick = function(){
+	
+	alert('Hover around the images for some cool effects! Brett hopes you enjoy.');
+
+};
+`,
+	saved: true
+};
+
+
+templates.push(album);
