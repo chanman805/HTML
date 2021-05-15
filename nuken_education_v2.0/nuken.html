@@ -11,11 +11,22 @@
 <meta name="author" content="Chandler Mrotzek">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- this makes sure that the webpage is supported on all devices -->
 <link id = "harry_styles" rel = "stylesheet" rel = "preload" href = "program_files/styles/default_stylesheet.css">
+<script>
+
+window.onerror = function(){
+document.getElementById('error_code').innerHTML = "nuken Education failed to start.<hr style = 'width:40%;opacity:20%'>Please contact yout educator.";
+
+};
+
+
+var counter = 0;
+</script>
 </head>
 <body>
 <div id = "preload" style = "background-color:white;padding-bottom:100%;important;z-index:10000000000000000000000000000000;">
 <center>
 <img class = "centered" width = "20%" style = "filter:invert(100%);opacity:50%;"src = "program_files/images/logo.gif"></img>
+<p style = "margin-top:40%;font-size:20px;text-align:center;color:gray;" id = "error_code"></p>
 </center>
 </div>
 <div id = "literally_everything_else" style = "opacity:0%">
@@ -29,7 +40,7 @@
 	The fact that you are seeing this message right now demonstrates to us that you would be a valuable asset to our Dev Team. You are intelligent, courageous, and not afraid of a challenge. You are a natural problem solver who isn't afraid to look under the hood. The world needs more people like you, people like me - who decided that they were done using someone else's solution, instead creating their own.
 	Click the link below to get in contact with me, I look forward to hearing from you! <br><br><a target = "_blank" style = "color:black" href = "https://forms.gle/rAbywvLmsB4XkgZDA">- Chandler Mrotzek, creator of nuken</a>
 	</p>
-	<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;width:100%;font-family:'fonty'"onclick = "document.getElementById('closer').click();imagepath='program_files/images/'">Nah, I'm off the grid, yo!</button>
+	<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;width:100%;font-family:'fonty'"onclick = "document.getElementById('closer').click();">Nah, I'm off the grid, yo!</button>
 
 			</div>
 			
@@ -184,26 +195,7 @@ We couldn't find any JS in your file. Remember to put your JS between two script
 </div>	
 
 
-<div id="popup2" class="overlay">
-	<div class="popup" >
-	<center>
-		<h1>You have no themes currently selected.</h1>
-		</center>
-		<br>
-		<a id = "closer" style = "display:none;" class="close" href="#">&times;</a>
-		<div class="content">
-			Make sure you extracted the contents of the theme file to <a target = "_blank" href = "program_files/themes/selected/">this location</a>. If you do not currently own any nuken themes, you can download them from the nuken Theme shop. Would you like to go there now?
-			<br>
-			<br>
-			<center>
-			<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;width:60%;"onclick = "document.getElementById('shop_icon').click();">Yes, take me there</button>
-			<br>
-			<br>
-			<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;width:60%;"onclick = "document.getElementById('closer').click();">No, I'd rather not</button>
-		</center>
-		</div>
-	</div>
-</div>	
+
 
 <div id="nothingtopreview" class="overlay">
 	<div class="popup" >
@@ -215,6 +207,38 @@ We couldn't find any JS in your file. Remember to put your JS between two script
 		<div class="content">
 		Make sure to hit that <img style = "width:12px"src = "program_files/images/play.gif"></img> button at least once, so we actually have something to preview! If you're trying to export your file, be sure to give it a name first.
 		Once something appears in the preview area, you can see how it looks in a stand-alone browser environment. Feel free to resize the popup window as you like, to check out different screen layouts!
+		<br>
+		<br>
+			<center>
+			<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;width:60%;"onclick = "document.getElementById('closer').click();">Okay, I got it!</button>
+		</center>
+		</div>
+	</div>
+</div>	
+
+
+<div id="exported" class="overlay">
+<div class = "popup">
+<center>
+<h1>Your file has been exported.</h1>
+</center>
+<center>
+<p>You'll find it on your system as an HTML file. If you'd like to keep working on your assignment at a later time, simply click on the <img width = "15px" src = "program_files/images/import.gif"></img> icon and select your file from the menu.</p>
+<button onclick = "window.location.replace('#klondikebar')" style = "width:100%;cursor:pointer;font-size:15px;background-color:black;color:white;padding:10px;border:none;border-radius:10px;outline:none;font-family:'fonty';" >Back to editing</button>
+</center>
+</div>	
+</div>
+
+
+<div id="exportwarn" class="overlay">
+	<div class="popup" >
+	<center>
+		<h1>Your project is being previewed.</h1>
+		</center>
+		<br>
+		<a id = "closer" style = "display:none;" class="close" href="#">&times;</a>
+		<div class="content">
+		Due to security measures in your browser, some scripts may not work in the pop-up window. If you're having issues with Javascript, try opening your HTML file in another tab!
 		<br>
 		<br>
 			<center>
@@ -314,7 +338,7 @@ Thank you for using v6.0, it was a lot of fun to work on! <br><br><center>We loo
 		</div></div>
 	</div>
 	<div class="editor_button playa">
-		<button id="preview" onmouseleave = "document.getElementById('playa-content').style.opacity='0%'" onmouseover = "document.getElementById('playa-content').style.opacity='100%'"><img id = "playbutton" onclick = "document.getElementById('preview').click();executedonce=true;" width = "17px;" style = "filter:invert(100%) contrast(150%);background-color:Transparent;"src = "program_files/images/play.gif"></img></button>
+		<button id="preview" onmouseleave = "document.getElementById('playa-content').style.opacity='0%'" onmouseover = "document.getElementById('playa-content').style.opacity='100%'"><img id = "playbutton" onclick = "executedonce=true;" width = "17px;" style = "filter:invert(100%) contrast(150%);background-color:Transparent;"src = "program_files/images/play.gif"></img></button>
 	<div class="playa-content">
 <input id = "checker_mccheckerson" style = "margin-right:5px;"type = "checkbox"></input>	
 Auto-run
@@ -338,9 +362,9 @@ Auto-run
 
 			<button><img id = "addoner"width = "17px;" style = "filter:invert(100%);background-color:Transparent;"src = "program_files/images/addon.gif"></img></button>
   <div class="addons-content">
-  <img id = "slot1" ondrag = "this.style.transition = 'all 0.15s';this.style.opacity = '0%';this.style.transform = 'scale(1.5)';" ondragend = "document.getElementById('pin1').click();this.style.opacity = '100%';this.style.transform = 'scale(1)';" style = "width:25%;" onclick = "document.getElementById('addon1button').click();expand1();" onerror = 'this.style.display="none";counter = counter+1;if(counter===3){document.getElementById("shopNO").style.display = "inline";document.getElementById("errorboi").style.display = "inline-block";}' src = "program_files/addons/active/slot1/addon_verification.gifz"></img>
- <img id = "slot2"   ondrag = "this.style.transition = 'all 0.15s';this.style.opacity = '0%';this.style.transform = 'scale(1.5)';" ondragend = "document.getElementById('pin2').click();this.style.opacity = '100%';this.style.transform = 'scale(1)';"style = "width:25%;"onclick = "document.getElementById('addon2button').click();expand2();"onerror = 'this.style.display="none";counter = counter+1;if(counter===3){document.getElementById("shopNO").style.display = "inline";document.getElementById("errorboi").style.display = "inline-block";}'src = "program_files/addons/active/slot2/addon_verification.gifz"></img>
- <img id = "slot3"   ondrag = "this.style.transition = 'all 0.15s';this.style.opacity = '0%';this.style.transform = 'scale(1.5)';" ondragend = "document.getElementById('pin3').click();this.style.opacity = '100%';this.style.transform = 'scale(1)';"style = "width:25%;"onclick = "document.getElementById('addon3button').click();expand3();"onerror = 'this.style.display="none";counter = counter+1;if(counter===3){document.getElementById("shopNO").style.display = "inline";document.getElementById("errorboi").style.display = "inline-block";}'src = "program_files/addons/active/slot3/addon_verification.gifz"></img>
+  <img id = "slot1" ondrag = "this.style.transition = 'all 0.15s';this.style.opacity = '0%';this.style.transform = 'scale(1.5)';" ondragend = "document.getElementById('pin1').click();this.style.opacity = '100%';this.style.transform = 'scale(1)';" style = "width:25%;" onclick = "document.getElementById('addon1button').click();expand1();" onerror = 'this.style.display="none";counter = counter+1;' src = "program_files/addons/active/slot1/addon_verification.gifz"></img>
+ <img id = "slot2"   ondrag = "this.style.transition = 'all 0.15s';this.style.opacity = '0%';this.style.transform = 'scale(1.5)';" ondragend = "document.getElementById('pin2').click();this.style.opacity = '100%';this.style.transform = 'scale(1)';"style = "width:25%;"onclick = "document.getElementById('addon2button').click();expand2();"onerror = 'this.style.display="none";counter = counter+1;'src = "program_files/addons/active/slot2/addon_verification.gifz"></img>
+ <img id = "slot3"   ondrag = "this.style.transition = 'all 0.15s';this.style.opacity = '0%';this.style.transform = 'scale(1.5)';" ondragend = "document.getElementById('pin3').click();this.style.opacity = '100%';this.style.transform = 'scale(1)';"style = "width:25%;"onclick = "document.getElementById('addon3button').click();expand3();"onerror = 'this.style.display="none";counter = counter+1;'src = "program_files/addons/active/slot3/addon_verification.gifz"></img>
 
  <center>
 <img id = "shopNO" width = "70px" style = "background-color:Transparent;padding:0px;border-radius:10px;opacity:50%;"src = "program_files/images/shop.gif"></img>
@@ -385,6 +409,8 @@ Auto-run
 
 </div>
 
+<img style = "display:noneopacity:0;height:0;" onload = "window.location.replace('aifhfOIhgoithowihosidnlsawriq9ur0q3rw9jrg0ejgpsojpawjrq9wt09erjhsnal')" src = "program_files/themes/selected/theme_verification_check.gif"></img>
+
 <div class="left_frame" style = "overflow-y:scroll">
 
 <textarea ondrop= "hideboxes()" title = "Enter your CSS here!" style = "background-image: url('program_files/images/css.gif'); background-repeat:no-repeat;background-position:5% 100%;background-size:25%;width:100%; height: 45%;border-width:0px;border-style:solid;" id="cssbox">
@@ -405,7 +431,6 @@ var x = 3.14;
 	</div>
 	
 </div>
-<img style = "display:none" onload = "themefound=true;themeverifier=true;themecheck();"onerror = "themefound=false;themeverifier=false;themecheck();" src = "program_files/themes/selected/theme_verification_check.gif"></img>
 <div style = "overflow:hidden">
 
 <div id = "addon1_widget" style = "display:none">
@@ -450,6 +475,8 @@ var x = 3.14;
 </div>
 <script>
 //START
+
+
 
 var expand1 = function(){
 slot1.style.transition = 'all 0.5s';
@@ -515,6 +542,7 @@ var h = screen.height;
 var w = screen.width;
 var win = window.open("", "Title", "toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width="+w+",height="+h+",top="+(screen.height-400)+",left="+(screen.width-840));
 win.document.body.innerHTML = external_html;
+window.location.replace('#exportwarn');
 console.log('Exported project to preview window.');
 } else {
 window.location.replace('#nothingtopreview');
@@ -547,7 +575,6 @@ window.location.replace("#popup7");
 console.log('Imported project HTML successfully.');
 document.getElementById('textbox').value = str.split('<body>').pop().split('</body>')[0];
 document.getElementById('filebox').value = "index_v2.html"
-document.getElementById('playbutton').click();
 document.getElementById('preview').click();
 document.getElementById('preview').click();
 
@@ -648,12 +675,9 @@ console.log('Failed to import project.');
   
 
 
-var counter = 0;
 var uptodate = true;
-var themefound = false;
-var themeverifier = false;
 var autorun = false;
-window.addEventListener("keydown", event => {
+window.addEventListener("keyup", event => {
 if (document.getElementById("checker_mccheckerson").checked===true){
 document.getElementById("playbutton").style.transition = "all 0.5s";
 document.getElementById("playbutton").style.filter = "invert(100%) brightness(78%) sepia(100) saturate(100) hue-rotate(125deg)";
@@ -752,17 +776,9 @@ var templates_imported = false;
 <script src = "program_files/feed.js"></script>
 <script>
 load_template(0);
-var imagepath = "program_files/images/";
 
-var themecheck = function(){
-if (themefound ===false){
-imagepath = "program_files/images/";
-document.getElementById("harry_styles").href = "program_files/styles/default_stylesheet.css";
-} else {
-imagepath = "program_files/images/"
-window.location.replace('#aifhfOIhgoithowihosidnlsawriq9ur0q3rw9jrg0ejgpsojpawjrq9wt09erjhsnal');
-}
-};
+
+
 
 var fadein_nuken = function(){
 console.log('Welcome to nuken!');
@@ -772,6 +788,22 @@ literally_everything_else.style.opacity = "100%";
 
 };
 var preload = document.getElementById('preload');
+
+
+var blackout = function(element){
+element.style.display = "none";
+element.style.opacity = "0%";
+};
+
+var addonmenu1 = document.getElementById('addon1');
+var addonmenu2 = document.getElementById('addon2');
+var addonmenu3 = document.getElementById('addon3');
+
+var whitein = function(element){
+element.style.display = "block!important";
+element.style.opacity = "100%!important";
+};
+
 var literally_everything_else = document.getElementById('literally_everything_else');
 var welcome_user = function(){
 preload.style.transition = "all 0.5s";
@@ -785,10 +817,43 @@ if (reloadstopper === false){
    return "Be sure to save your work before you reload the page!";
    }
 };
+
+document.addEventListener("keydown", function(e) {
+  if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)  && e.keyCode == 83) {
+    e.preventDefault();
+    document.getElementById('create').click();
+  }
+  
+  
+   if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)  && e.keyCode == 80) {
+    e.preventDefault();
+    document.getElementById('preview').click();
+  }
+  
+  
+  if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)  && e.keyCode == 32) {
+    e.preventDefault();
+    document.getElementById('checker_mccheckerson').checked = true;
+  }
+  
+  
+
+  
+  
+}, false);
+
+var replaceField = function(element,text){
+if (element.value ===""){
+element.value = text;
+}
+};
 		
 window.onload = function(){
 
 welcome_user();
+setInterval(function(){replaceField(document.getElementById('titlebox'), "New Assignment")},5000);
+setInterval(function(){replaceField(document.getElementById('filebox'), "assignment.html")},5000);
+
 if (feed_url==="NONE"){
 document.getElementById('bullhorn').style.display = "none";
 document.getElementById('trending_dropdown').style.display = "none";
@@ -802,11 +867,23 @@ init();
 
 document.body.style.transition = "all 0.5s";
 document.body.style.opacity = "100%";
+
 if (counter ===3){
+
+blackout(addonmenu1);
+blackout(addonmenu2);
+blackout(addonmenu3);
+
 document.getElementById("errorboi").style.display = "block";
 document.getElementById("shopNO").style.display = "block";
 console.log('No add-ons detected.');
 } else {
+
+whitein(addonmenu1);
+whitein(addonmenu2);
+whitein(addonmenu3);
+
+
 document.getElementById("slot1").src = "program_files/addons/active/slot1/preview.gif";
 console.log('Add-ons detected.');
 document.getElementById("slot2").src = "program_files/addons/active/slot2/preview.gif";
@@ -815,7 +892,6 @@ document.getElementById("slot3").src = "program_files/addons/active/slot3/previe
 document.getElementById("errorboi").style.display = "none";
 document.getElementById("shopNO").style.display = "none";
 }
-themecheck();
 if (navigator.onLine){
 console.log('nuken is online!');
 if (uptodate === false){
@@ -829,54 +905,9 @@ console.log('nuken is offline!');
 uptodate=true;
 }
 };
-var switcheroo = false;
-var themeverify = function(){
-if (themeverifier === false){
-document.getElementById("puppy2").click();
-console.log('No theme files could be found.');
-} else {
-themefound=false;returntonormal();
-}
-};
-var returntonormal = function(){
-if (switcheroo === false){
-console.log('nuken Theme was reverted to default.');
-imagepath = "program_files/images/";
-document.getElementById("bigpreview").src = imagepath+"download.gif";
-document.getElementById("github").src = imagepath+"github.gif";
-document.getElementById("inverter").src = imagepath+"invert.gif";
-document.getElementById("reloader").src = imagepath+"reload.gif";
-document.getElementById("showandtell").src = imagepath+"share.gif";
-document.getElementById("shop_icon").src = imagepath+"shop.gif";
-document.getElementById("addoner").src = imagepath+"addon.gif";
-document.getElementById("tooler").src = imagepath+"tools.gif";
-document.getElementById("importer").src = imagepath+"import.gif";
-document.getElementById("exporter").src = imagepath+"export.gif";
-document.getElementById("shopNO").src = imagepath+"shop.gif";
-document.getElementById("playbutton").src = imagepath+"play.gif";
-document.getElementById("logo").src = imagepath+"logo.png";
-document.getElementById("harry_styles").href = "program_files/styles/default_stylesheet.css";
-switcheroo = true;
-} else {
-console.log('nuken Theme was selected!');
-imagepath = "program_files/themes/selected/images/";
-document.getElementById("bigpreview").src = imagepath+"download.gif";
-document.getElementById("github").src = imagepath+"github.gif";
-document.getElementById("inverter").src = imagepath+"invert.gif";
-document.getElementById("reloader").src = imagepath+"reload.gif";
-document.getElementById("showandtell").src = imagepath+"share.gif";
-document.getElementById("shop_icon").src = imagepath+"shop.gif";
-document.getElementById("addoner").src = imagepath+"addon.gif";
-document.getElementById("tooler").src = imagepath+"tools.gif";
-document.getElementById("importer").src = imagepath+"import.gif";
-document.getElementById("exporter").src = imagepath+"export.gif";
-document.getElementById("shopNO").src = imagepath+"shop.gif";
-document.getElementById("playbutton").src = imagepath+"play.gif";
-document.getElementById("logo").src = imagepath+"logo.png";
-document.getElementById("harry_styles").href = "program_files/themes/selected/theme.css";
-switcheroo = false;
-}
-};
+
+
+
 (function () {
 var textFile = null,
   makeTextFile = function (text) {

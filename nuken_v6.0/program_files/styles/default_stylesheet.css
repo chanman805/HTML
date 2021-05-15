@@ -274,6 +274,22 @@ cursor:pointer;
   transition: opacity 500ms;
   visibility: hidden;
   opacity: 0;
+  overflow-y:scroll;
+}
+
+
+.overlay::-webkit-scrollbar {
+    width: 10px;
+}
+
+.overlay::-webkit-scrollbar-track {
+  background-color:Transparent;
+}
+
+.overlay::-webkit-scrollbar-thumb {
+  background-color:gray;
+  border-radius:10px;
+
 }
 .overlay:target {
   visibility: visible;
@@ -311,8 +327,7 @@ cursor:pointer;
   color: #06D85F;
 }
 .popup .content {
-  max-height: 30%;
-  overflow: auto;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 700px){
@@ -407,6 +422,10 @@ animation: textboxanimation 5s linear 2s infinite alternate;
 focus:none;
 font-family: fonty;
 font-size:15px;
+}
+
+#titlebox {
+	width:25%;
 }
 
 #filebox {
