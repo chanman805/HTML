@@ -737,7 +737,7 @@ window.addEventListener("keyup", event => {
 
 if (document.getElementById("checker_mccheckerson").checked===true){
 document.getElementById("playbutton").style.transition = "all 0.5s";
-document.getElementById("playbutton").style.filter = "invert(100%) brightness(78%) sepia(100) saturate(100) hue-rotate(125deg)";
+document.getElementById("playbutton").style.filter = "invert(100%) brightness(150%) sepia(100) saturate(100) hue-rotate(50deg)";
 document.getElementById("preview").click();
 console.log('Auto-run has been activated.');
   } else {
@@ -896,7 +896,11 @@ document.addEventListener("keydown", function(e) {
   
   if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)  && e.keyCode == 32) {
     e.preventDefault();
-    document.getElementById('checker_mccheckerson').checked = true;
+	if (document.getElementById('checker_mccheckerson').checked){
+    document.getElementById('checker_mccheckerson').checked = false;
+	} else {
+	document.getElementById('checker_mccheckerson').checked = true;
+	}
   }
   
   
