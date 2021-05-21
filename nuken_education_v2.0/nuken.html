@@ -11,17 +11,9 @@
 <meta name="author" content="Chandler Mrotzek">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- this makes sure that the webpage is supported on all devices -->
 <link id = "harry_styles" rel = "stylesheet" rel = "preload" href = "program_files/styles/default_stylesheet.css">
-<script>
-
-window.onerror = function(){
-document.getElementById('error_code').innerHTML = "nuken Education failed to start.<hr style = 'width:40%;opacity:20%'>Please contact yout educator.";
-
-};
-
-
-var counter = 0;
-</script>
+<script src = "program_files/styles/preload.js"></script>
 </head>
+
 <body>
 <div id = "preload" style = "background-color:white;padding-bottom:100%;important;z-index:10000000000000000000000000000000;">
 <center>
@@ -32,12 +24,12 @@ var counter = 0;
 <div id = "literally_everything_else" style = "opacity:0%">
 
 <div id="aifhfOIhgoithowihosidnlsawriq9ur0q3rw9jrg0ejgpsojpawjrq9wt09erjhsnal" class="overlay">
-	<div class="popup" >
+	<div class="popup" style = "width:55%;" >
 	<center>
-	<img src = "program_files/images/resources/dummy.gif" width = "50%"></img>
+	<img src = "program_files/images/resources/dummy.gif" width = "45%"></img>
 	</center>
-	<p style = "font-size:13px;">I have to admit, you are pretty darn bent on importing a theme into nuken Education. We don't allow students to import themes for two reasons - one, it makes it harder for your educator to guide you through the user interface; and two, most theme creators don't want to have to create a whole other set of icons for nuken Education. In nuken Ed, the file system is laid out differently, which I'm sure you discovered, curious student.
-	The fact that you are seeing this message right now demonstrates to us that you would be a valuable asset to our Dev Team. You are intelligent, courageous, and not afraid of a challenge. You are a natural problem solver who isn't afraid to look under the hood. The world needs more people like you, people like me - who decided that they were done using someone else's solution, instead creating their own.
+	<p style = "font-size:14px;">I have to admit, you are pretty darn bent on importing a theme into nuken Education. We don't allow students to import themes for two reasons - one, it makes it harder for your educator to guide you through the interface; and two, most theme creators don't want to have to create a seperate set of icons for nuken Education. Also, the file system is laid out differently, which I'm sure you discovered, curious student.
+	The fact that you're here right now demonstrates to us that you would be a valuable asset to our Dev Team. You are intelligent, courageous, and not afraid of a challenge. You're a problem solver who isn't afraid of what's under the hood. The world needs more people like you, people like me - tinkerers.
 	Click the link below to get in contact with me, I look forward to hearing from you! <br><br><a target = "_blank" style = "color:black" href = "https://forms.gle/rAbywvLmsB4XkgZDA">- Chandler Mrotzek, creator of nuken</a>
 	</p>
 	<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;width:100%;font-family:'fonty'"onclick = "document.getElementById('closer').click();">Nah, I'm off the grid, yo!</button>
@@ -248,39 +240,19 @@ We couldn't find any JS in your file. Remember to put your JS between two script
 	</div>
 </div>	
 
-<div id="popup3" class="overlay">
-	<div class="popup" >
-	<center>
-		<h1>Support for nuken v6.0 has come to an end.</h1>
-		</center>
-		<br>
-		<a id = "closer" style = "display:none;" class="close" href="#">&times;</a>
-		Progress can't be stopped, it seems! We've come out with a new version for you to download <a href = "https://chanman805.github.io/nuken"> here</a>. You can continue to use nuken v6.0 for as long as you like, but just keep in mind that your external add-ons may stop working (if they're third party, or rely heavily on an external service that may come to an end as a result).
 
-Thank you for using v6.0, it was a lot of fun to work on! <br><br><center>We look forward to your continued use of this tool.
-</center>
-<br>
-<br>
-			<center>
-			<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;width:60%;"onclick = "window.location.replace('https://chanman805.github.io/nuken');">I'd like to download the new version!</button>
-			<br>
-			<br>
-			<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;width:60%;"onclick = "document.getElementById('closer').click();">I don't want to upgrade, sorry.</button>
-		</center>
-		</div>
-	</div>
 
 
 <div id="addon1" class="overlay">
-	<div class="popup" >
+	<div class="popup" id = "m1" >
 	<iframe id = "iframe1"scrolling = "no"class = "addon-body" src = "program_files/addons/active/slot1/addon.html"></iframe>
 <br>
 <br>
 <center>
 
-<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"onclick = "document.getElementById('closer').click();"><img width = "20px" style = "filter:invert(100%);"class = "hover" src = "program_files/images/close.gif"></img></button>
-		<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"onclick = "document.getElementById('iframe1').src = 'program_files/addons/active/slot1/addon.html';document.getElementById('addon_widget_iframe_1').src = 'program_files/addons/active/slot1/addon.html'"><img width = "20px" class = "spin" style = "filter:invert(100%);"src = "program_files/images/reload.gif"></img></button>
-	<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"onclick = "pin_addon1()"><img id = "pin1" class = "hover" width = "15px" style = "filter:invert(100%);"src = "program_files/images/pin.gif"></img></button>
+<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"onclick = "document.getElementById('closer').click();closeaddon()"><img width = "20px" style = "filter:invert(100%);"class = "hover" src = "program_files/images/close.gif"></img></button>
+		<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"onclick = "document.getElementById('iframe1').src = 'program_files/addons/active/slot1/addon.html';document.getElementById('addon_widget_iframe_1').src = 'program_files/addons/active/slot1/addon.html';reloadAnimate()"><img width = "20px" class = "spin" style = "filter:invert(100%);"src = "program_files/images/reload.gif"></img></button>
+	<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"onclick = "pin_addon1();closeaddon()"><img id = "pin1" class = "hover" width = "15px" style = "filter:invert(100%);"src = "program_files/images/pin.gif"></img></button>
 	
 		</center>
 			</div>
@@ -290,14 +262,14 @@ Thank you for using v6.0, it was a lot of fun to work on! <br><br><center>We loo
 
 
 <div id="addon2" class="overlay">
-	<div class="popup" >
+	<div class="popup" id = "m2" >
 	<iframe id = "iframe2"scrolling = "no" class = "addon-body" src = "program_files/addons/active/slot2/addon.html"></iframe>
 		<br>
 		<br>
 		<center>
-		<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"onclick = "document.getElementById('closer').click();"><img width = "20px" style = "filter:invert(100%);"class = "hover" src = "program_files/images/close.gif"></img></button>
-		<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"onclick = "document.getElementById('iframe2').src = 'program_files/addons/active/slot2/addon.html';document.getElementById('addon_widget_iframe_2').src = 'program_files/addons/active/slot2/addon.html'"><img width = "20px" class = "spin" style = "filter:invert(100%);"src = "program_files/images/reload.gif"></img></button>
-	<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"onclick = "pin_addon2()"><img id = "pin2" class = "hover"width = "15px" style = "filter:invert(100%);"src = "program_files/images/pin.gif"></img></button>
+		<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"onclick = "document.getElementById('closer').click();closeaddon()"><img width = "20px" style = "filter:invert(100%);"class = "hover" src = "program_files/images/close.gif"></img></button>
+<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"onclick = "document.getElementById('iframe2').src = 'program_files/addons/active/slot2/addon.html';document.getElementById('addon_widget_iframe_2').src = 'program_files/addons/active/slot2/addon.html';reloadAnimate()"><img width = "20px" class = "spin" style = "filter:invert(100%);"src = "program_files/images/reload.gif"></img></button>
+	<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"onclick = "pin_addon2();closeaddon()"><img id = "pin2" class = "hover"width = "15px" style = "filter:invert(100%);"src = "program_files/images/pin.gif"></img></button>
 		</center>
 		</div>
 	</div>
@@ -305,14 +277,14 @@ Thank you for using v6.0, it was a lot of fun to work on! <br><br><center>We loo
 
 
 <div id="addon3" class="overlay">
-	<div class="popup" >
+	<div class="popup" id = "m3" >
 	<iframe id = "iframe3" scrolling = "no"class = "addon-body" src = "program_files/addons/active/slot3/addon.html"></iframe>
 			<br>
 			<br>
 			<center>
-			<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"onclick = "document.getElementById('closer').click();"><img width = "20px" style = "filter:invert(100%);"class = "hover" src = "program_files/images/close.gif"></img></button>
-		<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"onclick = "document.getElementById('iframe3').src = 'program_files/addons/active/slot3/addon.html';document.getElementById('addon_widget_iframe_3').src = 'program_files/addons/active/slot3/addon.html'"><img width = "20px" class = "spin" style = "filter:invert(100%);"src = "program_files/images/reload.gif"></img></button>
-	<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"onclick = "pin_addon3()"><img id = "pin3" class = "hover"width = "15px" style = "filter:invert(100%);"src = "program_files/images/pin.gif"></img></button>
+			<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"onclick = "document.getElementById('closer').click();closeaddon()"><img width = "20px" style = "filter:invert(100%);"class = "hover" src = "program_files/images/close.gif"></img></button>
+<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"onclick = "document.getElementById('iframe3').src = 'program_files/addons/active/slot3/addon.html';document.getElementById('addon_widget_iframe_3').src = 'program_files/addons/active/slot3/addon.html';reloadAnimate()"><img width = "20px" class = "spin" style = "filter:invert(100%);"src = "program_files/images/reload.gif"></img></button>
+	<button style = "cursor:pointer;padding:10px;border:none;border-radius:10px;"onclick = "pin_addon3();closeaddon()"><img id = "pin3" class = "hover"width = "15px" style = "filter:invert(100%);"src = "program_files/images/pin.gif"></img></button>
 		</center>
 			</div>
 	</div>
@@ -362,9 +334,9 @@ Auto-run
 
 			<button><img id = "addoner"width = "17px;" style = "filter:invert(100%);background-color:Transparent;"src = "program_files/images/addon.gif"></img></button>
   <div class="addons-content">
-  <img id = "slot1" ondrag = "this.style.transition = 'all 0.15s';this.style.opacity = '0%';this.style.transform = 'scale(1.5)';" ondragend = "document.getElementById('pin1').click();this.style.opacity = '100%';this.style.transform = 'scale(1)';" style = "width:25%;" onclick = "document.getElementById('addon1button').click();expand1();" onerror = 'this.style.display="none";counter = counter+1;' src = "program_files/addons/active/slot1/addon_verification.gifz"></img>
- <img id = "slot2"   ondrag = "this.style.transition = 'all 0.15s';this.style.opacity = '0%';this.style.transform = 'scale(1.5)';" ondragend = "document.getElementById('pin2').click();this.style.opacity = '100%';this.style.transform = 'scale(1)';"style = "width:25%;"onclick = "document.getElementById('addon2button').click();expand2();"onerror = 'this.style.display="none";counter = counter+1;'src = "program_files/addons/active/slot2/addon_verification.gifz"></img>
- <img id = "slot3"   ondrag = "this.style.transition = 'all 0.15s';this.style.opacity = '0%';this.style.transform = 'scale(1.5)';" ondragend = "document.getElementById('pin3').click();this.style.opacity = '100%';this.style.transform = 'scale(1)';"style = "width:25%;"onclick = "document.getElementById('addon3button').click();expand3();"onerror = 'this.style.display="none";counter = counter+1;'src = "program_files/addons/active/slot3/addon_verification.gifz"></img>
+  <img id = "slot1" ondrag = "this.style.transition = 'all 0.15s';this.style.opacity = '0%';this.style.transform = 'scale(1.5)';" ondragend = "document.getElementById('pin1').click();this.style.opacity = '100%';this.style.transform = 'scale(1)';" style = "width:25%;" onclick = "document.getElementById('addon1button').click();expand(this);" onerror = 'this.style.display="none";counter = counter+1;' src = "program_files/addons/active/slot1/addon_verification.gifz"></img>
+ <img id = "slot2"   ondrag = "this.style.transition = 'all 0.15s';this.style.opacity = '0%';this.style.transform = 'scale(1.5)';" ondragend = "document.getElementById('pin2').click();this.style.opacity = '100%';this.style.transform = 'scale(1)';"style = "width:25%;"onclick = "document.getElementById('addon2button').click();expand(this);"onerror = 'this.style.display="none";counter = counter+1;'src = "program_files/addons/active/slot2/addon_verification.gifz"></img>
+ <img id = "slot3"   ondrag = "this.style.transition = 'all 0.15s';this.style.opacity = '0%';this.style.transform = 'scale(1.5)';" ondragend = "document.getElementById('pin3').click();this.style.opacity = '100%';this.style.transform = 'scale(1)';"style = "width:25%;"onclick = "document.getElementById('addon3button').click();expand(this);"onerror = 'this.style.display="none";counter = counter+1;'src = "program_files/addons/active/slot3/addon_verification.gifz"></img>
 
  <center>
 <img id = "shopNO" width = "70px" style = "background-color:Transparent;padding:0px;border-radius:10px;opacity:50%;"src = "program_files/images/shop.gif"></img>
@@ -396,7 +368,7 @@ Auto-run
 		</div></div>
 	</div>	
 
-<div class="editor_button" id = "conveniently_named_trending_div" onmouseleave = "reload_feed();"onmouseover="document.getElementById('trending_dropdown').style.display='block'"  onmouseout="document.getElementById('trending_dropdown').style.display='none'">
+<div class="editor_button" id = "conveniently_named_trending_div" onmouseleave = "redundant_reload(this);"onmouseover="document.getElementById('trending_dropdown').style.display='block'"  onmouseout="document.getElementById('trending_dropdown').style.display='none'">
 		<button><img id = "bullhorn"width = "17px;" style = "filter:invert(100%);background-color:Transparent;"src = "program_files/images/announce.gif"></img></button>
 		<div  id="trending_dropdown" class="dropdown" style="display: none; z-index: 1;"><div class="dropdown_content">
 		<p style = "color:black;margin:0px;margin-bottom:-2px;padding:0px;text-align:center">Your educator's announcements</p>
@@ -409,7 +381,6 @@ Auto-run
 
 </div>
 
-<img style = "display:noneopacity:0;height:0;" onload = "window.location.replace('aifhfOIhgoithowihosidnlsawriq9ur0q3rw9jrg0ejgpsojpawjrq9wt09erjhsnal')" src = "program_files/themes/selected/theme_verification_check.gif"></img>
 
 <div class="left_frame" style = "overflow-y:scroll">
 
@@ -471,307 +442,49 @@ var x = 3.14;
   <p style = "text-align:center;padding:7px;color:gray;margin-top:0px;font-size:10px;">Please be aware that this content will continute to run in the background.</p>
 </center>
 </div></div>
+<img style = "display:none" onload = "themefound=true;"onerror = "themefound=false;" src = "program_files/themes/selected/theme_verification_check.gif"></img>
 
 </div>
 <script>
 //START
 
 
-
-var expand1 = function(){
-slot1.style.transition = 'all 0.5s';
-slot1.style.opacity = '0%';
-slot1.style.transform = 'scale(1.5)';
-setTimeout(function(){
-slot1.style.transition = 'all 0.1s';
-slot1.style.opacity = '100%';
-slot1.style.transform = 'scale(1)';
-
-},500);
+var redundant_reload = function(element){
+element.src = element.src;
 };
 
-var expand2 = function(){
-slot2.style.transition = 'all 0.5s';
-slot2.style.opacity = '0%';
-slot2.style.transform = 'scale(1.5)';
-setTimeout(function(){
-slot2.style.transition = 'all 0.1s';
-slot2.style.opacity = '100%';
-slot2.style.transform = 'scale(1)';
 
-},500);
-};
-
-var expand3 = function(){
-slot3.style.transition = 'all 0.5s';
-slot3.style.opacity = '0%';
-slot3.style.transform = 'scale(1.5)';
-setTimeout(function(){
-slot3.style.transition = 'all 0.1s';
-slot3.style.opacity = '100%';
-slot3.style.transform = 'scale(1)';
-
-},500);
-};
-
-var reload_feed = function(){
-document.getElementById('announce_window').src = document.getElementById('announce_window').src;
-};
-
-var hideboxes = function(){
-document.getElementById('cssbox').readOnly=true;
-document.getElementById('textbox').readOnly=true;
-document.getElementById('jsbox').readOnly=true;
-document.getElementById('filebox').readOnly=true;
-document.getElementById('titlebox').readOnly=true;
-setTimeout(showboxes,500);
-};
-
-var showboxes = function(){
-document.getElementById('cssbox').readOnly=false;
-document.getElementById('textbox').readOnly=false;
-document.getElementById('jsbox').readOnly=false;
-document.getElementById('filebox').readOnly=false;
-document.getElementById('titlebox').readOnly=false;
-};
 var executedonce = false;
-var external_html;
-var theater_preview = function(){
-if (executedonce===true){
-var h = screen.height;
-var w = screen.width;
-var win = window.open("", "Title", "toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width="+w+",height="+h+",top="+(screen.height-400)+",left="+(screen.width-840));
-win.document.body.innerHTML = external_html;
-window.location.replace('#exportwarn');
-console.log('Exported project to preview window.');
-} else {
-window.location.replace('#nothingtopreview');
-console.log('Failed to export project to preview window.');
-}
-};
-
-
-
-function init(){
-console.log('Now accepting file input.');
-  document.getElementById('fileInput').addEventListener('change', handleFileSelect, false);
-}
-
-function handleFileSelect(event){
-  const reader = new FileReader()
-  reader.onload = handleFileLoad;
-  reader.readAsText(event.target.files[0])
-}
-
-function handleFileLoad(event){
-
-var str = event.target.result;
-if (str.includes("stylesheet")&&str.includes("<link")){
-window.location.replace('#incorrectformatting');
-console.log('Imported project contained incorrect CSS formatting.');
-} else{
-if (str.includes("<body>") && str.includes("</body>")){
-window.location.replace("#popup7");
-console.log('Imported project HTML successfully.');
-document.getElementById('textbox').value = str.split('<body>').pop().split('</body>')[0];
-document.getElementById('filebox').value = "index_v2.html"
-document.getElementById('preview').click();
-document.getElementById('preview').click();
-
-if (str.includes("<style>") && str.includes("</style>")){
-document.getElementById('cssbox').value =  str.split('<style>').pop().split('</style>')[0];
-console.log('Imported project CSS successfully.');
-} else {
-console.log('Executed Queen easter egg!');
-document.getElementById('cssbox').value = `Is this the real life?
-Is this just fantasy?
-Caught in a landslide
-No escape from reality
-Open your eyes
-Look up to the skies and see
-I'm just a poor boy
-I need no sympathy
-Because I'm easy come, easy go
-Little high, little low
-Any way the wind blows doesn't really matter to me, to me
-Mama, just killed a man
-Put a gun against his head
-Pulled my trigger, now he's dead
-Mama, life had just begun
-But now I've gone and thrown it all away
-Mama, ooh
-Didn't mean to make you cry
-If I'm not back again this time tomorrow
-Carry on, carry on
-As if nothing really matters
-Too late, my time has come
-Sends shivers down my spine
-Body's aching all the time
-Goodbye everybody, I've got to go
-Gotta leave you all behind and face the truth
-Mama, ooh (any way the wind blows)
-I don't wanna die
-I sometimes wish I'd never been born at all
-I see a little silhouetto of a man
-Scaramouche, Scaramouche, will you do the Fandango?
-Thunderbolt and lightning very very frightening me
-Gallileo, Gallileo
-Gallileo, Gallileo
-Gallileo Figaro, magnifico
-I'm just a poor boy, nobody loves me
-He's just a poor boy from a poor family
-Spare him his life from this monstrosity
-Easy come easy go, will you let me go?
-Bismillah! No, we will not let you go (let him go)
-Bismillah! We will not let you go (let him go)
-Bismillah! We will not let you go (let me go)
-Will not let you go (let me go)
-Never, never, never, never let me go
-No, no, no, no, no, no, no
-Oh, mama mia, mama mia
-Mama mia, let me go
-Beelzebub has a devil put aside for me
-For me
-For me
-So you think you can stone me and spit in my eye?
-So you think you can love me and leave me to die?
-Oh, baby
-Can't do this to me, baby
-Just gotta get out, just gotta get right outta here
-Nothing really matters
-Anyone can see
-Nothing really matters
-Nothing really matters to me
-Any way the wind blows
-`;
-window.location.replace("#nocssfound");
-console.log('Imported project does not contain any CSS.');
-}
-
-document.getElementById('preview').click();
-if (str.includes("<title>") && str.includes("</title>")){
-console.log('Imported project Title recovered successfully.');
-document.getElementById('titlebox').value = str.split('<title>').pop().split('</title>')[0]+" (Recovered)";
-
-} else {
-document.getElementById('titlebox').value = "Imported File (No title)";
-console.log('Imported project has no title.');
-}
-if (str.includes("<script>") && str.includes("</scr"+"ipt>")){
-console.log('Imported project JS successfully.');
-document.getElementById('jsbox').value = str.split('<script>').pop().split('</scr'+'ipt>')[0];
-} else {
-document.getElementById('jsbox').value = "//No JS found";
-window.location.replace("#nojsfound");
-console.log('Imported project has no JS.');
-}
-document.getElementById('preview').click();
-} else {
-window.location.replace("#popup8");
-console.log('Failed to import project.');
-}
-}
-}
-  
-
-
 var uptodate = true;
+var themeverifier = false;
 var autorun = false;
-window.addEventListener("keyup", event => {
-if (document.getElementById("checker_mccheckerson").checked===true){
-document.getElementById("playbutton").style.transition = "all 0.5s";
-document.getElementById("playbutton").style.filter = "invert(100%) brightness(150%) sepia(100) saturate(100) hue-rotate(50deg)";
-document.getElementById("preview").click();
-console.log('Auto-run has been activated.');
-  } else {
-  document.getElementById("playbutton").style.transition = "all 0.5s";
-document.getElementById("playbutton").style.filter = "invert(100%) contrast(150%)";
-console.log('Auto-run has been disabled.');
-  }
-});
-
-
-
-var slot1 = document.getElementById("slot1");
-var slot2 = document.getElementById("slot2");
-var slot3 = document.getElementById("slot3");
-
-
-var github = function(){
-document.getElementById("gitty").click();
-console.log('Github link was clicked!');
-};
-var mailer = function(){
-document.getElementById("supersecretmail").click();
-console.log('Mail link was clicked!');
-};
 var isdark=false;
-var darken = function(){
-if (isdark===false){
-document.documentElement.style.filter = "invert(100%)";
-console.log('All colors on the page were inverted.');
-isdark = true;
-} else {
-document.documentElement.style.filter = "invert(0%)";
-console.log('All colors on the page were inverted again!');
-isdark=false;
-}
-};
+var switcheroo = false;
 
-function load_template (index) {
-console.log('Template was loaded successfully.');
-	  textbox = document.getElementById("textbox"),
-    	cssbox = document.getElementById("cssbox"),
-		jsbox = document.getElementById('jsbox');
-    	titlebox = document.getElementById("titlebox"),
-    	filebox = document.getElementById("filebox");
-    	
-    	titlebox.value = templates[index].name;
-    	cssbox.innerHTML = templates[index].css;
-    	textbox.innerHTML = templates[index].body;
-        jsbox.value = "//Note: If your selected template doesn't include the JS parameter, then this field will read as 'undefined'.\n\n"+templates[index].js;
-		filebox.value = templates[index].file;    	
-}
-			
-function show_templates (id) {
-console.log('Template list loaded successfully.');
-	if(!templates_imported) {
-		var i;
-		document.getElementById(id).innerHTML = '';
-		for(i = 0; i < templates.length; i++) {
-		  var tmp = "<div class=\"inline-block\" onClick=\"load_template(" + i + "); preview_code ();\">"
-			+ "<div class=\"dropdown_icon\" style=\""
-			+ " color: " + templates[i]['template_color'] + ";"
-			+ " background-color: " + templates[i]['template_bg'] + ";"
-			+ " border: 0px solid " + templates[i]['template_color'] + ";"
-			+ " border-top: 0px solid " + templates[i]['template_color'] + ";"
-			+ "margin-top:-2.5px;margin-bottom:-2.5px"
-			+ "\">"+templates[i]['template_icon']
-			+ "</div>"
-			+ "<a width = '100%' title=\"" + templates[i]['title'] + "\">" 
-			+ templates[i]['title'] + "</a>" 
-			+ "</div>";
-			
-			
-			var editButtonHTML = document.createElement('div');
-				editButtonHTML.className = 'dropdown_button inline-block';
-				editButtonHTML.innerHTML = tmp;
-				document.getElementById(id).appendChild(editButtonHTML);
-		}
-		templates_imported = true;
-	}
-}
+var preload = document.getElementById('preload');
+var big_logo = document.getElementById('big_logo');
+var literally_everything_else = document.getElementById('literally_everything_else');
 
 
-var docs = new Array();
-var active_index = 0;
+var bullhorn = document.getElementById('bullhorn');
 
-var templates = new Array();
-var templates_imported = false;
+
+var external_html;
 
 
 </script>
+<script src = "program_files/styles/addons.js"></script>
+<script src = "program_files/styles/text_input.js"></script>
+<script src = "program_files/styles/file_input.js"></script>
+<script src = "program_files/styles/preview.js"></script>
+<script src = "program_files/styles/tools.js"></script>
+<script src = "program_files/styles/templates.js"></script>
 <script src = "program_files/styles/default.js"></script>
+<script src = "program_files/styles/keyboard_shortcuts.js"></script>
+<script src = "program_files/styles/onload.js"></script>
+<script src = "program_files/styles/reload.js"></script>
+<script src = "program_files/styles/online.js"></script>
+
 <script src = "program_files/lessons/lessons.js"></script>
 <script src = "program_files/feed.js"></script>
 <script>
@@ -779,90 +492,14 @@ load_template(0);
 
 
 
-
-var fadein_nuken = function(){
-console.log('Welcome to nuken!');
-preload.style.display = "none";
-literally_everything_else.style.transition = "all 0.5s";
-literally_everything_else.style.opacity = "100%";
-
-};
-var preload = document.getElementById('preload');
-
-
-var blackout = function(element){
-element.style.display = "none";
-element.style.opacity = "0%";
-};
-
-var addonmenu1 = document.getElementById('addon1');
-var addonmenu2 = document.getElementById('addon2');
-var addonmenu3 = document.getElementById('addon3');
-
-var whitein = function(element){
-element.style.display = "block!important";
-element.style.opacity = "100%!important";
-};
-
-var literally_everything_else = document.getElementById('literally_everything_else');
-var welcome_user = function(){
-preload.style.transition = "all 0.5s";
-preload.style.opacity = "0%";
-setTimeout(fadein_nuken,500);
-};
-
-reloadstopper=false;
-window.onbeforeunload = function() {
-if (reloadstopper === false){   
-   return "Be sure to save your work before you reload the page!";
-   }
-};
-
-document.addEventListener("keydown", function(e) {
-  if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)  && e.keyCode == 83) {
-    e.preventDefault();
-    document.getElementById('create').click();
-  }
-  
-  
-   if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)  && e.keyCode == 80) {
-    e.preventDefault();
-    document.getElementById('preview').click();
-  }
-  
-  
-  if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)  && e.keyCode == 32) {
-    e.preventDefault();
-   if (document.getElementById('checker_mccheckerson').checked){
-    document.getElementById('checker_mccheckerson').checked = false;
-	} else {
-	document.getElementById('checker_mccheckerson').checked = true;
-	}
-  }
-  
-  
-
-  
-  
-}, false);
-
-var replaceField = function(element,text){
-if (element.value ===""){
-element.value = text;
-}
-};
-		
+ 
 window.onload = function(){
 
 welcome_user();
+
 setInterval(function(){replaceField(document.getElementById('titlebox'), "New Assignment")},5000);
 setInterval(function(){replaceField(document.getElementById('filebox'), "assignment.html")},5000);
 
-if (feed_url==="NONE"){
-document.getElementById('bullhorn').style.display = "none";
-document.getElementById('trending_dropdown').style.display = "none";
-document.getElementById('conveniently_named_trending_div').style.display = "none";
-}
 document.getElementById('jsbox').style.backgroundColor = document.getElementById('textbox').style.backgroundColor;
 document.getElementById('jsbox').style.width = document.getElementById('textbox').style.width;
 document.getElementById('jsbox').style.height = document.getElementById('textbox').style.height;
@@ -871,134 +508,13 @@ init();
 
 document.body.style.transition = "all 0.5s";
 document.body.style.opacity = "100%";
-
-if (counter ===3){
-
-blackout(addonmenu1);
-blackout(addonmenu2);
-blackout(addonmenu3);
-
-document.getElementById("errorboi").style.display = "block";
-document.getElementById("shopNO").style.display = "block";
-console.log('No add-ons detected.');
-} else {
-
-whitein(addonmenu1);
-whitein(addonmenu2);
-whitein(addonmenu3);
-
-
-document.getElementById("slot1").src = "program_files/addons/active/slot1/preview.gif";
-console.log('Add-ons detected.');
-document.getElementById("slot2").src = "program_files/addons/active/slot2/preview.gif";
-
-document.getElementById("slot3").src = "program_files/addons/active/slot3/preview.gif";
-document.getElementById("errorboi").style.display = "none";
-document.getElementById("shopNO").style.display = "none";
-}
-if (navigator.onLine){
-console.log('nuken is online!');
-if (uptodate === false){
-console.log('A new version of nuken was detected.');
-uptodate=true;
-} else {
-uptodate=true;
-}
-} else {
-console.log('nuken is offline!');
-uptodate=true;
-}
+addoncheck();
+themecheck();
 };
 
 
-
-(function () {
-var textFile = null,
-  makeTextFile = function (text) {
-    var data = new Blob([text], {type: "text/html", endings:"native"});
-
-    // If we are replacing a previously generated file we need to
-    // manually revoke the object URL to avoid memory leaks.
-	
-    if (textFile !== null) {
-      window.URL.revokeObjectURL(textFile);
-    }
-
-    textFile = window.URL.createObjectURL(data);
-
-    return textFile;
-  };
- 
-  makeHTML = function() {
-  var jsbox_total = jsbox.value+"</scr"+"ipt>";
-	var html = "<html>\n<head>\n<title>\n"
-    	+ titlebox.value
-		+ "\n</title>\n" 
-    	+ "<style>\n"
-    	+ cssbox.value
-    	+ "\n</style>\n"
-    	+ "</head>\n<body>\n"
-    	+ textbox.value
-    	+ "\n</body>\n"
-		+ "<script>\n"
-		+ jsbox_total;	
-	external_html = html;
-	console.log('nuken Project was constructed.');
-	return html;
-
-	
-  }  
-
-  var create = document.getElementById("create"),
-  		textbox = document.getElementById("textbox"),
-    	cssbox = document.getElementById("cssbox"),
-    	titlebox = document.getElementById("titlebox"),
-		jsbox = document.getElementById('jsbox');
-    	filebox = document.getElementById("filebox");
-
-  create.addEventListener("click", function () {
-    var link = document.getElementById("downloadlink");
-    
-    var html = makeHTML(); 
-    
- 	link.download = filebox.value;
-    link.href = makeTextFile(html);   
-    link.style.display = "none";
-	link.click();
-  }, false);
-  preview.addEventListener("click", function () {
-	
-    var previewframe = document.getElementById("preview_frame");
-		previewframe.innerHTML = "<iframe id=\"new_frame\">" + html + "</iframe>";
-
-    var newframe = document.getElementById("new_frame");
-	var frame = (newframe.contentWindow || newframe.contentDocument); //Cross-browser support
-	if (frame.document) { frame = frame.document; }	
-
-    var html = makeHTML(); 
-    
-	frame.write(html);	
-	console.log('nuken Project was written to the preview area.');
-  }, false);  
-})();
-
-function preview_code () {
-    var previewframe = document.getElementById("preview_frame");
-		previewframe.innerHTML = "<iframe id=\"new_frame\">" + html + "</iframe>";
-
-    var newframe = document.getElementById("new_frame");
-	var frame = (newframe.contentWindow || newframe.contentDocument); //Cross-browser support
-	if (frame.document) { frame = frame.document; }	
-
-    var html = makeHTML(); 
-    
-	frame.write(html);	
-}
-
-
-
-
 </script>
+<script src = "program_files/styles/make_html.js"></script>
 <script src = "program_files/styles/drag.js"></script>
 
 </html>
