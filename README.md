@@ -7,7 +7,7 @@ nuken v6.0 offers plenty of free customization options - downloadable themes, ad
 
 If you plan to actually use nuken and you're wondering where to officially start, it's here:
 
-### [nuken Education v2.0](http://nuken.digitalartathome.com/download) 
+### [nuken | v6.0](http://nuken.digitalartathome.com/download) 
 
 We appreciate your support! If you notice anything wrong with our archive here, feel free to contact us via our site.
 For new users, nuken v6.0 is a great place to start - but if you plan to create your own custom build, we've uploaded our previous builds for you to look at.
