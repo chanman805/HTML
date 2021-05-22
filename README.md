@@ -1,5 +1,5 @@
 # nuken
-nuken is an HTML file editor, with cross-platform and offline access. Edit and preview your webpages in the browser, with access to an array of helpful tools and functions. This Github repository serves as an archive for our work. Here, you can view every version of nuken we've ever released!
+nuken is an HTML file editor, with cross-platform and offline access. Edit and preview your webpages in the browser, with access to an array of helpful tools and functions. This repository serves as an archive for our work. Here, you can view every version of nuken we've ever released!
 
 If you plan to actually use nuken and you're wondering where to officially start, it's here:
 
