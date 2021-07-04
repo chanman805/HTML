@@ -9,7 +9,14 @@ window.location.replace('#');
 console.log('Reset user position.');
 };
 var reset_shop = function(){
-shop_frame.src = "http://nuken.digitalartathome.com/shop/";
+		if (navigator.onLine){
+		document.getElementById('shop_frame').style.backgroundColor = "white";
+		document.getElementById('shop_frame').src = "http://nuken.xyz/editor/program_files/shop.html";
+	} else {
+		document.getElementById('shop_frame').style.backgroundColor = "white";
+document.getElementById('shop_frame').src = "program_files/styles/offline.html";
+	}
+	
 console.log('Reset nuken Shop frame.');
 };
 

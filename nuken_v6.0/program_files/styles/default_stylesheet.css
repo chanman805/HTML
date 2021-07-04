@@ -31,6 +31,9 @@ width:50px;
 }
 
 
+
+
+
 #mydiv::-webkit-scrollbar-track, #mydiv2::-webkit-scrollbar-track, #mydiv3::-webkit-scrollbar-track {
 
 }
@@ -52,6 +55,16 @@ width:50px;
 .addon_drag::-webkit-scrollbar-thumb {
   background-color: lightgray;
   border-radius:50px;
+}
+
+#addoner:hover, #tooler:hover, #playbutton:hover {
+	transition:all 0.5s;
+	transition-delay:0.05s;
+transform:rotate(360deg);
+}
+
+#playbutton:hover {
+transform:scale(-1,-1) rotate(180deg)!important;
 }
 
 
@@ -274,22 +287,6 @@ cursor:pointer;
   transition: opacity 500ms;
   visibility: hidden;
   opacity: 0;
-  overflow-y:scroll;
-}
-
-
-.overlay::-webkit-scrollbar {
-    width: 10px;
-}
-
-.overlay::-webkit-scrollbar-track {
-  background-color:Transparent;
-}
-
-.overlay::-webkit-scrollbar-thumb {
-  background-color:gray;
-  border-radius:10px;
-
 }
 .overlay:target {
   visibility: visible;
@@ -327,7 +324,8 @@ cursor:pointer;
   color: #06D85F;
 }
 .popup .content {
-  overflow: hidden;
+  max-height: 30%;
+  overflow: auto;
 }
 
 @media screen and (max-width: 700px){
@@ -345,6 +343,7 @@ cursor:pointer;
 transition: all 0.5s;
 transform: scale(1.05);
 }
+
 
 #shop_icon:hover {
 cursor:pointer;
@@ -372,10 +371,11 @@ cursor:pointer;
 	float:left;
 }
 .left_frame {
+	background-color:#e9e9e9;
 	float: left;
-	width: -moz-calc(33% - 2px);
-	width: -webkit-calc(33% - 2px);
-	width: calc(33% - 2px);
+	width:33%;
+	overflow-x:hidden;
+	overflow-y:scroll;
 
 }
 .right_frame {
@@ -394,22 +394,16 @@ cursor:pointer;
 
 }
 
-#textbox {
+#textbox, #cssbox, #jsbox  {
 outline-color:black;
 background-color:#e9e9e9;
 color:black;
 animation: textboxanimation 5s linear 2s infinite alternate;
 padding:20px;
 font-family: 'fonty';
+resize:vertical!important;
 }
-#cssbox, #jsbox {
-outline-color:white;
-background-color:#e9e9e9;
-color:black;
-animation: textboxanimation 5s linear 2s infinite alternate;
-padding:20px;
-font-family: 'fonty';
-}
+
 #box {
 outline-color:white;
 }
@@ -422,10 +416,6 @@ animation: textboxanimation 5s linear 2s infinite alternate;
 focus:none;
 font-family: fonty;
 font-size:15px;
-}
-
-#titlebox {
-	width:25%;
 }
 
 #filebox {
@@ -450,6 +440,8 @@ border-radius:5px;
 margin-left:-150px;
 border-radius:10px;
 }
+
+
 .right {
 	float:right;
 	
@@ -488,12 +480,16 @@ transition:all 0.5s;
 transform:rotate(360deg);
 
 }
-#logo:hover {
-cursor:pointer;
-}
+
 
 #bullhorn {
 transform:scale(1.0);
+}
+
+#bullhorn:hover, #exporter:hover {
+		transition:all 0.5s;
+	transition-delay:0.05s;
+transform:scale(-1,-1) rotate(180deg)!important;
 }
 
 #slot1, #slot2, #slot3 {
@@ -552,6 +548,7 @@ transform: matrix(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
 }
 
 #preview_frame {
+	
 height:100%;
 }
 

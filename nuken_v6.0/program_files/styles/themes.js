@@ -1,7 +1,7 @@
 
 var themeverify = function(){
 if (themeverifier === false){
-document.getElementById("puppy2").click();
+window.location.replace("#popup2");
 console.log('No theme files could be found.');
 } else {
 themefound=false;returntonormal();
@@ -33,6 +33,11 @@ document.getElementById("shopNO").src = imagepath+"shop.gif";
 document.getElementById("playbutton").src = imagepath+"play.gif";
 document.getElementById("logo").src = imagepath+"logo.png";
 document.getElementById("bullhorn").src = imagepath+"announce.gif";
+document.getElementById("script").src = imagepath+"script.gif";
+document.getElementById("styles").src = imagepath+"styles.gif";
+
+document.getElementById("script_head").src = imagepath+"script.gif";
+document.getElementById("styles_head").src = imagepath+"styles.gif";
 document.getElementById("harry_styles").href = "program_files/styles/default_stylesheet.css";
 switcheroo = true;
 } else {
@@ -58,6 +63,11 @@ document.getElementById("shopNO").src = imagepath+"shop.gif";
 document.getElementById("playbutton").src = imagepath+"play.gif";
 document.getElementById("logo").src = imagepath+"logo.png";
 document.getElementById("bullhorn").src = imagepath+"announce.gif";
+document.getElementById("script").src = imagepath+"script.gif";
+document.getElementById("styles").src = imagepath+"styles.gif";
+
+document.getElementById("script_head").src = imagepath+"script.gif";
+document.getElementById("styles_head").src = imagepath+"styles.gif";
 document.getElementById("harry_styles").href = "program_files/themes/selected/theme.css";
 switcheroo = false;
 }

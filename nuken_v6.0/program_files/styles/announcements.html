@@ -32,8 +32,8 @@ transition: all 1s;
 </style>
 <body>
 <center>
-<img id = "loader" style = "color:black" width = "30%" height = "65%"src = "../images/loader.gif" ></img>
-<iframe id = "item1"  class = "announce_window"style = "display:none;border:none;outline:none"width = "100%" height = "90%"src = "http://nuken.digitalartathome.com/editor/program_files/styles/feeds/latest.html"></iframe>
+<img id = "loader" style = "color:black;" width = "30%" height = "65%"src = "../images/loader.gif" ></img>
+<iframe id = "feed"  class = "announce_window"style = "display:none;border:none;outline:none"width = "100%" height = "90%"src = "http://nuken.xyz/editor/program_files/styles/feeds/latest.html"></iframe>
 
 <p id = "errortext"></p>
 </center>
@@ -41,19 +41,21 @@ transition: all 1s;
 <script>
 var mr_start_i_dont_feel_so_good = false;
 var loader = document.getElementById('loader');
-var item1 = document.getElementById('item1');
+var feed = document.getElementById('feed');
 var errortext = document.getElementById('errortext');
 
 window.onload = function(){
 if (navigator.onLine){
 loader.style.height = "0%";
 loader.style.opacity = "0%";
-item1.style.display = "inline-block";
+feed.style.display = "inline-block";
+
 } else {
+loader.style.marginTop = "7.5px";
 loader.src = "../images/disconnected.gif";
 loader.style.opacity = "100%";
 errortext.innerHTML = "You're not connected to the Internet.";
-item1.style.display = "none";
+feed.style.display = "none";
 
 var changer = function(){
 loader.src = "../images/reload.gif";

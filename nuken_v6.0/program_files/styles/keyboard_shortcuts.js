@@ -8,8 +8,21 @@ document.addEventListener("keydown", function(e) {
   
    if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)  && e.keyCode == 80) {
     e.preventDefault();
+
     document.getElementById('preview').click();
+	
   }
+  
+    if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)  && e.keyCode == 73) {
+    e.preventDefault();
+
+  fullscreen_preview();
+	
+  }
+  	
+  
+   
+
   
   
   if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)  && e.keyCode == 32) {
@@ -20,4 +33,5 @@ document.addEventListener("keydown", function(e) {
 	document.getElementById('checker_mccheckerson').checked = true;
 	}
   }
+  
   }, false);

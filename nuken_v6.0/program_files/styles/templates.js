@@ -10,7 +10,7 @@ console.log('Template was loaded successfully.');
     	titlebox.value = templates[index].name;
     	cssbox.innerHTML = templates[index].css;
     	textbox.innerHTML = templates[index].body;
-        jsbox.value = "//Note: If your selected template doesn't include the JS parameter, then this field will read as 'undefined'.\n\n"+templates[index].js;
+        jsbox.value = "//Note: If your selected lesson doesn't include the JS parameter, then this field will read as 'undefined'.\n\n"+templates[index].js;
 		filebox.value = templates[index].file;    	
 }
 			
