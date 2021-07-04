@@ -2,7 +2,7 @@
 <p align="center">
 <img src="http://nuken.xyz/editor/program_files/images/banner.png" alt="nuken" width="100%">
 </p>
-nuken is an webpage file editor, with cross-platform and offline access. Edit your HTML files, with access to an array of helpful templates and tools, with no interruptions! 
+nuken is a development environment for web-based applications, with cross-platform and offline access. Edit your HTML files, with access to an array of helpful templates and tools, with no interruptions! 
 nuken v6.0 offers plenty of free customization options - downloadable themes, add-ons, template packs, and packages.
 
 If you plan to actually use nuken and you're wondering where to officially start, it's here:
